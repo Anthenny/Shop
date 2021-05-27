@@ -1,0 +1,132 @@
+// Import Poppins font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+// Import Gabriola font
+
+// Kleuren Opgeslagen in variabel
+$white: #ffffff;
+$mainPink: #ffc2d0;
+
+// Reset padding margin etc en voeg font-family toe.
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  background-color: $mainPink;
+  align-items: center;
+  justify-content: space-between;
+  .hamburger {
+    height: 51px;
+    width: 51px;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px $white;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(0.9);
+    margin-left: 20px;
+
+    .bar {
+      height: 2px;
+      width: 30px;
+      background-color: $white;
+      z-index: -1;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1rem;
+  }
+
+  .img-list {
+    display: flex;
+
+    .navbar-img {
+      height: 25px;
+      color: black;
+      margin: 0.2rem;
+    }
+
+    .space {
+      margin-right: 20px;
+    }
+  }
+}
+
+.mobile-grid {
+  height: 84vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  .btn {
+    height: 100px;
+    width: 200px;
+    padding: 0.5rem;
+    color: white;
+    background-color: $mainPink;
+  }
+
+  .sectie-1-img {
+    // width: 100%;
+    padding-top: 42%;
+    background: url('../images/mobile1.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .sectie-2-img {
+    width: 100%;
+    padding-top: 42%;
+    background: url('../images/mobile2.png') no-repeat center;
+    background-size: 100%;
+  }
+
+  .sectie-3-img {
+    width: 100%;
+    padding-top: 42%;
+    background: url('../images/mobile3.png') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: -2;
+  }
+}
+
+footer {
+  height: 8vh;
+  background: $mainPink;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+
+  .icons {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer-tekst {
+    display: none;
+  }
+}
