@@ -21,7 +21,9 @@ $mainPink: #ffc2d0;
 .sectie-1,
 .sectie-2,
 .sectie-3,
-.footer-tekst {
+.footer-tekst,
+header .desktopMenu,
+header .img-list li:first-child {
   display: none;
 }
 
@@ -66,7 +68,6 @@ header {
     cursor: pointer;
     transform: scale(0.9);
     margin-left: 20px;
-
     .bar {
       height: 2px;
       width: 30px;
@@ -285,6 +286,9 @@ footer {
   }
 }
 
+//-------------------------------------------//
+//------------------media--------------------//
+//-------------------------------------------//
 @media screen and (min-width: 1300px) {
   .mobile-grid,
   .pijlLinks,
@@ -299,6 +303,7 @@ footer {
   }
 
   header {
+    padding-left: 30px;
     .desktopMenu {
       width: 20%;
       display: flex;
@@ -311,6 +316,35 @@ footer {
 
       .active {
         color: black;
+      }
+    }
+    .img-list {
+      align-items: center;
+      justify-content: center;
+    }
+    .img-list li:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 30px;
+      margin-right: 30px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      input {
+        width: 90%;
+        margin: 0 10px;
+        outline: none;
+        border: none;
+        height: 25px;
+      }
+      label {
+        display: flex;
+        width: 30px;
+        img {
+          width: 20px;
+          height: auto;
+        }
       }
     }
   }
@@ -415,7 +449,7 @@ footer {
       justify-content: space-around;
 
       h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         color: white;
         font-weight: 400;
       }
