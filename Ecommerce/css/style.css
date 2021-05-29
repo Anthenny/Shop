@@ -5,7 +5,31 @@
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.sectie-1,
+.sectie-2,
+.sectie-3,
+.footer-tekst {
+  display: none;
+}
+
+.btn {
+  background-color: #ffc2d0;
+  color: white;
+  padding: 0.5rem;
+  height: 40px;
+  width: 100px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover {
+  color: #ffc2d0;
+  background-color: white;
+  border: 1px solid #ffc2d0;
 }
 
 body {
@@ -13,6 +37,7 @@ body {
 }
 
 header {
+  position: relative;
   height: 8vh;
   width: 100vw;
   display: flex;
@@ -75,12 +100,24 @@ header .img-list .space {
   grid-template-rows: 1fr 1fr 1fr;
 }
 
-.mobile-grid .btn {
-  height: 100px;
-  width: 200px;
-  padding: 0.5rem;
-  color: white;
-  background-color: #ffc2d0;
+.mobile-grid .sectie-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-grid .sectie-text .product-titel {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 1rem 0 1rem 0;
+}
+
+.mobile-grid .sectie-text .product-beschrijving {
+  font-size: 0.9rem;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .mobile-grid .sectie-1-img {
@@ -93,7 +130,7 @@ header .img-list .space {
   width: 100%;
   padding-top: 42%;
   background: url("../images/mobile2.png") no-repeat center;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .mobile-grid .sectie-3-img {
@@ -102,10 +139,10 @@ header .img-list .space {
   background: url("../images/mobile3.png") no-repeat center;
   background-size: cover;
   overflow: hidden;
-  z-index: -2;
 }
 
 footer {
+  position: fixed;
   height: 8vh;
   background: #ffc2d0;
   display: grid;
@@ -119,6 +156,224 @@ footer .icons {
   justify-content: space-around;
 }
 
-footer .footer-tekst {
-  display: none;
+@media screen and (min-width: 700px) {
+  .mobile-grid,
+  .hidden {
+    display: none;
+  }
+  .sectie-1,
+  .sectie-2,
+  .sectie-3 {
+    display: block;
+  }
+  header .img-list .navbar-img {
+    height: 35px;
+    color: black;
+  }
+  header .logo {
+    font-size: 1.4rem;
+  }
+  main {
+    height: 84vh;
+    display: grid;
+    justify-content: center;
+  }
+  main .layout-desktop {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  main .layout-desktop .sectie-1 h2 {
+    margin: 2rem 0 0 0;
+    font-weight: 400;
+    font-size: 1.8rem;
+  }
+  main .layout-desktop .sectie-1 h2 span {
+    color: #ffc2d0;
+  }
+  main .layout-desktop .sectie-2 .img {
+    position: relative;
+    border-radius: 6px;
+    height: 280px;
+  }
+  main .layout-desktop .sectie-2 .img img {
+    border-radius: 6px;
+  }
+  main .layout-desktop .sectie-2 .img a {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  main .layout-desktop .sectie-2 .btn {
+    height: 40px;
+    width: 300px;
+  }
+  main .layout-desktop .sectie-3 {
+    width: 80%;
+    margin: 0 auto;
+  }
+  main .layout-desktop .sectie-3 h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+  main .layout-desktop .sectie-3 h3 span {
+    color: #ffc2d0;
+  }
+  main .layout-desktop .sectie-3 .producten {
+    position: relative;
+  }
+  main .layout-desktop .sectie-3 .producten h2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  main .layout-desktop .sectie-3 .producten .pijlLinks {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  main .layout-desktop .sectie-3 .producten .pijlRechts {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  main .layout-desktop .sectie-3 .producten .img {
+    position: relative;
+    display: grid;
+    justify-content: center;
+  }
+  main .layout-desktop .sectie-3 .producten .img a {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+  main .layout-desktop .sectie-3 .producten .img .btn {
+    height: 40px;
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .mobile-grid,
+  .pijlLinks,
+  .pijlRechts,
+  .hamburger {
+    display: none !important;
+  }
+  .footer-tekst,
+  .hidden {
+    display: block;
+  }
+  header .desktopMenu {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+  }
+  header .desktopMenu a {
+    color: white;
+    font-size: 1.2rem;
+  }
+  header .desktopMenu .active {
+    color: black;
+  }
+  main {
+    width: 80%;
+    margin: 0 auto;
+    height: 84vh;
+  }
+  main .layout-desktop {
+    height: 84vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "sectie-1 sectie-2" "sectie-3 sectie-3";
+    grid-gap: 10px 250px;
+  }
+  main .layout-desktop .sectie-1 {
+    grid-area: sectie-1;
+    margin-top: 2rem;
+  }
+  main .layout-desktop .sectie-1 p {
+    margin: 1.2rem 0;
+    width: 70%;
+  }
+  main .layout-desktop .sectie-1 .button {
+    display: flex;
+  }
+  main .layout-desktop .sectie-1 .button .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    height: 50px;
+    width: 200px;
+    color: white;
+    background-color: #ffc2d0;
+    margin-right: 1.5rem;
+  }
+  main .layout-desktop .sectie-1 .button .login:hover {
+    color: #ffc2d0;
+    background-color: white;
+    border: 1px solid #ffc2d0;
+  }
+  main .layout-desktop .sectie-1 .button .registreer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    height: 50px;
+    width: 200px;
+    color: black;
+    border: 1px solid #ffc2d0;
+  }
+  main .layout-desktop .sectie-1 .button .registreer:hover {
+    color: #ffc2d0;
+  }
+  main .layout-desktop .sectie-2 {
+    grid-area: sectie-2;
+    display: grid;
+    margin-top: 2rem;
+    justify-content: right;
+  }
+  main .layout-desktop .sectie-3 {
+    grid-area: sectie-3;
+    width: 100%;
+    margin: 0;
+  }
+  main .layout-desktop .sectie-3 h3 {
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+  main .layout-desktop .sectie-3 .producten {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1.5rem;
+  }
+  main .layout-desktop .sectie-3 .producten .product h2 {
+    margin-bottom: 20px;
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .icons {
+    width: 10%;
+    margin-left: 4rem;
+  }
+  footer .footer-tekst {
+    margin-right: 4rem;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+  }
+  footer .footer-tekst h2 {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 400;
+  }
 }
