@@ -1,0 +1,269 @@
+@import "variables";
+@import "globals";
+@import "header";
+
+.sectie-1,
+.sectie-2,
+.sectie-3 {
+  display: none;
+}
+
+.mobile-grid {
+  height: 84vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+
+  .sectie-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .product-titel {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin: 1rem 0 1rem 0;
+    }
+
+    .product-beschrijving {
+      font-size: 0.9rem;
+      width: 80%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .sectie-1-img {
+    // width: 100%;
+    padding-top: 42%;
+    background: url("../images/mobile1.png") no-repeat center;
+    background-size: cover;
+  }
+
+  .sectie-2-img {
+    width: 100%;
+    padding-top: 42%;
+    background: url("../images/mobile2.png") no-repeat center;
+    background-size: cover;
+  }
+
+  .sectie-3-img {
+    width: 100%;
+    padding-top: 42%;
+    background: url("../images/mobile3.png") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .mobile-grid,
+  .hidden {
+    display: none;
+  }
+  .sectie-1,
+  .sectie-2,
+  .sectie-3 {
+    display: block;
+  }
+
+  main {
+    height: 84vh;
+    display: grid;
+    justify-content: center;
+
+    .layout-desktop {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .sectie-1 {
+        h2 {
+          margin: 2rem 0 0 0;
+          font-weight: 400;
+          font-size: 1.8rem;
+          span {
+            color: $mainPink;
+          }
+        }
+      }
+      .sectie-2 {
+        .img {
+          position: relative;
+          border-radius: 6px;
+          height: 280px;
+
+          img {
+            border-radius: 6px;
+          }
+          a {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        .btn {
+          height: 40px;
+          width: 300px;
+        }
+      }
+      .sectie-3 {
+        width: 80%;
+        margin: 0 auto;
+        h3 {
+          margin-top: 0px;
+          margin-bottom: 10px;
+          text-align: center;
+          font-weight: 400;
+          font-size: 1.4rem;
+          span {
+            color: $mainPink;
+          }
+        }
+
+        .producten {
+          position: relative;
+          h2 {
+            font-weight: 400;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 5px;
+          }
+
+          .pijlLinks {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          .pijlRechts {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+
+          .img {
+            position: relative;
+            display: grid;
+            justify-content: center;
+            a {
+              position: absolute;
+              left: 50%;
+              bottom: 20px;
+              transform: translateX(-50%);
+            }
+
+            .btn {
+              height: 40px;
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .mobile-grid,
+  .pijlLinks,
+  .pijlRechts {
+    display: none !important;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  main {
+    width: 80%;
+    margin: 0 auto;
+    height: 84vh;
+
+    .layout-desktop {
+      height: 84vh;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "sectie-1 sectie-2"
+        "sectie-3 sectie-3";
+      grid-gap: 10px 250px;
+
+      .sectie-1 {
+        grid-area: sectie-1;
+        margin-top: 2rem;
+
+        p {
+          margin: 1.2rem 0;
+          width: 70%;
+        }
+
+        .button {
+          display: flex;
+          .login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            height: 50px;
+            width: 200px;
+            color: white;
+            background-color: $mainPink;
+            margin-right: 1.5rem;
+            &:hover {
+              color: $mainPink;
+              background-color: white;
+              border: 1px solid $mainPink;
+            }
+          }
+          .registreer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            height: 50px;
+            width: 200px;
+            color: black;
+            border: 1px solid $mainPink;
+
+            &:hover {
+              color: $mainPink;
+            }
+          }
+        }
+      }
+
+      .sectie-2 {
+        grid-area: sectie-2;
+        display: grid;
+        margin-top: 2rem;
+        justify-content: right;
+      }
+
+      .sectie-3 {
+        grid-area: sectie-3;
+        width: 100%;
+        margin: 0;
+
+        h3 {
+          text-align: start;
+          margin-bottom: 1rem;
+        }
+        .producten {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-gap: 1.5rem;
+
+          .product h2 {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "footer";
