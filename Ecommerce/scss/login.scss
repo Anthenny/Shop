@@ -1,0 +1,232 @@
+@import "variables";
+@import "globals";
+@import "header";
+
+main {
+  height: 84vh;
+  display: grid;
+  .rechts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .form-container {
+      z-index: 5;
+      padding: 20px 0;
+      background-color: $darkPink;
+      height: 400px;
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 80px 250px;
+      justify-content: center;
+      overflow: hidden;
+      .top-box {
+        color: #ffff;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-weight: 400;
+        }
+      }
+      form .input-box:first-child {
+        margin: 10px 20px 30px;
+      }
+      form .input-box {
+        background-color: #ffff;
+        border-radius: 6px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        margin: 10px 20px 10px;
+        height: 30px;
+        input {
+          border: none;
+          margin: 5px 10px 5px 0px;
+          outline: none;
+        }
+        input::placeholder {
+          color: $darkPink;
+          font-size: 10px;
+        }
+        label {
+          display: grid;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      a:first-of-type p {
+        margin-right: 20px;
+        display: grid;
+        justify-content: right;
+        color: #ffff;
+        font-size: 12px;
+      }
+      a:last-of-type p {
+        display: flex;
+        justify-content: center;
+        color: #ffff;
+        font-size: 12px;
+        margin-top: 10px;
+      }
+      a:last-of-type p span {
+        color: $bluw;
+      }
+      button {
+        display: grid;
+        justify-content: center;
+        margin: 20px auto;
+        border-radius: 4px;
+        border: none;
+        padding: 4px 70px;
+        cursor: pointer;
+        color: $darkPink;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+    .cirlecs {
+      position: relative;
+      .circel-1 {
+        top: -230px;
+        left: 280px;
+        height: 50px;
+        width: 50px;
+      }
+      .circel-2 {
+        top: 0px;
+        left: -15px;
+        height: 32px;
+        width: 32px;
+      }
+      .circel-3 {
+        top: 220px;
+        left: -30px;
+        height: 13px;
+        width: 13px;
+      }
+      .circel-4 {
+        display: none;
+      }
+      .circel-5 {
+        display: none;
+      }
+    }
+    .cirlecs > div {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      z-index: 1;
+      background-color: $darkPink;
+    }
+  }
+
+  .links {
+    z-index: 10;
+    display: none;
+    img {
+      object-fit: cover;
+      object-position: center;
+      height: 84vh;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  main {
+    .rechts {
+      .form-container {
+        padding: 40px 0;
+        height: 550px;
+        width: 350px;
+        background-color: #ffff;
+        .top-box {
+          color: $darkPink;
+          font-size: 15px;
+        }
+        form .input-box:first-child {
+          margin: 30px 50px 30px;
+        }
+        form .input-box {
+          border-radius: 0px;
+          border-bottom: 1px solid #afafaf;
+          margin: 10px 50px 20px;
+          height: 50px;
+          input::placeholder {
+            font-size: 15px;
+          }
+          label {
+            img {
+              height: auto;
+              width: 25px;
+            }
+          }
+        }
+        a:first-of-type p {
+          margin-right: 50px;
+          color: #afafaf;
+          font-size: 12px;
+        }
+        a:last-of-type p {
+          color: #000;
+          font-size: 15px;
+        }
+        button {
+          background-color: $darkPink;
+          margin: 40px auto;
+          padding: 10px 120px;
+          color: #ffff;
+        }
+      }
+      .cirlecs {
+        .circel-1 {
+          top: -400px;
+          left: 330px;
+          height: 294px;
+          width: 294px;
+        }
+        .circel-2 {
+          top: -100px;
+          left: 320px;
+          height: 58px;
+          width: 58px;
+        }
+        .circel-3 {
+          top: 240px;
+          left: -90px;
+          height: 13px;
+          width: 13px;
+        }
+        .circel-4 {
+          display: block;
+          top: 270px;
+          left: -310px;
+          height: 205px;
+          width: 205px;
+        }
+        .circel-5 {
+          display: block;
+          top: -320px;
+          left: 180px;
+          height: 26px;
+          width: 26px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main {
+    background-color: #ececec;
+    grid-template-columns: 44% 56%;
+    .links {
+      display: block;
+    }
+  }
+}
+@import "footer";
