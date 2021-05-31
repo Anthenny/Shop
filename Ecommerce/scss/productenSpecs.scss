@@ -1,0 +1,148 @@
+@import "variables";
+@import "globals";
+@import "header";
+
+.desktop-title,
+.desktop-gevonden,
+.details-img {
+  display: none;
+}
+
+main {
+  height: 84vh;
+  padding: 30px 70px;
+  .left-box {
+    .mobile-title {
+      font-weight: 400;
+      font-size: 1.6rem;
+      display: grid;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .center {
+      display: grid;
+      justify-content: center;
+    }
+  }
+
+  .right-box {
+    max-width: 400px;
+    margin: 0 auto;
+    .product-header {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .product-categorie {
+      color: $darkGrey;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .product-beschrijving {
+      margin: 20px 0;
+      width: 100%;
+      text-align: start;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      .btn {
+        height: 55px;
+        width: 150px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .winkelmand {
+        color: $mainPink;
+        background-color: $white;
+        border: 1px solid $mainPink;
+
+        &:hover {
+          background-color: $mainPink;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mobile-title,
+  .product-prijs-mobile {
+    display: none !important;
+  }
+
+  .desktop-title,
+  .desktop-gevonden,
+  .details-img {
+    display: block;
+  }
+
+  main {
+    padding: 70px 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .left-box {
+      .desktop-title {
+        font-weight: 400;
+        font-size: 2rem;
+        margin-bottom: 8px;
+      }
+
+      .desktop-gevonden {
+        color: $darkGrey;
+        margin-bottom: 20px;
+      }
+
+      .center {
+        justify-content: start;
+        margin-left: -5px;
+      }
+
+      .details-img {
+        img {
+          margin: 10px 10px;
+        }
+      }
+    }
+
+    .right-box {
+      padding: 30px 0;
+      .product-header {
+        h2 {
+          font-size: 1.8rem;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+      }
+      .product-categorie {
+        font-weight: 400;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .product-beschrijving {
+        text-align: start;
+      }
+
+      .buttons {
+        .btn {
+          margin-top: 20px;
+          height: 60px;
+          width: 180px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@import "footer";
