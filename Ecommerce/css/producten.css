@@ -93,7 +93,7 @@ header .hamburger .bar {
 }
 
 header .logo {
-  color: white;
+  color: #ffff;
   font-size: 1rem;
 }
 
@@ -101,10 +101,15 @@ header .img-list {
   display: flex;
 }
 
-header .img-list .navbar-img {
-  height: 25px;
-  color: black;
+header .img-list .fas {
+  font-size: 30px;
+  color: #ffff;
   margin: 0.2rem;
+}
+
+header .img-list .fa-search {
+  font-size: 18px;
+  color: #000;
 }
 
 header .img-list .space {
@@ -343,6 +348,12 @@ footer {
 footer .icons {
   display: flex;
   justify-content: space-around;
+}
+
+footer .icons .fab {
+  margin: 0 20px;
+  font-size: 50px;
+  color: #ffff;
 }
 
 @media screen and (min-width: 1300px) {

@@ -58,17 +58,21 @@ header {
   }
 
   .logo {
-    color: white;
+    color: #ffff;
     font-size: 1rem;
   }
 
   .img-list {
     display: flex;
 
-    .navbar-img {
-      height: 25px;
-      color: black;
+    .fas {
+      font-size: 30px;
+      color: #ffff;
       margin: 0.2rem;
+    }
+    .fa-search {
+      font-size: 18px;
+      color: #000;
     }
 
     .space {

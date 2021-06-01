@@ -11,7 +11,7 @@ main {
     align-items: center;
     overflow: hidden;
     .form-container {
-      z-index: 5;
+      z-index: 2;
       padding: 20px 0;
       background-color: $darkPink;
       height: 400px;
@@ -57,6 +57,10 @@ main {
           display: grid;
           justify-content: center;
           align-items: center;
+          .fas {
+            font-size: 20px;
+            color: $mainPink;
+          }
         }
       }
       a:first-of-type p {

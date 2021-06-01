@@ -93,7 +93,7 @@ header .hamburger .bar {
 }
 
 header .logo {
-  color: white;
+  color: #ffff;
   font-size: 1rem;
 }
 
@@ -101,10 +101,15 @@ header .img-list {
   display: flex;
 }
 
-header .img-list .navbar-img {
-  height: 25px;
-  color: black;
+header .img-list .fas {
+  font-size: 30px;
+  color: #ffff;
   margin: 0.2rem;
+}
+
+header .img-list .fa-search {
+  font-size: 18px;
+  color: #000;
 }
 
 header .img-list .space {
@@ -185,7 +190,7 @@ main .rechts {
 }
 
 main .rechts .form-container {
-  z-index: 5;
+  z-index: 2;
   padding: 20px 0;
   background-color: #fdb5c0;
   height: 400px;
@@ -240,6 +245,11 @@ main .rechts .form-container form .input-box label {
   display: grid;
   justify-content: center;
   align-items: center;
+}
+
+main .rechts .form-container form .input-box label .fas {
+  font-size: 20px;
+  color: #ffc2d0;
 }
 
 main .rechts .form-container a:first-of-type p {
@@ -430,6 +440,12 @@ footer {
 footer .icons {
   display: flex;
   justify-content: space-around;
+}
+
+footer .icons .fab {
+  margin: 0 20px;
+  font-size: 50px;
+  color: #ffff;
 }
 
 @media screen and (min-width: 1300px) {

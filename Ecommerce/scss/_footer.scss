@@ -14,6 +14,11 @@ footer {
   .icons {
     display: flex;
     justify-content: space-around;
+    .fab {
+      margin: 0 20px;
+      font-size: 50px;
+      color: #ffff;
+    }
   }
 }
 
