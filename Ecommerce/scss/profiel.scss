@@ -1,0 +1,134 @@
+@import "variables";
+@import "globals";
+@import "header";
+
+main {
+  height: 84vh;
+  display: grid;
+  background-color: #f8f6f6;
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 12% 88%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+      "left-box top-box"
+      "left-box right-box";
+    background-color: #f8f6f6;
+    .top-box {
+      grid-area: top-box;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+    }
+    .left-box {
+      grid-area: left-box;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10% 10% 10%;
+      background-color: #ffb2c4;
+      padding-top: 30px;
+      max-width: 50px;
+      a {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+      a p {
+        display: none;
+      }
+    }
+    .right-box {
+      grid-area: right-box;
+      background-color: #ffff;
+      border-radius: 6px;
+      height: 400px;
+      width: 80%;
+      margin: 0 auto;
+      box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+      .informatie-box {
+        padding: 10px;
+      }
+      .informatie-box > p {
+        margin: 10px 0;
+        font-size: 15px;
+      }
+      button {
+        display: block;
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        border: none;
+        background-color: $mainPink;
+        color: #ffff;
+        margin: 20px auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    .container {
+      .left-box {
+        max-width: 80px;
+      }
+      .right-box {
+        width: 80%;
+        max-width: 600px;
+        .informatie-box {
+          display: grid;
+          justify-content: center;
+        }
+        .informatie-box > p {
+          border-bottom: 0.3px solid rgba(70, 70, 70, 0.4);
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    .container {
+      grid-template-columns: 1fr 2fr;
+      grid-template-areas:
+        "aa top-box"
+        "left-box right-box";
+      .left-box {
+        grid-gap: 30px;
+        background-color: #f8f6f6;
+        padding-top: 0px;
+        margin-left: 40%;
+        max-width: 100%;
+        a {
+          grid-template-columns: 20% 80%;
+          width: 300px;
+        }
+        .actieve {
+          border-left: 6px solid $mainPink;
+        }
+        a p {
+          display: block;
+          margin-left: 10%;
+          color: #000;
+        }
+        a img {
+          padding: 10px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1300px) {
+  main {
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+  }
+}
+@import "footer";
