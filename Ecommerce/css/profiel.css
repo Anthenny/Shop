@@ -211,6 +211,11 @@ main .container .left-box a {
   align-items: center;
 }
 
+main .container .left-box a .fas {
+  font-size: 30px;
+  color: #ffff;
+}
+
 main .container .left-box a p {
   display: none;
 }
@@ -272,12 +277,15 @@ main .container .right-box button {
     grid-gap: 30px;
     background-color: #f8f6f6;
     padding-top: 0px;
-    margin-left: 40%;
     max-width: 100%;
+    justify-self: right;
   }
   main .container .left-box a {
     grid-template-columns: 20% 80%;
     width: 300px;
+  }
+  main .container .left-box a .fas {
+    color: #000;
   }
   main .container .left-box .actieve {
     border-left: 6px solid #ffc2d0;

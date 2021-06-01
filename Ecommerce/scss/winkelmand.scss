@@ -21,7 +21,90 @@ main {
     }
     form {
       display: grid;
-      grid-template-rows: 70% 30%;
+      justify-content: center;
+      grid-template-rows: 75% 25%;
+      margin: 0 auto;
+      width: 80%;
+      .top-form {
+        overflow: auto;
+        height: 425px;
+        width: 100%;
+        min-width: 300px;
+        .card {
+          margin: 10px;
+          height: 130px;
+          display: grid;
+          background-color: #ffff;
+          grid-template-columns: 1fr 4fr 1fr;
+          border-radius: 10px;
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+          .left {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+          }
+          .middel {
+            display: block;
+            justify-self: left;
+            font-size: 10px;
+            margin: 20px 0px 10px 10px;
+            p:first-child,
+            p:last-child {
+              font-weight: 600;
+              font-size: 12px;
+            }
+            p:last-child {
+              margin-top: 30px;
+            }
+          }
+          .right {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-rows: repeat(2, 65px);
+            img {
+              justify-self: center;
+            }
+            .button {
+              display: flex;
+              p {
+                margin: 0 15px;
+              }
+              button {
+                color: #000;
+                border: none;
+                background-color: #ffff;
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+      .bottom-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        button {
+          justify-self: center;
+          width: 132px;
+          height: 50px;
+          border-radius: 8px;
+          border: none;
+          background-color: $darkPink;
+          color: #ffff;
+          font-size: 20px;
+          font-weight: 600;
+        }
+        .totaal {
+          justify-self: center;
+        }
+        .totaal > p {
+          font-size: 20px;
+        }
+        .totaal p:last-child {
+          font-weight: 600;
+        }
+      }
     }
   }
 }
@@ -42,8 +125,6 @@ main {
 @media screen and (min-width: 1300px) {
   main {
     .container {
-      max-width: 1300px;
-      margin: 0 auto;
     }
   }
 }

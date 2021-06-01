@@ -34,6 +34,10 @@ main {
         display: grid;
         justify-content: center;
         align-items: center;
+        .fas {
+          font-size: 30px;
+          color: #ffff;
+        }
       }
       a p {
         display: none;
@@ -101,11 +105,14 @@ main {
         grid-gap: 30px;
         background-color: #f8f6f6;
         padding-top: 0px;
-        margin-left: 40%;
         max-width: 100%;
+        justify-self: right;
         a {
           grid-template-columns: 20% 80%;
           width: 300px;
+          .fas {
+            color: #000;
+          }
         }
         .actieve {
           border-left: 6px solid $mainPink;

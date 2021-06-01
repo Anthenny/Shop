@@ -206,9 +206,15 @@ main .container .left-box {
 }
 
 main .container .left-box a {
+  text-decoration: none;
   display: grid;
-  justify-content: center;
+  justify-self: center;
   align-items: center;
+}
+
+main .container .left-box a .fas {
+  font-size: 30px;
+  color: #ffff;
 }
 
 main .container .left-box a p {
@@ -235,7 +241,7 @@ main .container .right-box .besteling-box .top {
 
 main .container .right-box .besteling-box .bottom {
   overflow: auto;
-  height: 400px;
+  height: 380px;
 }
 
 main .container .right-box .besteling-box .bottom .besteling {
@@ -243,6 +249,7 @@ main .container .right-box .besteling-box .bottom .besteling {
   grid-template-columns: repeat(3, 1fr);
   margin: 30px 10px;
   border-radius: 8px;
+  background-color: #ffff;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -275,12 +282,15 @@ main .container .right-box .besteling-box .bottom .besteling > p {
     grid-gap: 30px;
     background-color: #f8f6f6;
     padding-top: 0px;
-    margin-left: 40%;
     max-width: 100%;
+    justify-self: right;
   }
   main .container .left-box a {
     grid-template-columns: 20% 80%;
     width: 300px;
+  }
+  main .container .left-box a .fas {
+    color: #000;
   }
   main .container .left-box .actieve {
     border-left: 6px solid #ffc2d0;
@@ -300,6 +310,7 @@ main .container .right-box .besteling-box .bottom .besteling > p {
   }
   main .container .right-box .besteling-box {
     border-radius: 8px;
+    background-color: #ffff;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
   }
   main .container .right-box .besteling-box .bottom .besteling {

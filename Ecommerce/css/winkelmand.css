@@ -197,14 +197,106 @@ main .container .top-box h1 {
 
 main .container form {
   display: grid;
-  grid-template-rows: 70% 30%;
+  justify-content: center;
+  grid-template-rows: 75% 25%;
+  margin: 0 auto;
+  width: 80%;
 }
 
-@media screen and (min-width: 1300px) {
-  main .container {
-    max-width: 1300px;
-    margin: 0 auto;
-  }
+main .container form .top-form {
+  overflow: auto;
+  height: 425px;
+  width: 100%;
+  min-width: 300px;
+}
+
+main .container form .top-form .card {
+  margin: 10px;
+  height: 130px;
+  display: grid;
+  background-color: #ffff;
+  grid-template-columns: 1fr 4fr 1fr;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+main .container form .top-form .card .left {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+main .container form .top-form .card .middel {
+  display: block;
+  justify-self: left;
+  font-size: 10px;
+  margin: 20px 0px 10px 10px;
+}
+
+main .container form .top-form .card .middel p:first-child,
+main .container form .top-form .card .middel p:last-child {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+main .container form .top-form .card .middel p:last-child {
+  margin-top: 30px;
+}
+
+main .container form .top-form .card .right {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(2, 65px);
+}
+
+main .container form .top-form .card .right img {
+  justify-self: center;
+}
+
+main .container form .top-form .card .right .button {
+  display: flex;
+}
+
+main .container form .top-form .card .right .button p {
+  margin: 0 15px;
+}
+
+main .container form .top-form .card .right .button button {
+  color: #000;
+  border: none;
+  background-color: #ffff;
+  width: 20px;
+}
+
+main .container form .bottom-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main .container form .bottom-form button {
+  justify-self: center;
+  width: 132px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fdb5c0;
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main .container form .bottom-form .totaal {
+  justify-self: center;
+}
+
+main .container form .bottom-form .totaal > p {
+  font-size: 20px;
+}
+
+main .container form .bottom-form .totaal p:last-child {
+  font-weight: 600;
 }
 
 .footer-tekst {
