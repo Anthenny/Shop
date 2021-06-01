@@ -35,13 +35,37 @@ header .img-list li:first-child {
 }
 
 header {
-  position: relative;
   height: 8vh;
-  width: 100vw;
   display: flex;
   background-color: #ffc2d0;
   align-items: center;
   justify-content: space-between;
+}
+
+header .mobileMenu {
+  position: fixed;
+  display: flex;
+  background: #ffc2d0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+
+header .mobileMenu a {
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  color: white;
+}
+
+header .mobileMenu a:hover {
+  color: black;
 }
 
 header .hamburger {
@@ -53,7 +77,7 @@ header .hamburger {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 4;
   cursor: pointer;
   transform: scale(0.9);
   margin-left: 20px;
@@ -66,10 +90,6 @@ header .hamburger .bar {
   z-index: -1;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
-}
-
-header .mobileMenu {
-  display: none;
 }
 
 header .logo {
@@ -102,7 +122,8 @@ header .img-list .space {
 }
 
 @media screen and (min-width: 1300px) {
-  .hamburger {
+  .hamburger,
+  .mobileMenu {
     display: none !important;
   }
   header {
@@ -189,27 +210,27 @@ main .sorteren {
   padding: 0 15px 40px 15px;
 }
 
-main .sorteren .desktop-flex {
+main .sorteren .desktop-knoppen {
   display: flex;
 }
 
-main .sorteren .desktop-flex button {
+main .sorteren .desktop-knoppen button {
   cursor: pointer;
   margin-right: 20px;
   border: none;
   align-items: center;
 }
 
-main .sorteren .desktop-flex button:hover {
+main .sorteren .desktop-knoppen button:hover {
   border: 1px solid #ffc2d0;
 }
 
-main .sorteren .desktop-flex .non-active {
+main .sorteren .desktop-knoppen .non-active {
   background-color: #e6e6e6;
   color: #a2a2a2;
 }
 
-main .sorteren .desktop-flex .non-active:hover {
+main .sorteren .desktop-knoppen .non-active:hover {
   color: #ffc2d0;
   background-color: #ffffff;
 }
@@ -256,6 +277,53 @@ main .producten-grid .product .product-beschrijving .hartje {
 
 main .producten-grid .product .product-beschrijving .hartje img {
   height: 18px;
+}
+
+@media screen and (min-width: 1280px) {
+  .dropbox {
+    display: none;
+  }
+  .sorteren {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sorteren .desktop-knoppen {
+    display: flex;
+  }
+  .sorteren .desktop-knoppen .btn {
+    height: 40px;
+    width: 120px;
+    font-size: 1rem;
+  }
+  .sorteren .items-gevonden {
+    display: block;
+    font-weight: 400;
+    color: #a2a2a2;
+  }
+  .opties {
+    padding: 10px 15px 10px 15px;
+    margin: 0 15px 10px 15px;
+    display: block;
+    background-color: #ffc2d0;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.4rem;
+    width: 15%;
+    height: 50%;
+  }
+  .opties label {
+    margin-right: 10px;
+  }
+  .opties select {
+    font-size: 1.1rem;
+  }
+  .desktop-flex {
+    display: flex;
+  }
+  .desktop-flex .producten-grid {
+    width: 100%;
+  }
 }
 
 .footer-tekst {

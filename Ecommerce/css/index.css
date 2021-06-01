@@ -35,13 +35,37 @@ header .img-list li:first-child {
 }
 
 header {
-  position: relative;
   height: 8vh;
-  width: 100vw;
   display: flex;
   background-color: #ffc2d0;
   align-items: center;
   justify-content: space-between;
+}
+
+header .mobileMenu {
+  position: fixed;
+  display: flex;
+  background: #ffc2d0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+
+header .mobileMenu a {
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  color: white;
+}
+
+header .mobileMenu a:hover {
+  color: black;
 }
 
 header .hamburger {
@@ -53,7 +77,7 @@ header .hamburger {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 4;
   cursor: pointer;
   transform: scale(0.9);
   margin-left: 20px;
@@ -66,10 +90,6 @@ header .hamburger .bar {
   z-index: -1;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
-}
-
-header .mobileMenu {
-  display: none;
 }
 
 header .logo {
@@ -102,7 +122,8 @@ header .img-list .space {
 }
 
 @media screen and (min-width: 1300px) {
-  .hamburger {
+  .hamburger,
+  .mobileMenu {
     display: none !important;
   }
   header {
@@ -186,21 +207,21 @@ header .img-list .space {
 
 .mobile-grid .sectie-1-img {
   padding-top: 42%;
-  background: url("../images/mobile1.png") no-repeat center;
+  background: url("../public/img/mobile1.png") no-repeat center;
   background-size: cover;
 }
 
 .mobile-grid .sectie-2-img {
   width: 100%;
   padding-top: 42%;
-  background: url("../images/mobile2.png") no-repeat center;
+  background: url("../public/img/mobile2.png") no-repeat center;
   background-size: cover;
 }
 
 .mobile-grid .sectie-3-img {
   width: 100%;
   padding-top: 42%;
-  background: url("../images/mobile3.png") no-repeat center;
+  background: url("../public/img/mobile3.png") no-repeat center;
   background-size: cover;
   overflow: hidden;
 }

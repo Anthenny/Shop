@@ -4,13 +4,36 @@ header .img-list li:first-child {
 }
 
 header {
-  position: relative;
   height: 8vh;
-  width: 100vw;
   display: flex;
   background-color: $mainPink;
   align-items: center;
   justify-content: space-between;
+
+  .mobileMenu {
+    position: fixed;
+    display: flex;
+    background: $mainPink;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    overflow-x: hidden;
+    transition: 0.5s ease left;
+    a {
+      letter-spacing: 0.2rem;
+      font-size: 2rem;
+      line-height: 3.5rem;
+      color: white;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
   .hamburger {
     height: 51px;
     width: 51px;
@@ -20,7 +43,7 @@ header {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 4;
     cursor: pointer;
     transform: scale(0.9);
     margin-left: 20px;
@@ -32,10 +55,6 @@ header {
       margin-top: 0.3rem;
       margin-bottom: 0.3rem;
     }
-  }
-
-  .mobileMenu {
-    display: none;
   }
 
   .logo {
@@ -73,7 +92,8 @@ header {
 
 // Media queries 1300px
 @media screen and (min-width: 1300px) {
-  .hamburger {
+  .hamburger,
+  .mobileMenu {
     display: none !important;
   }
   header {

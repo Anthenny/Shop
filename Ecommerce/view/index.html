@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Navbar Mobiel -->
+    <header>
+      <div class="hamburger">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+      </div>
+      <ul class="mobileMenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./producten.html">Oorbellen</a></li>
+        <li><a href="#">Armbandjes</a></li>
+        <li><a href="#">Tassen</a></li>
+        <li><a href="#">Wax melts</a></li>
+        <li><a href="#">Baby accessoires</a></li>
+      </ul>
+      <!-- Einde Navbar Mobiel -->
+      <!-- Navbar Desktop -->
+      <ul class="desktopMenu">
+        <li><a class="active" href="./index.html">Home</a></li>
+        <li><a href="./producten.html">Oorbellen</a></li>
+        <li><a href="#">Over mij</a></li>
+      </ul>
+      <h2 class="logo">Anna's accessoires</h2>
+      <ul class="img-list">
+        <li>
+          <input type="text" name="search" id="search" />
+          <label for="search"><img src="../public/img/Icon open-magnifying-glass.png" /></label>
+        </li>
+        <li>
+          <a href="./login.html"><img class="navbar-img" src="../public/img/user.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img class="navbar-img space" src="../public/img/cart.png " alt="" /></a>
+        </li>
+      </ul>
+    </header>
+    <!-- Einde navbar mobiel  -->
+    <main>
+      <!-- Hier begint de layout voor mobiel -->
+      <div class="mobile-grid">
+        <div class="sectie-1-img"></div>
+        <div class="sectie-text">
+          <h2 class="product-titel">Oorbellen</h2>
+          <p class="product-beschrijving">Bekijk hier het ruime assortiment van exclusieve handgemaakte oorbellen.</p>
+          <a class="btn" href="#">Shop nu</a>
+        </div>
+        <div class="sectie-text">
+          <h2 class="product-titel">Baby accessoires</h2>
+          <p class="product-beschrijving">Bekijk hier de handgemaakte baby accessoires</p>
+          <a class="btn" href="#">Shop nu</a>
+        </div>
+        <div class="sectie-2-img"></div>
+        <div class="sectie-3-img"></div>
+        <div class="sectie-text">
+          <h2 class="product-titel">Armbandjes</h2>
+          <p class="product-beschrijving">Bekijk hier de handgemaakte armbandjes. Verkrijgbaar in twee verschillende maten.</p>
+          <a class="btn" href="#">Shop nu</a>
+        </div>
+      </div>
+      <!-- Hier eindigt de grid layout van mobiel -->
+      <!-- Begin layout Desktop -->
+      <div class="layout-desktop">
+        <div class="sectie-1">
+          <h2>Premium <span>handgemaakte</span> accessoires</h2>
+          <p class="hidden">Op deze site wil ik graag nieuwe handgemaakte producten met jullie delen. Je kan een account maken en krijg op de 1e bestelling 10% korting.</p>
+          <div class="button">
+            <a href="#" class="login hidden">Login</a>
+            <a href="#" class="registreer hidden">Registreren</a>
+          </div>
+        </div>
+        <div class="sectie-2">
+          <div class="img">
+            <img src="../public/img/sectie2.png" alt="" />
+            <a class="btn" href="#">Bekijk de nieuwe collectie</a>
+          </div>
+        </div>
+        <div class="sectie-3">
+          <h3>Zoek per <span> Categorie </span></h3>
+          <div class="producten">
+            <img class="pijlLinks" src="../public/img/pijlLinks.png" alt="" />
+            <div class="product">
+              <h2>Oorbellen</h2>
+              <div class="img">
+                <img src="../public/img/oorbelDesk.png" alt="" />
+                <a class="btn" href="">Shop nu</a>
+              </div>
+            </div>
+            <div class="product hidden">
+              <h2>Armbanden</h2>
+              <div class="img">
+                <img src="../public/img/armDesk.png" alt="" />
+                <a class="btn" href="">Shop nu</a>
+              </div>
+            </div>
+            <div class="product hidden">
+              <h2>Baby Accessoires</h2>
+              <div class="img">
+                <img src="../public/img/leeuwDesk.png" alt="" />
+                <a class="btn" href="">Shop nu</a>
+              </div>
+            </div>
+            <div class="product hidden">
+              <h2>Tassen</h2>
+              <div class="img">
+                <img src="../public/img/tasDesk.png" alt="" />
+                <a class="btn" href="">Shop nu</a>
+              </div>
+            </div>
+            <div class="product hidden">
+              <h2>Wax Melts</h2>
+              <div class="img">
+                <img src="../public/img/waxDesk.png" alt="" />
+                <a class="btn" href="">Shop nu</a>
+              </div>
+            </div>
+            <img class="pijlRechts" src="../public/img/pijlRechts.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer van de webshop -->
+    <footer>
+      <div class="icons">
+        <img src="../public/img/fb.png" alt="" />
+        <img src="../public/img/pinterest.png" alt="" />
+        <img src="../public/img/ig.png" alt="" />
+      </div>
+      <div class="footer-tekst">
+        <a href="#"><h2>Retourneren</h2></a>
+        <a href="#"><h2>Inspiratie</h2></a>
+        <a href="#"><h2>Contact</h2></a>
+      </div>
+    </footer>
+    <script src="../public/js/hamburger.js"></script>
+  </body>
+</html>

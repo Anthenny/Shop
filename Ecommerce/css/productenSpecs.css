@@ -172,131 +172,129 @@ header .img-list .space {
   }
 }
 
-main {
-  height: 84vh;
-  display: grid;
-  background-color: #f8f6f6;
-}
-
-main .container {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 12% 88%;
-  grid-template-rows: 20% 80%;
-  grid-template-areas: "left-box top-box" "left-box right-box";
-  background-color: #f8f6f6;
-}
-
-main .container .top-box {
-  grid-area: top-box;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-}
-
-main .container .left-box {
-  grid-area: left-box;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 10% 10% 10%;
-  background-color: #ffb2c4;
-  padding-top: 30px;
-  max-width: 50px;
-}
-
-main .container .left-box a {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-
-main .container .left-box a p {
+.desktop-title,
+.desktop-gevonden,
+.details-img {
   display: none;
 }
 
-main .container .right-box {
-  grid-area: right-box;
-  background-color: #ffff;
-  border-radius: 6px;
-  height: 400px;
-  width: 80%;
+main {
+  height: 84vh;
+  padding: 30px 70px;
+}
+
+main .left-box .mobile-title {
+  font-weight: 400;
+  font-size: 1.6rem;
+  display: grid;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+main .left-box .center {
+  display: grid;
+  justify-content: center;
+}
+
+main .right-box {
+  max-width: 400px;
   margin: 0 auto;
-  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
 }
 
-main .container .right-box .informatie-box {
-  padding: 10px;
+main .right-box .product-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-main .container .right-box .informatie-box > p {
-  margin: 10px 0;
-  font-size: 15px;
+main .right-box .product-categorie {
+  color: #a2a2a2;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
-main .container .right-box button {
-  display: block;
-  height: 50px;
-  width: 200px;
-  border-radius: 10px;
-  border: none;
+main .right-box .product-beschrijving {
+  margin: 20px 0;
+  width: 100%;
+  text-align: start;
+}
+
+main .right-box .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .right-box .buttons .btn {
+  height: 55px;
+  width: 150px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+main .right-box .buttons .winkelmand {
+  color: #ffc2d0;
+  background-color: #ffffff;
+  border: 1px solid #ffc2d0;
+}
+
+main .right-box .buttons .winkelmand:hover {
   background-color: #ffc2d0;
-  color: #ffff;
-  margin: 20px auto;
+  color: #ffffff;
 }
 
-@media screen and (min-width: 600px) {
-  main .container .left-box {
-    max-width: 80px;
+@media screen and (min-width: 1280px) {
+  .mobile-title,
+  .product-prijs-mobile {
+    display: none !important;
   }
-  main .container .right-box {
-    width: 80%;
-    max-width: 600px;
-  }
-  main .container .right-box .informatie-box {
-    display: grid;
-    justify-content: center;
-  }
-  main .container .right-box .informatie-box > p {
-    border-bottom: 0.3px solid rgba(70, 70, 70, 0.4);
-    width: 300px;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  main .container {
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: "aa top-box" "left-box right-box";
-  }
-  main .container .left-box {
-    grid-gap: 30px;
-    background-color: #f8f6f6;
-    padding-top: 0px;
-    margin-left: 40%;
-    max-width: 100%;
-  }
-  main .container .left-box a {
-    grid-template-columns: 20% 80%;
-    width: 300px;
-  }
-  main .container .left-box .actieve {
-    border-left: 6px solid #ffc2d0;
-  }
-  main .container .left-box a p {
+  .desktop-title,
+  .desktop-gevonden,
+  .details-img {
     display: block;
-    margin-left: 10%;
-    color: #000;
   }
-  main .container .left-box a img {
-    padding: 10px;
-    width: 50px;
+  main {
+    padding: 70px 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-
-@media screen and (min-width: 1300px) {
-  main .container {
-    max-width: 1300px;
-    margin: 0 auto;
+  main .left-box .desktop-title {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  main .left-box .desktop-gevonden {
+    color: #a2a2a2;
+    margin-bottom: 20px;
+  }
+  main .left-box .center {
+    justify-content: start;
+    margin-left: -5px;
+  }
+  main .left-box .details-img img {
+    margin: 10px 10px;
+  }
+  main .right-box {
+    padding: 30px 0;
+  }
+  main .right-box .product-header h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  main .right-box .product-categorie {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  main .right-box .product-beschrijving {
+    text-align: start;
+  }
+  main .right-box .buttons .btn {
+    margin-top: 20px;
+    height: 60px;
+    width: 180px;
+    font-size: 1.1rem;
   }
 }
 

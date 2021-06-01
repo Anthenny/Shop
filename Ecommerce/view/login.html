@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <!-- Navbar Mobiel -->
+    <header>
+      <div class="hamburger">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+      </div>
+      <ul class="mobileMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Oorbellen</a></li>
+        <li><a href="#">Armbandjes</a></li>
+        <li><a href="#">Tassen</a></li>
+        <li><a href="#">Wax melts</a></li>
+        <li><a href="#">Baby accessoires</a></li>
+      </ul>
+      <!-- Einde Navbar Mobiel -->
+      <!-- Navbar Desktop -->
+      <ul class="desktopMenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./producten.html">Oorbellen</a></li>
+        <li><a href="#">Over mij</a></li>
+      </ul>
+      <h2 class="logo">Anna's accessoires</h2>
+      <ul class="img-list">
+        <li>
+          <input type="text" name="search" id="search" />
+          <label for="search"><img src="../public/img/Icon open-magnifying-glass.png" /></label>
+        </li>
+        <li>
+          <a class="active" href="./login.html"><img class="navbar-img" src="../public/img/user.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img class="navbar-img space" src="../public/img/cart.png " alt="" /></a>
+        </li>
+      </ul>
+    </header>
+    <!-- main -->
+    <main>
+      <div class="links">
+        <img src="../public/img/login/rechtsImg.png" />
+      </div>
+      <div class="rechts">
+        <div class="cirlecs">
+          <div class="circel-1"></div>
+          <div class="circel-2"></div>
+          <div class="circel-3"></div>
+          <div class="circel-4"></div>
+          <div class="circel-5"></div>
+        </div>
+        <div class="form-container">
+          <div class="top-box">
+            <h1>Welkom terug !</h1>
+            <p>Log in om door te gaan</p>
+          </div>
+          <form action="">
+            <div class="input-box">
+              <label for="email"><img src="images/login/Icon zocial-email.svg" /></label>
+              <input type="email" id="email" placeholder="Vul uw email in" />
+            </div>
+
+            <div class="input-box">
+              <label for="password"><img src="images/login/Icon ionic-ios-lock.svg" /></label>
+              <input type="password" id="password" placeholder="Vul uw wachtwoord in" />
+            </div>
+            <a href="#"><p>Wachtwoord vergeten?</p></a>
+            <button type="submit">Log in</button>
+            <a href="#"
+              ><p>Heb je geen account?<span>Sing up</span></p></a
+            >
+          </form>
+        </div>
+      </div>
+    </main>
+    <!-- Footer van de webshop -->
+    <footer>
+      <div class="icons">
+        <img src="../public/img/fb.png" alt="" />
+        <img src="../public/img/pinterest.png" alt="" />
+        <img src="../public/img/ig.png" alt="" />
+      </div>
+      <div class="footer-tekst">
+        <a href="#"><h2>Retourneren</h2></a>
+        <a href="#"><h2>Inspiratie</h2></a>
+        <a href="#"><h2>Contact</h2></a>
+      </div>
+    </footer>
+    <script src="../public/js/hamburger.js"></script>
+  </body>
+</html>
