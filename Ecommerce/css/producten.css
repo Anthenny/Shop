@@ -35,9 +35,7 @@ header .img-list li:first-child {
 }
 
 header {
-  position: relative;
   height: 8vh;
-  width: 100vw;
   display: flex;
   background-color: #ffc2d0;
   align-items: center;
@@ -45,7 +43,29 @@ header {
 }
 
 header .mobileMenu {
-  display: none;
+  position: fixed;
+  display: flex;
+  background: #ffc2d0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+
+header .mobileMenu a {
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  color: white;
+}
+
+header .mobileMenu a:hover {
+  color: black;
 }
 
 header .hamburger {
@@ -57,7 +77,7 @@ header .hamburger {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 4;
   cursor: pointer;
   transform: scale(0.9);
   margin-left: 20px;
