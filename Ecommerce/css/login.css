@@ -99,6 +99,7 @@ header .logo {
 
 header .img-list {
   display: flex;
+  margin-right: 30px;
 }
 
 header .img-list .fas {
