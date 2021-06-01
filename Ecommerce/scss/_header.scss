@@ -11,6 +11,10 @@ header {
   background-color: $mainPink;
   align-items: center;
   justify-content: space-between;
+
+  .mobileMenu {
+    display: none;
+  }
   .hamburger {
     height: 51px;
     width: 51px;
@@ -32,10 +36,6 @@ header {
       margin-top: 0.3rem;
       margin-bottom: 0.3rem;
     }
-  }
-
-  .mobileMenu {
-    display: none;
   }
 
   .logo {
@@ -73,7 +73,8 @@ header {
 
 // Media queries 1300px
 @media screen and (min-width: 1300px) {
-  .hamburger {
+  .hamburger,
+  .mobileMenu {
     display: none !important;
   }
   header {

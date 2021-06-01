@@ -53,10 +53,20 @@ header .hamburger {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 101;
   cursor: pointer;
   transform: scale(0.9);
   margin-left: 20px;
+}
+
+header .hamburger::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  animation: hamburgerPulse 1s ease infinite;
 }
 
 header .hamburger .bar {
@@ -69,7 +79,32 @@ header .hamburger .bar {
 }
 
 header .mobileMenu {
-  display: none;
+  position: absolute;
+  background-color: #ffc2d0;
+  width: 105vw;
+  height: 105vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+
+header .mobileMenu a {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 20px;
+  display: block;
+}
+
+header .mobileMenu a:hover {
+  color: #000000;
 }
 
 header .logo {
@@ -89,6 +124,17 @@ header .img-list .navbar-img {
 
 header .img-list .space {
   margin-right: 20px;
+}
+
+@keyframes hamburgerPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
 }
 
 @media screen and (min-width: 700px) {

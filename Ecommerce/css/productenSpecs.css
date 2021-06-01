@@ -44,6 +44,10 @@ header {
   justify-content: space-between;
 }
 
+header .mobileMenu {
+  display: none;
+}
+
 header .hamburger {
   height: 51px;
   width: 51px;
@@ -53,20 +57,10 @@ header .hamburger {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  z-index: 101;
+  z-index: 100;
   cursor: pointer;
   transform: scale(0.9);
   margin-left: 20px;
-}
-
-header .hamburger::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  animation: hamburgerPulse 1s ease infinite;
 }
 
 header .hamburger .bar {
@@ -76,35 +70,6 @@ header .hamburger .bar {
   z-index: -1;
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
-}
-
-header .mobileMenu {
-  position: absolute;
-  background-color: #ffc2d0;
-  width: 105vw;
-  height: 105vh;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  overflow-x: hidden;
-  transition: 0.5s ease left;
-}
-
-header .mobileMenu a {
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 20px;
-  display: block;
-}
-
-header .mobileMenu a:hover {
-  color: #000000;
 }
 
 header .logo {
@@ -126,17 +91,6 @@ header .img-list .space {
   margin-right: 20px;
 }
 
-@keyframes hamburgerPulse {
-  0% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.3);
-  }
-}
-
 @media screen and (min-width: 700px) {
   header .img-list .navbar-img {
     height: 35px;
@@ -148,7 +102,8 @@ header .img-list .space {
 }
 
 @media screen and (min-width: 1300px) {
-  .hamburger {
+  .hamburger,
+  .mobileMenu {
     display: none !important;
   }
   header {
@@ -197,157 +152,129 @@ header .img-list .space {
   }
 }
 
-.opties,
-.items-gevonden {
+.desktop-title,
+.desktop-gevonden,
+.details-img {
   display: none;
 }
 
 main {
-  overflow-x: hidden;
   height: 84vh;
-  padding: 0 5%;
+  padding: 30px 70px;
 }
 
-main .titel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 15px 25px 15px;
-}
-
-main .titel h2 {
-  font-weight: 500;
-  font-size: 1.8rem;
-}
-
-main .titel .dropbox label {
-  font-size: 1.2rem;
-  margin-right: 0.4rem;
-}
-
-main .titel .dropbox select {
-  font-size: 1rem;
-}
-
-main .sorteren {
-  display: flex;
-  align-items: center;
-  padding: 0 15px 40px 15px;
-}
-
-main .sorteren .desktop-knoppen {
-  display: flex;
-}
-
-main .sorteren .desktop-knoppen button {
-  cursor: pointer;
-  margin-right: 20px;
-  border: none;
-  align-items: center;
-}
-
-main .sorteren .desktop-knoppen button:hover {
-  border: 1px solid #ffc2d0;
-}
-
-main .sorteren .desktop-knoppen .non-active {
-  background-color: #e6e6e6;
-  color: #a2a2a2;
-}
-
-main .sorteren .desktop-knoppen .non-active:hover {
-  color: #ffc2d0;
-  background-color: #ffffff;
-}
-
-main .producten-grid {
-  padding: 0 15px 10px 15px;
+main .left-box .mobile-title {
+  font-weight: 400;
+  font-size: 1.6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 2rem;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-main .producten-grid .product .img-product {
-  height: 170px;
-}
-
-main .producten-grid .product .product-beschrijving {
-  max-width: 170px;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-main .producten-grid .product .product-beschrijving .oorbel-prijs,
-main .producten-grid .product .product-beschrijving .oorbel-naam {
-  font-size: 1.1rem;
-}
-
-main .producten-grid .product .product-beschrijving .oorbel-prijs {
-  margin-top: 5px;
-}
-
-main .producten-grid .product .product-beschrijving .hartje {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-  border-radius: 50%;
-  background-color: #ffc2d0;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+main .left-box .center {
+  display: grid;
   justify-content: center;
 }
 
-main .producten-grid .product .product-beschrijving .hartje img {
-  height: 18px;
+main .right-box {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+main .right-box .product-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main .right-box .product-categorie {
+  color: #a2a2a2;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+main .right-box .product-beschrijving {
+  margin: 20px 0;
+  width: 100%;
+  text-align: start;
+}
+
+main .right-box .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .right-box .buttons .btn {
+  height: 55px;
+  width: 150px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+main .right-box .buttons .winkelmand {
+  color: #ffc2d0;
+  background-color: #ffffff;
+  border: 1px solid #ffc2d0;
+}
+
+main .right-box .buttons .winkelmand:hover {
+  background-color: #ffc2d0;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 1280px) {
-  .dropbox {
-    display: none;
+  .mobile-title,
+  .product-prijs-mobile {
+    display: none !important;
   }
-  .sorteren {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-  }
-  .sorteren .desktop-knoppen {
-    display: flex;
-  }
-  .sorteren .desktop-knoppen .btn {
-    height: 40px;
-    width: 120px;
-    font-size: 1rem;
-  }
-  .sorteren .items-gevonden {
+  .desktop-title,
+  .desktop-gevonden,
+  .details-img {
     display: block;
+  }
+  main {
+    padding: 70px 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .left-box .desktop-title {
     font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  main .left-box .desktop-gevonden {
     color: #a2a2a2;
+    margin-bottom: 20px;
   }
-  .opties {
-    padding: 10px 15px 10px 15px;
-    margin: 0 15px 10px 15px;
-    display: block;
-    background-color: #ffc2d0;
-    border-radius: 6px;
-    color: white;
-    font-size: 1.4rem;
-    width: 15%;
-    height: 50%;
+  main .left-box .center {
+    justify-content: start;
+    margin-left: -5px;
   }
-  .opties label {
-    margin-right: 10px;
+  main .left-box .details-img img {
+    margin: 10px 10px;
   }
-  .opties select {
+  main .right-box {
+    padding: 30px 0;
+  }
+  main .right-box .product-header h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  main .right-box .product-categorie {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  main .right-box .product-beschrijving {
+    text-align: start;
+  }
+  main .right-box .buttons .btn {
+    margin-top: 20px;
+    height: 60px;
+    width: 180px;
     font-size: 1.1rem;
-  }
-  .desktop-flex {
-    display: flex;
-  }
-  .desktop-flex .producten-grid {
-    width: 100%;
   }
 }
 
