@@ -35,7 +35,7 @@ header .img-list li:first-child {
 }
 
 header {
-  height: 8vh;
+  height: 7vh;
   display: flex;
   background-color: #ffc2d0;
   align-items: center;
@@ -185,7 +185,7 @@ header .img-list .space {
 }
 
 .mobile-grid {
-  height: 84vh;
+  height: 87vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 1fr 1fr;
@@ -243,7 +243,7 @@ header .img-list .space {
     display: block;
   }
   main {
-    height: 84vh;
+    height: 87vh;
     display: grid;
     justify-content: center;
   }
@@ -340,7 +340,7 @@ header .img-list .space {
   main {
     width: 80%;
     margin: 0 auto;
-    height: 84vh;
+    height: 87vh;
   }
   main .layout-desktop {
     height: 84vh;
@@ -420,7 +420,8 @@ header .img-list .space {
 
 footer {
   position: fixed;
-  height: 8vh;
+  height: 6vh;
+  bottom: 0;
   background: #ffc2d0;
   display: grid;
   align-items: center;
@@ -435,7 +436,7 @@ footer .icons {
 
 footer .icons .fab {
   margin: 0 20px;
-  font-size: 50px;
+  font-size: 40px;
   color: #ffff;
 }
 

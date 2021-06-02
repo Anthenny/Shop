@@ -35,7 +35,7 @@ header .img-list li:first-child {
 }
 
 header {
-  height: 8vh;
+  height: 7vh;
   display: flex;
   background-color: #ffc2d0;
   align-items: center;
@@ -185,7 +185,7 @@ header .img-list .space {
 }
 
 main {
-  height: 84vh;
+  height: 87vh;
   padding: 30px 70px;
 }
 
@@ -310,7 +310,8 @@ main .right-box .buttons .winkelmand:hover {
 
 footer {
   position: fixed;
-  height: 8vh;
+  height: 6vh;
+  bottom: 0;
   background: #ffc2d0;
   display: grid;
   align-items: center;
@@ -325,7 +326,7 @@ footer .icons {
 
 footer .icons .fab {
   margin: 0 20px;
-  font-size: 50px;
+  font-size: 40px;
   color: #ffff;
 }
 

@@ -16,8 +16,8 @@
       <!-- Einde Navbar Mobiel -->
       <!-- Navbar Desktop -->
       <ul class="desktopMenu">
-        <li><a class="active" href="/">Home</a></li>
-        <li><a href="/oorbellen">Oorbellen</a></li>
+        <li><a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a></li>
+        <li><a class="<%= path === '/oorbellen' ? 'active' : '' %>" href="/oorbellen">Oorbellen</a></li>
         <li><a href="#">Over mij</a></li>
       </ul>
       <h2 class="logo">Anna's accessoires</h2>
@@ -27,10 +27,10 @@
           <label for="search"><i class="fas fa-search"></i></label>
         </li>
         <li>
-          <a href="/login"><i class="fas fa-user"></i></a>
+          <a  class="<%= path === '/login' ? 'active' : '' %>"  href="/login"><i class="fas fa-user"></i></a>
         </li>
         <li>
-          <a href="winkelmand"><i class="fas fa-shopping-cart"></i></a>
+          <a  class="<%= path === '/winkelmand' ? 'active' : '' %>" href="winkelmand"><i class="fas fa-shopping-cart"></i></a>
         </li>
       </ul>
     </header>

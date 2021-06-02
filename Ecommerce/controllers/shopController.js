@@ -35,7 +35,7 @@ exports.getWinkeland = (req, res) => {
 
 exports.getOorbellen = (req, res) => {
   res.status(200).render("shop/oorbellen", {
-    pageTitle: "Winkelmand",
-    path: "/winkelmand",
+    pageTitle: "Oorbellen",
+    path: "/oorbellen",
   });
 };

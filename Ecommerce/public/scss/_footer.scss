@@ -4,7 +4,8 @@
 
 footer {
   position: fixed;
-  height: 8vh;
+  height: 6vh;
+  bottom: 0;
   background: $mainPink;
   display: grid;
   align-items: center;
@@ -16,7 +17,7 @@ footer {
     justify-content: space-around;
     .fab {
       margin: 0 20px;
-      font-size: 50px;
+      font-size: 40px;
       color: #ffff;
     }
   }
