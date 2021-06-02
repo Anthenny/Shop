@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs')  %> 
+    <link rel="stylesheet" href="../css/profiel.css"/>
+</head>
+<body>
+    <%- include('../includes/navbar.ejs')  %> 
+    <main>
+        <div class="container">
+            <div class="top-box">
+                <h1>Persoonlijke gegevens</h1>
+            </div>
+            <div class="left-box">
+                <a href="/profiel" class="actieve"><i class="fas fa-user"></i><p>Account</p></a>
+                <a href="/bestellingen"><i class="fas fa-shopping-basket"></i><p>Bestellingen</p></a>
+                <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
+            </div>
+            <div class="right-box">
+                <div class="informatie-box">
+                    <p>Naam:<span> Anthenny</span></p>
+                    <p>Achternaam:<span> De Hoon</span></p>
+                    <p>Adres:<span> Kwartelstraat 19</span></p>
+                    <p>Plaats:<span> Strijen 3291 VD</span></p>
+                    <p>Email:<span> Anthenny1997@hotmail.com</span></p>
+                    <p>Geboortedatum:<span> 01-07-1964</span></p>
+                </div>
+                <button type="submit">Bevestig gegevens</button>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs')  %> 

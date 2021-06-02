@@ -1,0 +1,51 @@
+<%- include('../includes/head.ejs')  %> 
+    <link rel="stylesheet" href="../css/register.css" />
+  </head>
+  <body>
+    <%- include('../includes/navbar.ejs')  %> 
+    <!-- main -->
+    <main>
+      <div class="links">
+        <img src="../img/login/rechtsImg.png" />
+      </div>
+      <div class="rechts">
+        <div class="cirlecs">
+          <div class="circel-1"></div>
+          <div class="circel-2"></div>
+          <div class="circel-3"></div>
+          <div class="circel-4"></div>
+          <div class="circel-5"></div>
+        </div>
+        <div class="form-container">
+          <div class="top-box">
+            <h1>Leuk dat je er bent!</h1>
+            <p>Account aanmaken</p>
+          </div>
+          <form action="">
+            <div class="input-box">
+                <label for="email"><i class="fas fa-user"></i></label>
+                <input type="email" id="email" placeholder="Vul uw naam in" />
+              </div>
+  
+              <div class="input-box">
+                <label for="password"><i class="fas fa-envelope"></i></label>
+                <input type="password" id="password" placeholder="Vul uw email in" />
+              </div>
+  
+              <div class="input-box">
+                  <label for="password"><i class="fas fa-lock"></i></label>
+                  <input type="password" id="password" placeholder="Vul uw wachtwoord in" />
+                </div>
+                <div class="input-box">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" placeholder="Confurm uw wachtwoord in" />
+                  </div>
+            <button type="submit">Registreer je</button>
+            <a href="/login"
+              ><p>Heb je al account?<span>Log in</span></p></a
+            >
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('../includes/footer.ejs')  %> 

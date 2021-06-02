@@ -9,5 +9,6 @@ router.get("/login", shopController.getLogin);
 router.get("/signup", shopController.getSignUp);
 router.get("/bestellingen", shopController.getBestellingen);
 router.get("/winkelmand", shopController.getWinkeland);
+router.get("/oorbellen", shopController.getOorbellen);
 
 module.exports = router;

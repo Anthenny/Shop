@@ -213,21 +213,21 @@ header .img-list .space {
 
 .mobile-grid .sectie-1-img {
   padding-top: 42%;
-  background: url("../public/img/mobile1.png") no-repeat center;
+  background: url("../img/mobile1.png") no-repeat center;
   background-size: cover;
 }
 
 .mobile-grid .sectie-2-img {
   width: 100%;
   padding-top: 42%;
-  background: url("../public/img/mobile2.png") no-repeat center;
+  background: url("../img/mobile2.png") no-repeat center;
   background-size: cover;
 }
 
 .mobile-grid .sectie-3-img {
   width: 100%;
   padding-top: 42%;
-  background: url("../public/img/mobile3.png") no-repeat center;
+  background: url("../img/mobile3.png") no-repeat center;
   background-size: cover;
   overflow: hidden;
 }
