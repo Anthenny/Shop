@@ -5,20 +5,6 @@ exports.getHome = (req, res) => {
   });
 };
 
-exports.getLogin = (req, res) => {
-  res.status(200).render("shop/login", {
-    pageTitle: "Login",
-    path: "/login",
-  });
-};
-
-exports.getSignUp = (req, res) => {
-  res.status(200).render("shop/signUp", {
-    pageTitle: "Sign Up",
-    path: "/signUp",
-  });
-};
-
 exports.getBestellingen = (req, res) => {
   res.status(200).render("shop/bestellingen", {
     pageTitle: "Bestellingen",
