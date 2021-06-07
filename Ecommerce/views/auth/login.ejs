@@ -22,15 +22,15 @@
             <h1>Welkom terug !</h1>
             <p>Log in om door te gaan</p>
           </div>
-          <form action="">
+          <form action="/login" method="POST">
             <div class="input-box">
               <label for="email"><i class="fas fa-envelope"></i></label>
-              <input type="email" id="email" placeholder="Vul uw email in" />
+              <input type="email" name="email" placeholder="Vul uw email in" />
             </div>
 
             <div class="input-box">
               <label for="password"><i class="fas fa-lock"></i></label>
-              <input type="password" id="password" placeholder="Vul uw wachtwoord in" />
+              <input type="password" name="password" placeholder="Vul uw wachtwoord in" />
             </div>
             <a href="#"><p>Wachtwoord vergeten?</p></a>
             <button type="submit">Log in</button>

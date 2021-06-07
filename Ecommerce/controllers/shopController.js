@@ -25,3 +25,10 @@ exports.getOorbellen = (req, res) => {
     path: "/oorbellen",
   });
 };
+
+exports.getProfiel = (req, res) => {
+  res.status(200).render("shop/profiel", {
+    pageTitle: "Profiel",
+    path: "/profiel",
+  });
+};
