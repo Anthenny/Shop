@@ -1,0 +1,31 @@
+<%- include('../includes/head.ejs')  %> 
+    <link rel="stylesheet" href="../css/index.css" />
+</head>
+  <body>
+            <main>
+                <!-- als er meer producten zijn daan 1 doe wat hier onder is ander ga naar else -->
+                <% if (prods.length > 0) { %>
+                    <div class="container">
+                        <% for (let product of prods) { %>
+                            <div class="card">
+                                <div class="">
+                                    <h1><%= product.ProductNaam %></h1>
+                                    <img src="<%= product.ProductImg %>" alt="<%= product.ProductNaam %>">
+                                    <h1><%= product.ProductPrijs %></h1>
+                                    <p><%= product.ProductBeschrijving %></p>
+                                </div>
+                                <div class="">
+                                    <form action="/delete-product" method="POST">
+                                        <input type="hidden" value="<%= product._id %>" name="productId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+                                    <a href="/Add-product">product toevoegen</a>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                    <!-- als er geen producten zijn doe dit -->
+                    <% } else { %>
+                        <h1>No Products Found!</h1>
+                    <% } %>
+            </main>

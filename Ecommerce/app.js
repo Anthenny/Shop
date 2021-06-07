@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const authRoutes = require("./routes/auth");
 
@@ -12,6 +13,7 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static("public"));
+app.use(adminRoutes);
 app.use(authRoutes);
 app.use(shopRoutes);
 
