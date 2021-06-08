@@ -23,7 +23,6 @@ app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.use(adminRoutes);
 
 app.use(
   session({
@@ -37,5 +36,6 @@ app.use(
 // Routes
 app.use(authRoutes);
 app.use(shopRoutes);
+app.use(adminRoutes);
 
 module.exports = app;

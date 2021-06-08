@@ -20,7 +20,7 @@ main {
       box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
       display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: 80px 250px;
+      grid-template-rows: 1fr 1fr;
       justify-content: center;
       overflow: hidden;
       .top-box {
@@ -150,7 +150,7 @@ main {
         background-color: #ffff;
         .top-box {
           color: $darkPink;
-          font-size: 15px;
+          font-size: 20px;
         }
         form .input-box:first-child {
           margin: 30px 50px 30px;
