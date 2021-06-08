@@ -20,8 +20,13 @@ main {
       border-radius: 8px;
       box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
       display: grid;
+<<<<<<< HEAD
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
+=======
+      grid-template-columns: 100%;
+      grid-template-rows: 1fr 1fr;
+>>>>>>> b74af13da287468b47fc0b2ec2258b1f8e82dcdf
       justify-content: center;
       overflow: hidden;
       .top-box {
@@ -159,7 +164,11 @@ main {
         background-color: #ffff;
         .top-box {
           color: $darkPink;
+<<<<<<< HEAD
           font-size: 18px;
+=======
+          font-size: 20px;
+>>>>>>> b74af13da287468b47fc0b2ec2258b1f8e82dcdf
         }
         form .input-box:first-child {
           margin: 30px 50px 30px;

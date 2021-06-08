@@ -39,6 +39,8 @@ app.use(flash());
 app.use(authRoutes);
 app.use(shopRoutes);
 app.use(adminRoutes);
+<<<<<<< HEAD
+=======
 
 // catch 404
 
@@ -48,5 +50,6 @@ app.use((req, res, next) => {
     path: "/error404",
   });
 });
+>>>>>>> 3e4b4bfdaa557bfe1a9cf52e375e63619d69ad6c
 
 module.exports = app;

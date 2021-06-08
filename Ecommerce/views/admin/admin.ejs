@@ -1,31 +1,51 @@
 <%- include('../includes/head.ejs')  %> 
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css"/>
 </head>
   <body>
+        <%- include('../includes/navbar.ejs')  %> 
             <main>
                 <!-- als er meer producten zijn daan 1 doe wat hier onder is ander ga naar else -->
                 <% if (prods.length > 0) { %>
                     <div class="container">
-                        <% for (let product of prods) { %>
-                            <div class="card">
-                                <div class="">
-                                    <h1><%= product.ProductNaam %></h1>
-                                    <img src="<%= product.ProductImg %>" alt="<%= product.ProductNaam %>">
-                                    <h1><%= product.ProductPrijs %></h1>
-                                    <p><%= product.ProductBeschrijving %></p>
+                        <div class="top-box">
+                            <h1>Admin Dashboard</h1>
+                        </div>
+                        <div class="left-box">
+                            <a href="/admin" class="actieve"><i class="fas fa-table"></i><p>Producten</p></a>
+                            <a href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
+                            <a href="#"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
+                        </div>
+                        <div class="right-box">
+                                <div class="besteling-box">
+                                    <div class="top">
+                                        <p>ProductNaam</p>
+                                        <p>ProductImg</p>
+                                        <p>ProductPrijs</p>
+                                        <p>ProductBeschrijving</p>
+                                        <p></p>
+                                    </div>
+                                    <div class="bottom">
+                                        <% for (let product of prods) { %>
+                                        <div class="besteling">
+                                            <p><%= product.ProductNaam %></p>
+                                            <img src="<%= product.ProductImg %>" alt="<%= product.ProductNaam %>">
+                                            <p><%= product.ProductPrijs %></p>
+                                            <p><%= product.ProductBeschrijving %></p>
+                                            <div>
+                                                <form action="/delete-product" method="POST">
+                                                    <input type="hidden" value="<%= product._id %>" name="productId">
+                                                    <button class="btns" type="submit">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                                    </div>
                                 </div>
-                                <div class="">
-                                    <form action="/delete-product" method="POST">
-                                        <input type="hidden" value="<%= product._id %>" name="productId">
-                                        <button class="btn" type="submit">Delete</button>
-                                    </form>
-                                    <a href="/Add-product">product toevoegen</a>
-                                </div>
-                            </div>
-                        <% } %>
+                        </div>
                     </div>
                     <!-- als er geen producten zijn doe dit -->
                     <% } else { %>
                         <h1>No Products Found!</h1>
                     <% } %>
             </main>
+            <%- include('../includes/footer.ejs')  %>
