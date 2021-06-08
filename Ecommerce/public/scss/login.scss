@@ -20,13 +20,8 @@ main {
       border-radius: 8px;
       box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
       display: grid;
-<<<<<<< HEAD
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-=======
-      grid-template-columns: 100%;
-      grid-template-rows: 1fr 1fr;
->>>>>>> b74af13da287468b47fc0b2ec2258b1f8e82dcdf
+      grid-template-rows: 20% 80%;
       justify-content: center;
       overflow: hidden;
       .top-box {
@@ -70,7 +65,6 @@ main {
         }
       }
       a:first-of-type p {
-        margin-right: 20px;
         display: grid;
         justify-content: right;
         color: #ffff;
@@ -148,7 +142,6 @@ main {
   .user-message-error {
     height: 50px;
     margin-top: 10px;
-    margin-bottom: -40px;
     color: crimson;
     text-align: center;
   }
@@ -159,19 +152,15 @@ main {
     .rechts {
       .form-container {
         padding: 40px 0;
-        height: 600px;
+        height: 620px;
         width: 400px;
         background-color: #ffff;
         .top-box {
           color: $darkPink;
-<<<<<<< HEAD
           font-size: 18px;
-=======
-          font-size: 20px;
->>>>>>> b74af13da287468b47fc0b2ec2258b1f8e82dcdf
         }
         form .input-box:first-child {
-          margin: 30px 50px 30px;
+          margin: 20px 50px 30px;
         }
         form .input-box {
           border-radius: 0px;
@@ -179,6 +168,9 @@ main {
           margin: 10px 50px 20px;
           height: 50px;
           input::placeholder {
+            font-size: 17px;
+          }
+          input {
             font-size: 17px;
           }
           label {
@@ -189,7 +181,6 @@ main {
           }
         }
         a:first-of-type p {
-          margin-right: 50px;
           color: #afafaf;
           font-size: 15px;
         }
