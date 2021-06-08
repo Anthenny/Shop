@@ -17,13 +17,13 @@
           <div class="circel-4"></div>
           <div class="circel-5"></div>
         </div>
-        <% if (errorMessage) { %>
-        <div class="user-message user-message-error"> <%= errorMessage %></div>
-        <% } %>
         <div class="form-container">
           <div class="top-box">
             <h1>Welkom terug !</h1>
             <p>Log in om door te gaan</p>
+            <% if (errorMessage) { %>
+            <div class="user-message user-message-error"> <%= errorMessage %></div>
+            <% } %>
           </div>
           <form action="/login" method="POST">
             <div class="input-box">
