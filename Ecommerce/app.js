@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
+const flash = require("connect-flash");
 
 dotenv.config({ path: "./config.env" });
 
@@ -23,7 +24,6 @@ app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
-app.use(adminRoutes);
 
 app.use(
   session({
@@ -33,9 +33,20 @@ app.use(
     store: store,
   })
 );
+app.use(flash());
 
 // Routes
 app.use(authRoutes);
 app.use(shopRoutes);
+app.use(adminRoutes);
+
+// catch 404
+
+app.use((req, res, next) => {
+  res.status(404).render("error/404", {
+    pageTitle: "Page Not Found",
+    path: "/error404",
+  });
+});
 
 module.exports = app;

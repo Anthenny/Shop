@@ -17,6 +17,9 @@
           <div class="circel-4"></div>
           <div class="circel-5"></div>
         </div>
+        <% if (errorMessage) { %>
+        <div class="user-message user-message-error"> <%= errorMessage %></div>
+        <% } %>
         <div class="form-container">
           <div class="top-box">
             <h1>Welkom terug !</h1>
@@ -25,7 +28,7 @@
           <form action="/login" method="POST">
             <div class="input-box">
               <label for="email"><i class="fas fa-envelope"></i></label>
-              <input type="email" name="email" placeholder="Vul uw email in" />
+              <input type="email" name="email" value="<%= oldInput.email %>" placeholder="Vul uw email in" />
             </div>
 
             <div class="input-box">

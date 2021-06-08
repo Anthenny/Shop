@@ -21,15 +21,18 @@
             <h1>Leuk dat je er bent!</h1>
             <p>Account aanmaken</p>
           </div>
-          <form action="/signup" method="POST">
+          <% if (errorMessage) { %>
+            <div class="user-message user-message-error"> <%= errorMessage %></div>
+            <% } %>
+          <form action="/signup" method="POST" novalidate>
             <div class="input-box">
                 <label for="naam"><i class="fas fa-user"></i></label>
-                <input type="text" name="name" placeholder="Vul uw naam in" />
+                <input type="text" name="name" value="<%= oldInput.name %>" placeholder="Vul uw naam in" />
               </div>
   
               <div class="input-box">
                 <label for="email"><i class="fas fa-envelope"></i></label>
-                <input type="email" name="email" placeholder="Vul uw email in" />
+                <input type="email" name="email" value="<%= oldInput.email %>" placeholder="Vul uw email in" />
               </div>
   
               <div class="input-box">
