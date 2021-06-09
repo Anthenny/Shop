@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const flash = require("connect-flash");
+const User = require("./models/userModel");
 
 dotenv.config({ path: "./config.env" });
 
@@ -34,6 +35,15 @@ app.use(
   })
 );
 app.use(flash());
+
+app.use((req, res, next) => {
+  if (!req.session.user) return next();
+
+  User.findById(req.session.user._id).then((user) => {
+    req.user = user;
+    next();
+  });
+});
 
 // Routes
 app.use(authRoutes);

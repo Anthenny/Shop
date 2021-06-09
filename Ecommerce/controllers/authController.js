@@ -34,6 +34,8 @@ exports.getSignUp = (req, res) => {
     oldInput: {
       name: "",
       email: "",
+      plaats: "",
+      adres: "",
     },
   });
 };
@@ -48,6 +50,8 @@ exports.getLogout = (req, res) => {
 exports.postSignUp = (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
+  const plaats = req.body.plaats;
+  const adres = req.body.adres;
   const password = req.body.password;
   const errors = validationResult(req);
 
@@ -56,7 +60,7 @@ exports.postSignUp = (req, res) => {
       pageTitle: "Sign Up",
       path: "/signUp",
       errorMessage: errors.array()[0].msg,
-      oldInput: { name: name, email: email },
+      oldInput: { name: name, email: email, plaats: plaats, adres: adres },
     });
   }
 
@@ -72,6 +76,8 @@ exports.postSignUp = (req, res) => {
           const user = new User({
             name: name,
             email: email,
+            plaats: plaats,
+            adres: adres,
             password: hashedPassword,
             cart: { items: [] },
           });

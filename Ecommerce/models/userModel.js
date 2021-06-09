@@ -10,6 +10,14 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Elke gebruiker moet een email hebben"],
   },
+  adres: {
+    type: String,
+    required: [true, "Elke gebruiker moet een adres hebben"],
+  },
+  plaats: {
+    type: String,
+    required: [true, "Elke gebruiker moet een plaats hebben"],
+  },
   password: {
     type: String,
     required: [true, "Elke gebruiker moet een wachtwoord hebben"],

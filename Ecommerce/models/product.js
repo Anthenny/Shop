@@ -9,6 +9,10 @@ const productSchema = new Schema({
     type: String,
     require: true,
   },
+  ProductCategorie: {
+    type: String,
+    require: [true, "Een product moet een categorie hebben"],
+  },
   ProductImg: {
     type: String,
     require: false,

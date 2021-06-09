@@ -151,10 +151,10 @@ main {
   main {
     .rechts {
       .form-container {
-        padding: 40px 0;
-        height: 620px;
-        width: 400px;
+        height: 750px;
+        width: 500px;
         background-color: #ffff;
+        padding: 0;
         .top-box {
           color: $darkPink;
           font-size: 18px;
@@ -183,6 +183,7 @@ main {
         a:first-of-type p {
           color: #afafaf;
           font-size: 15px;
+          margin-right: 50px;
         }
         a:last-of-type p {
           color: #000;

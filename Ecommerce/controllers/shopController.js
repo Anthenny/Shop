@@ -27,9 +27,11 @@ exports.getOorbellen = (req, res) => {
 };
 
 exports.getProfiel = (req, res) => {
+  console.log(req.user);
   res.status(200).render("shop/profiel", {
     pageTitle: "Profiel",
     path: "/profiel",
+    user: req.user,
   });
 };
 

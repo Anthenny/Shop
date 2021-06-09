@@ -367,10 +367,10 @@ main .user-message-error {
 
 @media screen and (min-width: 500px) {
   main .rechts .form-container {
-    padding: 40px 0;
-    height: 620px;
-    width: 400px;
+    height: 750px;
+    width: 500px;
     background-color: #ffff;
+    padding: 0;
   }
   main .rechts .form-container .top-box {
     color: #fdb5c0;
@@ -398,6 +398,7 @@ main .user-message-error {
   main .rechts .form-container a:first-of-type p {
     color: #afafaf;
     font-size: 15px;
+    margin-right: 50px;
   }
   main .rechts .form-container a:last-of-type p {
     color: #000;

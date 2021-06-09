@@ -55,7 +55,7 @@
         </div>
 
         <div class="producten-grid">
-          <div class="product">
+          <!-- <div class="product">
             <div class="">
               <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/Oorbel1.png" alt="" /> </a>
               <div class="product-beschrijving">
@@ -64,43 +64,13 @@
                 <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="product">
             <div class="">
-              <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/Oorbel1.png" alt="" /> </a>
+              <a href="/productSpecificatie"><img class="img-product" src="<%= product.img %>" alt="" /> </a>
               <div class="product-beschrijving">
-                <div class="oorbel-naam">Oorbel naam</div>
-                <div class="oorbel-prijs">$ 5,99</div>
-                <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="">
-              <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/Oorbel1.png" alt="" /> </a>
-              <div class="product-beschrijving">
-                <div class="oorbel-naam">Oorbel naam</div>
-                <div class="oorbel-prijs">$ 5,99</div>
-                <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="">
-              <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/Oorbel1.png" alt="" /> </a>
-              <div class="product-beschrijving">
-                <div class="oorbel-naam">Oorbel naam</div>
-                <div class="oorbel-prijs">$ 5,99</div>
-                <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
-              </div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="">
-              <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/Oorbel1.png" alt="" /> </a>
-              <div class="product-beschrijving">
-                <div class="oorbel-naam">Oorbel naam</div>
-                <div class="oorbel-prijs">$ 5,99</div>
+                <div class="oorbel-naam"><%= product.naam %></div>
+                <div class="oorbel-prijs"><%= product.prijs %></div>
                 <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
               </div>
             </div>
