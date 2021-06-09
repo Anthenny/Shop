@@ -136,16 +136,37 @@ header .img-list .space {
     padding-left: 30px;
   }
   header .desktopMenu {
+    position: relative;
     width: 20%;
     display: flex;
     justify-content: space-around;
+    transition: all 0.3s;
   }
   header .desktopMenu a {
     color: white;
     font-size: 1.2rem;
   }
+  header .desktopMenu a:hover {
+    color: black;
+  }
   header .desktopMenu .active {
     color: black;
+  }
+  header .desktopMenu .dropdown__menu {
+    display: none;
+  }
+  header .desktopMenu .dropdown:hover .dropdown__menu {
+    display: block;
+    position: absolute;
+    background-color: #ffc2d0;
+    z-index: 100;
+  }
+  header .desktopMenu .dropdown:hover .dropdown__menu ul {
+    margin: 10px;
+  }
+  header .desktopMenu .dropdown:hover .dropdown__menu ul li {
+    width: 200px;
+    padding: 10px;
   }
   header .img-list {
     align-items: center;
@@ -346,10 +367,10 @@ main .user-message-error {
 
 @media screen and (min-width: 500px) {
   main .rechts .form-container {
-    padding: 40px 0;
-    height: 620px;
-    width: 400px;
+    height: 750px;
+    width: 500px;
     background-color: #ffff;
+    padding: 0;
   }
   main .rechts .form-container .top-box {
     color: #fdb5c0;
@@ -377,6 +398,7 @@ main .user-message-error {
   main .rechts .form-container a:first-of-type p {
     color: #afafaf;
     font-size: 15px;
+    margin-right: 50px;
   }
   main .rechts .form-container a:last-of-type p {
     color: #000;

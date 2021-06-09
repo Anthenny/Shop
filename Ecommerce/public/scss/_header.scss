@@ -103,20 +103,50 @@ header {
   }
   header {
     padding-left: 30px;
+
     .desktopMenu {
+      position: relative;
       width: 20%;
       display: flex;
       justify-content: space-around;
+      transition: all 0.3s;
 
       a {
         color: white;
         font-size: 1.2rem;
+
+        &:hover {
+          color: black;
+        }
       }
 
       .active {
         color: black;
       }
+
+      .dropdown__menu {
+        display: none;
+      }
+
+      .dropdown:hover {
+        .dropdown__menu {
+          display: block;
+          position: absolute;
+          background-color: $mainPink;
+          z-index: 100;
+
+          ul {
+            margin: 10px;
+
+            li {
+              width: 200px;
+              padding: 10px;
+            }
+          }
+        }
+      }
     }
+
     .img-list {
       align-items: center;
       justify-content: center;

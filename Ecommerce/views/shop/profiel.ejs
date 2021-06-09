@@ -15,12 +15,10 @@
             </div>
             <div class="right-box">
                 <div class="informatie-box">
-                    <p>Naam:<span> Anthenny</span></p>
-                    <p>Achternaam:<span> De Hoon</span></p>
-                    <p>Adres:<span> Kwartelstraat 19</span></p>
-                    <p>Plaats:<span> Strijen 3291 VD</span></p>
-                    <p>Email:<span> Anthenny1997@hotmail.com</span></p>
-                    <p>Geboortedatum:<span> 01-07-1964</span></p>
+                    <p>Naam:<span> <%= user.name %></span></p>
+                    <p>Adres:<span> <%= user.adres %></span></p>
+                    <p>Plaats:<span> <%=user.plaats %></span></p>
+                    <p>Email:<span> <%= user.email %></span></p>
                 </div>
                 <button type="submit">Bevestig gegevens</button>
             </div>
