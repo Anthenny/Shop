@@ -22,7 +22,7 @@ exports.getWinkeland = (req, res) => {
 };
 
 exports.getOorbellen = (req, res) => {
-  Product.find({ ProductCategorie: "oorbelen" })
+  Product.find({ ProductCategorie: "Oorbellen" })
     .then((products) => {
       res.status(200).render("shop/oorbellen", {
         prods: products,
@@ -34,7 +34,6 @@ exports.getOorbellen = (req, res) => {
 };
 
 exports.getProfiel = (req, res) => {
-  console.log(req.user);
   res.status(200).render("shop/profiel", {
     pageTitle: "Profiel",
     path: "/profiel",

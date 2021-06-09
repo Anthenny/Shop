@@ -271,6 +271,7 @@ main .producten-grid {
 
 main .producten-grid .product .img-product {
   height: 170px;
+  width: 170px;
 }
 
 main .producten-grid .product .product-beschrijving {
