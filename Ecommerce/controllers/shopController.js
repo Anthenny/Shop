@@ -1,3 +1,5 @@
+const Product = require("../models/product");
+
 exports.getHome = (req, res) => {
   res.status(200).render("shop/index", {
     pageTitle: "Home",
@@ -20,10 +22,15 @@ exports.getWinkeland = (req, res) => {
 };
 
 exports.getOorbellen = (req, res) => {
-  res.status(200).render("shop/oorbellen", {
-    pageTitle: "Oorbellen",
-    path: "/oorbellen",
-  });
+  Product.find({ ProductCategorie: "oorbelen" })
+    .then((products) => {
+      res.status(200).render("shop/oorbellen", {
+        prods: products,
+        pageTitle: "Oorbellen",
+        path: "/oorbellen",
+      });
+    })
+    .catch((err) => console.log(err));
 };
 
 exports.getProfiel = (req, res) => {

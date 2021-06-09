@@ -49,7 +49,7 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.getProductsFromCategorie = (req, res, next) => {
-  Product.find({ ProductCategorie: "boek" })
+  Product.find({ ProductCategorie: "oorbelen" })
     .then((products) => {
       res.render("admin/admin", {
         prods: products,
