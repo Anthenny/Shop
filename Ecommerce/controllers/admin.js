@@ -16,7 +16,7 @@ exports.postAddproduct = (req, res, next) => {
   const ProductCategorie = req.body.ProductCategorie;
   const product = new Product({
     ProductNaam: ProductNaam,
-    ProductImg: ProductImg,
+    ProductImg: `../img/Producten/${ProductImg}`,
     ProductBeschrijving: ProductBeschrijving,
     ProductPrijs: ProductPrijs,
     ProductCategorie: ProductCategorie,
@@ -34,22 +34,6 @@ exports.postAddproduct = (req, res, next) => {
 
 exports.getProducts = (req, res, next) => {
   Product.find()
-    //     .select('title price -_id')
-    //     .populate('userId', 'name')
-    //     met select benoem je wat je van databse wil
-    //     bijvoorbeel allen die title price en id
-    .then((products) => {
-      res.render("admin/admin", {
-        prods: products,
-        pageTitle: "Admin Products",
-        path: "/admin",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getProductsFromCategorie = (req, res, next) => {
-  Product.find({ ProductCategorie: "oorbelen" })
     .then((products) => {
       res.render("admin/admin", {
         prods: products,

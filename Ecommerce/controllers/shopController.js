@@ -22,7 +22,7 @@ exports.getWinkeland = (req, res) => {
 };
 
 exports.getOorbellen = (req, res) => {
-  Product.find({ ProductCategorie: "oorbelen" })
+  Product.find({ ProductCategorie: "Oorbellen" })
     .then((products) => {
       res.status(200).render("shop/oorbellen", {
         prods: products,
