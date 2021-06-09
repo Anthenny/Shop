@@ -8,16 +8,28 @@
   <ul class="mobileMenu">
     <li><a href="/">Home</a></li>
     <li><a href="/oorbellen">Oorbellen</a></li>
-    <li><a href="#">Armbandjes</a></li>
-    <li><a href="#">Tassen</a></li>
-    <li><a href="#">Wax melts</a></li>
-    <li><a href="#">Baby accessoires</a></li>
+    <li><a href="/armbanden">Armbandjes</a></li>
+    <li><a href="/tassen">Tassen</a></li>
+    <li><a href="/waxmelts">Wax melts</a></li>
+    <li><a href="/babyaccessoires">Baby accessoires</a></li>
   </ul>
   <!-- Einde Navbar Mobiel -->
   <!-- Navbar Desktop -->
   <ul class="desktopMenu">
-    <li><a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a></li>
-    <li><a class="<%= path === '/oorbellen' ? 'active' : '' %>" href="/oorbellen">Oorbellen</a></li>
+    <li><a href="/">Home</a></li>
+    <li class="dropdown">
+      <a href="">Categorieën <i class="fas fa-caret-down"></i></a>
+
+      <div class="dropdown__menu">
+        <ul>
+          <li><a href="/oorbellen">Oorbellen</a></li>
+          <li><a href="/armbanden">Armbanden</a></li>
+          <li><a href="/babyaccessoires">Baby-accessoires</a></li>
+          <li><a href="/tassen">Tassen</a></li>
+          <li><a href="/waxmelts">Wax Melts</a></li>
+        </ul>
+      </div>
+    </li>
     <li><a href="#">Over mij</a></li>
   </ul>
   <h2 class="logo">Anna's accessoires</h2>
