@@ -33,6 +33,10 @@
                             <label for="">ProductBeschrijving</label>
                             <textarea name="ProductBeschrijving" rows="2"><% if (editing) { %><%= product.description %><% } %></textarea>
                         </div>
+                        <div class="form-control">
+                            <label for="">ProductCategorie</label>
+                            <input type="text" name="ProductCategorie" value="<% if (editing) { %><%= product.ProductCategorie %><% } %>">
+                        </div>
                         <% if (editing) { %>
                             <input type="hidden" value="<%= product._id %>" name="productId">
                         <% } %>

@@ -13,11 +13,13 @@ exports.postAddproduct = (req, res, next) => {
   const ProductImg = req.body.ProductImg;
   const ProductBeschrijving = req.body.ProductBeschrijving;
   const ProductPrijs = req.body.ProductPrijs;
+  const ProductCategorie = req.body.ProductCategorie;
   const product = new Product({
     ProductNaam: ProductNaam,
     ProductImg: ProductImg,
     ProductBeschrijving: ProductBeschrijving,
     ProductPrijs: ProductPrijs,
+    ProductCategorie: ProductCategorie,
   });
   product
     .save()
@@ -36,6 +38,18 @@ exports.getProducts = (req, res, next) => {
     //     .populate('userId', 'name')
     //     met select benoem je wat je van databse wil
     //     bijvoorbeel allen die title price en id
+    .then((products) => {
+      res.render("admin/admin", {
+        prods: products,
+        pageTitle: "Admin Products",
+        path: "/admin",
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.getProductsFromCategorie = (req, res, next) => {
+  Product.find({ ProductCategorie: "boek" })
     .then((products) => {
       res.render("admin/admin", {
         prods: products,
