@@ -277,7 +277,7 @@ main .container .right-box .besteling-box .bottom {
 
 main .container .right-box .besteling-box .bottom .besteling {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
   margin: 30px 10px;
   border-radius: 8px;
   background-color: #ffff;
@@ -291,19 +291,20 @@ main .container .right-box .besteling-box .bottom .besteling img {
   height: auto;
 }
 
-main .container .right-box .besteling-box .bottom .besteling form .btns {
-  border: none;
-  border-radius: 8px;
-  background-color: #ffc2d0;
-  padding: 5px;
-  font-size: 12px;
-  margin-right: 20px;
+main .container .right-box .besteling-box .bottom .besteling .btn {
+  width: 70px;
+  margin-right: 10px;
+  border: 1px solid #000;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btn:last-child {
+  margin-top: 10px;
 }
 
 main .container .right-box .besteling-box .bottom .besteling > p {
   display: grid;
   justify-content: center;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 @media screen and (min-width: 600px) {
@@ -315,10 +316,10 @@ main .container .right-box .besteling-box .bottom .besteling > p {
     max-width: 600px;
   }
   main .container .right-box .besteling-box .top p {
-    font-size: 13px;
+    font-size: 10px;
   }
   main .container .right-box .besteling-box .bottom .besteling > p {
-    font-size: 15px;
+    font-size: 11px;
   }
 }
 
@@ -362,11 +363,15 @@ main .container .right-box .besteling-box .bottom .besteling > p {
     background-color: #ffff;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
   }
+  main .container .right-box .besteling-box .top p {
+    font-size: 12px;
+  }
   main .container .right-box .besteling-box .bottom .besteling {
     margin: 10px 0px;
     border-radius: 0px;
     box-shadow: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 13px;
   }
   main .container .right-box .besteling-box .top {
     margin-top: 10px;

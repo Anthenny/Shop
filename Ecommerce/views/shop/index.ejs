@@ -43,10 +43,14 @@
             delen. Je kan een account maken en krijg op de 1e bestelling 10%
             korting.
           </p>
-          <div class="button">
-            <a href="/login" class="login hidden">Login</a>
-            <a href="/signup" class="registreer hidden">Registreren</a>
-          </div>
+          <% if (login) { %>
+            <div class="button"></div>
+          <% } else { %>
+            <div class="button">
+              <a href="/login" class="login hidden">Login</a>
+              <a href="/signup" class="registreer hidden">Registreren</a>
+            </div>
+          <% } %>
         </div>
         <div class="sectie-2">
           <div class="img">
@@ -70,28 +74,28 @@
               <h2>Armbanden</h2>
               <div class="img">
                 <img src="../img/armDesk.png" alt="" />
-                <a class="btn" href="">Shop nu</a>
+                <a class="btn" href="/armbanden">Shop nu</a>
               </div>
             </div>
             <div class="product hidden">
               <h2>Baby Accessoires</h2>
               <div class="img">
                 <img src="../img/leeuwDesk.png" alt="" />
-                <a class="btn" href="">Shop nu</a>
+                <a class="btn" href="/babyaccessoires">Shop nu</a>
               </div>
             </div>
             <div class="product hidden">
               <h2>Tassen</h2>
               <div class="img">
                 <img src="../img/tasDesk.png" alt="" />
-                <a class="btn" href="">Shop nu</a>
+                <a class="btn" href="/tassen">Shop nu</a>
               </div>
             </div>
             <div class="product hidden">
               <h2>Wax Melts</h2>
               <div class="img">
                 <img src="../img/waxDesk.png" alt="" />
-                <a class="btn" href="">Shop nu</a>
+                <a class="btn" href="/waxmelts">Shop nu</a>
               </div>
             </div>
             <img class="pijlRechts" src="../img/pijlRechts.png" alt="" />

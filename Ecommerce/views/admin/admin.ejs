@@ -22,6 +22,8 @@
                                         <p>ProductImg</p>
                                         <p>ProductPrijs</p>
                                         <p>ProductBeschrijving</p>
+                                        <p>ProductMaat</p>
+                                        <p>ProductKleur</p>
                                         <p></p>
                                     </div>
                                     <div class="bottom">
@@ -31,10 +33,13 @@
                                             <img src="<%= product.ProductImg %>" alt="<%= product.ProductNaam %>">
                                             <p><%= product.ProductPrijs %></p>
                                             <p><%= product.ProductBeschrijving %></p>
+                                            <p><%= product.ProductMaat %></p>
+                                            <p><%= product.ProductKleur %></p>
                                             <div>
+                                                <a href="edit-product/<%= product._id %>?edit=true" class="btn">Edit</a>
                                                 <form action="/delete-product" method="POST">
                                                     <input type="hidden" value="<%= product._id %>" name="productId">
-                                                    <button class="btns" type="submit">Delete</button>
+                                                    <button class="btn" type="submit">Delete</button>
                                                 </form>
                                             </div>
                                         </div>

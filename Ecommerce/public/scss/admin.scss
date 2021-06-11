@@ -65,7 +65,7 @@ main {
           height: 400px;
           .besteling {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 0.1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
             margin: 30px 10px;
             border-radius: 8px;
             background-color: #ffff;
@@ -76,19 +76,19 @@ main {
               width: 100px;
               height: auto;
             }
-            form .btns {
-              border: none;
-              border-radius: 8px;
-              background-color: $mainPink;
-              padding: 5px;
-              font-size: 12px;
-              margin-right: 20px;
+            .btn {
+              width: 70px;
+              margin-right: 10px;
+              border: 1px solid #000;
+            }
+            .btn:last-child {
+              margin-top: 10px;
             }
           }
           .besteling > p {
             display: grid;
             justify-content: center;
-            font-size: 12px;
+            font-size: 8px;
           }
         }
       }
@@ -108,12 +108,12 @@ main {
         .besteling-box {
           .top {
             p {
-              font-size: 13px;
+              font-size: 10px;
             }
           }
           .bottom {
             .besteling > p {
-              font-size: 15px;
+              font-size: 11px;
             }
           }
         }
@@ -162,12 +162,18 @@ main {
           border-radius: 8px;
           background-color: #ffff;
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+          .top {
+            p {
+              font-size: 12px;
+            }
+          }
           .bottom {
             .besteling {
               margin: 10px 0px;
               border-radius: 0px;
               box-shadow: none;
               border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+              font-size: 13px;
             }
           }
           .top {

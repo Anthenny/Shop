@@ -25,6 +25,14 @@ const productSchema = new Schema({
     type: Number,
     require: true,
   },
+  ProductMaat: {
+    type: String,
+    require: true,
+  },
+  ProductKleur: {
+    type: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("Product", productSchema);
