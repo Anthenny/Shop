@@ -55,16 +55,22 @@
         </div>
 
         <div class="producten-grid">
-          <div class="product">
-            <div class="">
-              <a href="/productSpecificatie"><img class="img-product" src="../img/Producten/tas.png" alt="" /> </a>
-              <div class="product-beschrijving">
-                <div class="oorbel-naam">Tas</div>
-                <div class="oorbel-prijs">$ 5,99</div>
-                <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
+          <% if (prods.length > 0) { %>
+            <% for (let product of prods) { %>
+            <div class="product">
+              <div class="">
+                <a href="/productSpecificatie"><img class="img-product" src="<%=product.ProductImg %>" alt="" /> </a>
+                <div class="product-beschrijving">
+                  <div class="oorbel-naam"><%= product.ProductNaam %></div>
+                  <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
+                  <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
+                </div>
               </div>
             </div>
-          </div>
+            <% } %>
+          <% } else { %>
+              <h1>Geen prodcten gevonden</h1>
+          <% } %>
         </div>
       </div>
     </main>
