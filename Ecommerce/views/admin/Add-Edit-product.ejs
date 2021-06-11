@@ -15,35 +15,35 @@
                 <a href="#"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
             </div>
             <div class="right-box">
-                <div class="besteling-box">
-                    <form class="product-form" action="<% if (editing) { %>/admin/edit-product<% } else { %>Add-product<% } %>" method="POST">
-                        <div class="form-control">
-                            <label for="">ProductNaam</label>
-                            <input type="text" name="ProductNaam" value="<% if (editing) { %><%= product.title %><% } %>">
-                        </div>
-                        <div class="form-control">
-                            <label for="">ProductImg</label>
-                            <input type="file" name="ProductImg"  value="<% if (editing) { %><%= product.imageUrl %><% } %>">
-                        </div>
-                        <div class="form-control">
-                            <label for="">ProductPrijs</label>
-                            <input type="number" name="ProductPrijs"  step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
-                        </div>
-                        <div class="form-control">
-                            <label for="">ProductBeschrijving</label>
-                            <textarea name="ProductBeschrijving" rows="2"><% if (editing) { %><%= product.description %><% } %></textarea>
-                        </div>
-                        <div class="form-control">
-                            <label for="">ProductCategorie</label>
-                            <input type="text" name="ProductCategorie" value="<% if (editing) { %><%= product.ProductCategorie %><% } %>">
-                        </div>
-                        <% if (editing) { %>
-                            <input type="hidden" value="<%= product._id %>" name="productId">
-                        <% } %>
-            
+                <form class="product-form" action="<% if (editing) { %>/admin/edit-product<% } else { %>Add-product<% } %>" method="POST">
+                    <div class="form-control">
+                        <label for="">ProductNaam</label>
+                        <input type="text" name="ProductNaam" value="<% if (editing) { %><%= product.title %><% } %>">
+                    </div>
+                    <div class="form-control">
+                        <label for="">ProductImg</label>
+                        <input type="file" name="ProductImg"  value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+                    </div>
+                    <div class="form-control">
+                        <label for="">ProductPrijs</label>
+                        <input type="number" name="ProductPrijs"  step="0.01" value="<% if (editing) { %><%= product.price %><% } %>">
+                    </div>
+                    <div class="form-control">
+                        <label for="">ProductBeschrijving</label>
+                        <textarea name="ProductBeschrijving" rows="1"><% if (editing) { %><%= product.description %><% } %></textarea>
+                    </div>
+                    <div class="form-control">
+                        <label for="">ProductCategorie</label>
+                        <input type="text" name="ProductCategorie" value="<% if (editing) { %><%= product.ProductCategorie %><% } %>">
+                    </div>
+                    <% if (editing) { %>
+                        <input type="hidden" value="<%= product._id %>" name="productId">
+                    <% } %>
+        
+                    <div class="form-control">
                         <button class="btn" type="submit"><% if (editing) { %>Update Product<% } else { %>Product toevoegen<% } %></button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

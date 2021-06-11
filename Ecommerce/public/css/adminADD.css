@@ -256,8 +256,32 @@ main .container .right-box {
   margin: 0 auto;
 }
 
-main .container .right-box .besteling-box {
+main .container .right-box .product-form {
   display: grid;
+  gap: 20px;
+  font-size: 14px;
+  width: 100%;
+  justify-content: center;
+}
+
+main .container .right-box .product-form .form-control {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: 0 10px;
+}
+
+main .container .right-box .product-form .form-control:last-child {
+  margin: 0 auto;
+}
+
+main .container .right-box .product-form .form-control input,
+main .container .right-box .product-form textarea {
+  height: auto;
+}
+
+main .container .right-box .product-form .btn {
+  width: 150px;
 }
 
 @media screen and (min-width: 600px) {
@@ -305,10 +329,11 @@ main .container .right-box .besteling-box {
     width: 80%;
     max-width: 600px;
   }
-  main .container .right-box .besteling-box {
+  main .container .right-box .product-form {
     border-radius: 8px;
     background-color: #ffff;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
   }
 }
 

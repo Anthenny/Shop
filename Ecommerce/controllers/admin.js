@@ -34,10 +34,6 @@ exports.postAddproduct = (req, res, next) => {
 
 exports.getProducts = (req, res, next) => {
   Product.find()
-    //     .select('title price -_id')
-    //     .populate('userId', 'name')
-    //     met select benoem je wat je van databse wil
-    //     bijvoorbeel allen die title price en id
     .then((products) => {
       res.render("admin/admin", {
         prods: products,
