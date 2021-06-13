@@ -4,8 +4,8 @@ const authController = require("../controllers/authController");
 const isAuth = require("../middleware/is-auth");
 const router = express.Router();
 
-router.get("/login", isAuth.isAuth, authController.getLogin);
-router.get("/signup", isAuth.isAuth, authController.getSignUp);
+router.get("/login", isAuth.isAdmin, authController.getLogin);
+router.get("/signup", isAuth.isAdmin, authController.getSignUp);
 router.get("/logout", authController.getLogout);
 router.post(
   "/signup",
@@ -19,9 +19,9 @@ router.post(
         return true;
       }),
   ],
-  isAuth.isAuth,
+  isAuth.isAdmin,
   authController.postSignUp
 );
-router.post("/login", [body("email").isEmail().withMessage("Vul aub een geldig email adres in.").normalizeEmail(), body("password").trim()], isAuth.isAuth, authController.postLogIn);
+router.post("/login", [body("email").isEmail().withMessage("Vul aub een geldig email adres in.").normalizeEmail(), body("password").trim()], isAuth.isAdmin, authController.postLogIn);
 
 module.exports = router;

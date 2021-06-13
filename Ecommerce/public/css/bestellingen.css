@@ -149,6 +149,9 @@ header .img-list .space {
   header .desktopMenu a:hover {
     color: black;
   }
+  header .desktopMenu .dropdown {
+    margin-right: 60px;
+  }
   header .desktopMenu .active {
     color: black;
   }
@@ -168,7 +171,11 @@ header .img-list .space {
     width: 200px;
     padding: 10px;
   }
+  header .logo {
+    text-align: center;
+  }
   header .img-list {
+    padding-right: 10px;
     align-items: center;
     justify-content: center;
   }

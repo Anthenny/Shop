@@ -120,6 +120,10 @@ header {
         }
       }
 
+      .dropdown {
+        margin-right: 60px;
+      }
+
       .active {
         color: black;
       }
@@ -147,7 +151,12 @@ header {
       }
     }
 
+    .logo {
+      text-align: center;
+    }
+
     .img-list {
+      padding-right: 10px;
       align-items: center;
       justify-content: center;
     }

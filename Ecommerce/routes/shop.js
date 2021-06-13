@@ -4,25 +4,14 @@ const isAuth = require("../middleware/is-auth");
 const router = express.Router();
 
 router.get("/", shopController.getHome);
-router.get(
-  "/winkelmand",
-  isAuth.isNotAuth,
-  shopController.getWinkeland
-);
+router.get("/winkelmand", isAuth.isAuth, shopController.getWinkeland);
 router.get("/oorbellen", shopController.getOorbellen);
 router.get("/armbanden", shopController.getArmbanden);
 router.get("/tassen", shopController.getTassen);
 router.get("/waxmelts", shopController.getWaxmelts);
 router.get("/babyaccessoires", shopController.getBabyAccessoires);
-router.get(
-  "/productSpecificatie",
-  shopController.getProductSpecificatie
-);
-router.get("/profiel", isAuth.isNotAuth, shopController.getProfiel);
-router.get(
-  "/bestellingen",
-  isAuth.isNotAuth,
-  shopController.getBestellingen
-);
+router.get("/productSpecificatie", shopController.getProductSpecificatie);
+router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
+router.get("/bestellingen", isAuth.isAuth, shopController.getBestellingen);
 
 module.exports = router;
