@@ -4,32 +4,32 @@
   <body>
     <%- include('../includes/navbar.ejs')  %> 
     <main>
-      <div class="left-box">
-        <h2 class="mobile-title">Olifanten Bijtring</h2>
-        <h2 class="desktop-title">Product Specificatie</h2>
-        <p class="desktop-gevonden">1 item gevonden</p>
-        <div class="center">
-          <img class="bigSpec" src="../img/ProductSpecs/groteOlifant.png" alt="" />
+        <div class="left-box">
+          <h2 class="mobile-title"><%= prods.ProductNaam %></h2>
+          <h2 class="desktop-title"><%= prods.ProductNaam %></h2>
+          <p class="desktop-gevonden">1 item gevonden</p>
+          <div class="center">
+            <img class="bigSpec" src="<%=prods.ProductImg %>" alt="" />
+          </div>
+          <!-- <div class="details-img">
+            <img src="<%=prods.ProductImg %>" alt="" />
+            <img src="<%=prods.ProductImg %>" alt="" />
+            <img src="<%=prods.ProductImg %>" alt="" />
+          </div> -->
         </div>
-        <div class="details-img">
-          <img src="../img/ProductSpecs/kleineOlifant.png" alt="" />
-          <img src="../img/ProductSpecs/kleineOlifant.png" alt="" />
-          <img src="../img/ProductSpecs/kleineOlifant.png" alt="" />
-        </div>
-      </div>
 
-      <div class="right-box">
-        <div class="product-header">
-          <h2>Olifanten Bijtring</h2>
-          <h2 class="product-prijs-mobile">$250</h2>
+        <div class="right-box">
+          <div class="product-header">
+            <h2><%= prods.ProductNaam %></h2>
+            <h2 class="product-prijs-mobile">$<%= prods.ProductPrijs %></h2>
+          </div>
+          <p class="product-categorie"><%= prods.ProductCategorie %></p>
+          <h2 class="product-prijs-desktop">$<%= prods.ProductPrijs %></h2>
+          <p class="product-beschrijving"><%= prods.ProductBeschrijving %></p>
+          <div class="buttons">
+            <a class="btn" href="#">Koop nu</a>
+            <a class="btn winkelmand" href="#">In winkelmand</a>
+          </div>
         </div>
-        <p class="product-categorie">Baby-accessoires</p>
-        <h2 class="product-prijs-desktop">$250</h2>
-        <p class="product-beschrijving">Een leuke zelfgemaakte bijtring voor jouw baby. De stof die we hebben gebruikt is extra zacht. Voor de rest is de olifant gemaakt van 100% katoen.</p>
-        <div class="buttons">
-          <a class="btn" href="#">Koop nu</a>
-          <a class="btn winkelmand" href="#">In winkelmand</a>
-        </div>
-      </div>
     </main>
     <%- include('../includes/footer.ejs')  %> 

@@ -105,3 +105,16 @@ exports.getBabyAccessoires = (req, res) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.getProduct = (req, res, next) => {
+  const prodId = req.params.productId;
+  Product.findById(prodId)
+    .then((product) => {
+      res.render("shop/productSpecs", {
+        prods: product,
+        pageTitle: "Product Specificatie",
+        path: "/products",
+      });
+    })
+    .catch((err) => console.log(err));
+};

@@ -59,7 +59,7 @@
             <% for (let product of prods) { %>
             <div class="product">
               <div class="">
-                <a href="/productSpecificatie"><img class="img-product" src="<%=product.ProductImg %>" alt="" /> </a>
+                <a href="/productSpecificatie/<%= product._id %>"><img class="img-product" src="<%=product.ProductImg %>" alt="" /> </a>
                 <div class="product-beschrijving">
                   <div class="oorbel-naam"><%= product.ProductNaam %></div>
                   <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
