@@ -118,3 +118,20 @@ exports.getProduct = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.getCart = (req, res, next) => {
+  req.user
+    .populate("cart.items.productId")
+    // door execPopulate() kan je die then method roepen
+    .execPopulate()
+    .then((user) => {
+      const products = user.cart.items;
+      console.log(user);
+      res.render("shop/winkelmand", {
+        path: "/cart",
+        pageTitle: "Your Cart",
+        products: products,
+      });
+    })
+    .catch((err) => console.log(err));
+};
