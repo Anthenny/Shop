@@ -29,7 +29,6 @@ exports.getWinkeland = (req, res) => {
     .populate("cart.items.productId")
     .execPopulate()
     .then((user) => {
-      console.log(user.cart.items);
       const products = user.cart.items;
       res.status(200).render("shop/winkelmand", {
         pageTitle: "Winkelmand",
@@ -95,7 +94,7 @@ exports.getWaxmelts = (req, res) => {
     .then((products) => {
       res.status(200).render("shop/waxmelts", {
         prods: products,
-        pageTitle: "Waxmelts",
+        pageTitle: "Wax Melts",
         path: "/waxmelts",
       });
     })
@@ -134,7 +133,13 @@ exports.postWinkelmand = (req, res) => {
       return req.user.addToCart(product);
     })
     .then((result) => {
-      console.log(result);
       res.redirect("/winkelmand");
     });
+};
+
+exports.postWinkelmandDeleteProduct = (req, res) => {
+  const prodId = req.body.productId;
+  req.user.removeFromCart(prodId).then((result) => {
+    res.redirect("/winkelmand");
+  });
 };

@@ -16,5 +16,6 @@ router.get("/bestellingen", isAuth.isAuth, shopController.getBestellingen);
 router.get("/productSpecificatie/:productId", shopController.getProduct);
 
 router.post("/winkelmand", shopController.postWinkelmand);
+router.post("/winkelmand-delete-item", shopController.postWinkelmandDeleteProduct);
 
 module.exports = router;
