@@ -63,7 +63,11 @@
                 <div class="product-beschrijving">
                   <div class="oorbel-naam"><%= product.ProductNaam %></div>
                   <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
-                  <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div>
+                  <form action="/winkelmand" method="post">
+                    <button type="submit">Add to Cart</button>
+                    <input type="hidden" name="productId" value="<%= product._id %>">
+                  </form>
+                  <!-- <div class="hartje"><img src="../img/Producten/hartje.png" alt="" /></div> -->
                 </div>
               </div>
             </div>

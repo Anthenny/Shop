@@ -17,7 +17,7 @@
                         </div>
                         <div class="middel">
                             <p><%= p.productId.ProductNaam %></p>
-                            <p> Vrouwen Mode</p>
+                            <p><%= p.productId.ProductCategorie %></p>
                             <p>$<%= p.productId.ProductPrijs %></p>
                         </div>
                         <div class="right">
@@ -29,7 +29,8 @@
                             </div>
                         </div>
                     </div>
-                    <% }) %>
+                </div>
+
                 <div class="bottom-form">
                     <div class="totaal">
                         <p>Totaal:</p>
@@ -38,9 +39,10 @@
                     <button type="submit">Reken af</button>
                 </div>
             </form>
+            <% }) %>
             <% } else { %>
-                <h1>No Products Found!</h1>
-            <% } %>
+                <h1>Geen producten in uw winkelmand!</h1>
+                <% } %>
         </div>
     </main>
     <%- include('../includes/footer.ejs')  %> 

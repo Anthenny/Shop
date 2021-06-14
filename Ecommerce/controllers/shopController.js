@@ -25,10 +25,18 @@ exports.getBestellingen = (req, res) => {
 };
 
 exports.getWinkeland = (req, res) => {
-  res.status(200).render("shop/winkelmand", {
-    pageTitle: "Winkelmand",
-    path: "/winkelmand",
-  });
+  req.user
+    .populate("cart.items.productId")
+    .execPopulate()
+    .then((user) => {
+      console.log(user.cart.items);
+      const products = user.cart.items;
+      res.status(200).render("shop/winkelmand", {
+        pageTitle: "Winkelmand",
+        path: "/winkelmand",
+        prods: products,
+      });
+    });
 };
 
 exports.getProfiel = (req, res) => {
@@ -119,19 +127,14 @@ exports.getProduct = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-exports.getCart = (req, res, next) => {
-  req.user
-    .populate("cart.items.productId")
-    // door execPopulate() kan je die then method roepen
-    .execPopulate()
-    .then((user) => {
-      const products = user.cart.items;
-      console.log(user);
-      res.render("shop/winkelmand", {
-        path: "/cart",
-        pageTitle: "Your Cart",
-        products: products,
-      });
+exports.postWinkelmand = (req, res) => {
+  const prodId = req.body.productId;
+  Product.findById(prodId)
+    .then((product) => {
+      return req.user.addToCart(product);
     })
-    .catch((err) => console.log(err));
+    .then((result) => {
+      console.log(result);
+      res.redirect("/winkelmand");
+    });
 };
