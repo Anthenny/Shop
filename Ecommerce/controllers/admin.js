@@ -36,6 +36,7 @@ exports.postAddproduct = (req, res, next) => {
     ProductCategorie: ProductCategorie,
     ProductMaat: ProductMaat,
     ProductKleur: ProductKleur,
+    userId: req.user,
   });
   product
     .save()

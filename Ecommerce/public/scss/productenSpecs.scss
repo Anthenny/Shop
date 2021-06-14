@@ -23,6 +23,12 @@ main {
     .center {
       display: grid;
       justify-content: center;
+
+      .bigSpec {
+        height: 340px;
+        width: 340px;
+        border-radius: 6px;
+      }
     }
   }
 
@@ -49,14 +55,15 @@ main {
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      width: 600px;
 
       .btn {
-        height: 55px;
-        width: 150px;
+        height: 65px;
+        width: 185px;
         display: grid;
         justify-content: center;
         align-items: center;
+        margin-right: 60px;
       }
 
       .winkelmand {
@@ -73,7 +80,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1250px) {
   .mobile-title,
   .product-prijs-mobile {
     display: none !important;
@@ -86,7 +93,7 @@ main {
   }
 
   main {
-    padding: 70px 300px;
+    padding: 70px 200px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -142,6 +149,12 @@ main {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 1380px) {
+  main {
+    padding: 70px 300px;
   }
 }
 

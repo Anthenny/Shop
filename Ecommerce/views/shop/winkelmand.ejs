@@ -8,81 +8,30 @@
             <div class="top-box">
                 <h1>Winkelmand</h1>
             </div>
+            <% if (prods.length > 0) { %>
+                <% prods.forEach (p => { %>
             <form action="">
                 <div class="top-form">
                     <div class="card">
                         <div class="left">
-                            <img src="../img/NoPath - kopie (3).png" alt="">
+                            <img src="<%= p.productId.ProductImg %>" alt="">
                         </div>
                         <div class="middel">
-                            <p>Groene oorbel</p>
-                            <p> Vrouwen Mode</p>
-                            <p>$ 5.99</p>
+                            <p><%= p.productId.ProductNaam %></p>
+                            <p><%= p.productId.ProductCategorie %></p>
+                            <p>$<%= p.productId.ProductPrijs %></p>
                         </div>
                         <div class="right">
                             <img src="../img/Group 3.png" alt="">
                             <div class="button">
                                 <button type="submit" value="1">-</button>
-                                <p>1</p>
-                                <button type="submit" value="1">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="left">
-                            <img src="../img/NoPath - kopie (3).png" alt="">
-                        </div>
-                        <div class="middel">
-                            <p>Groene oorbel</p>
-                            <p>Vrouwen Mode</p>
-                            <p>$ 5.99</p>
-                        </div>
-                        <div class="right">
-                            <img src="../img/Group 3.png" alt="">
-                            <div class="button">
-                                <button type="submit" value="1">-</button>
-                                <p>1</p>
-                                <button type="submit" value="1">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="left">
-                            <img src="../img/NoPath - kopie (3).png" alt="">
-                        </div>
-                        <div class="middel">
-                            <p>Groene oorbel</p>
-                            <p>Vrouwen Mode</p>
-                            <p>$ 5.99</p>
-                        </div>
-                        <div class="right">
-                            <img src="../img/Group 3.png" alt="">
-                            <div class="button">
-                                <button type="submit" value="1">-</button>
-                                <p>1</p>
-                                <button type="submit" value="1">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="left">
-                            <img src="../img/NoPath - kopie (3).png" alt="">
-                        </div>
-                        <div class="middel">
-                            <p>Groene oorbel</p>
-                            <p>Vrouwen Mode</p>
-                            <p>$ 5.99</p>
-                        </div>
-                        <div class="right">
-                            <img src="../img/Group 3.png" alt="">
-                            <div class="button">
-                                <button type="submit" value="1">-</button>
-                                <p>1</p>
+                                <p><%= p.quantity %></p>
                                 <button type="submit" value="1">+</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="bottom-form">
                     <div class="totaal">
                         <p>Totaal:</p>
@@ -91,6 +40,10 @@
                     <button type="submit">Reken af</button>
                 </div>
             </form>
+            <% }) %>
+            <% } else { %>
+                <h1>Geen producten in uw winkelmand!</h1>
+                <% } %>
         </div>
     </main>
     <%- include('../includes/footer.ejs')  %> 
