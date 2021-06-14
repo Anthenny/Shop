@@ -8,9 +8,7 @@ exports.isAuth = (req, res, next) => {
 exports.isNotAuth = (req, res, next) => {
   // Check of de persoon een admin is.
   if (req.user) {
-    if (!req.session.user.admin) {
-      return res.redirect("/");
-    }
+    if (req.user.admin) return next();
   }
   return res.redirect("/login");
 };

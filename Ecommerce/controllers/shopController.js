@@ -1,13 +1,5 @@
 const Product = require("../models/product");
 
-// exports.getHome = (req, res) => {
-//   res.status(200).render("shop/index", {
-//     pageTitle: "Home",
-//     path: "/",
-//     login: false,
-//   });
-// };
-
 exports.getHome = (req, res) => {
   // Check of user is ingelogd
   if (req.session.isLoggedIn) {
