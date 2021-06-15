@@ -30,6 +30,10 @@ router.post(
   adminController.postEditProduct
 );
 
-router.get("/orders", adminController.getOrders);
+router.get("/orders", adminController.getNewOrders);
+router.get("/oldOrders", adminController.getOldOrders);
+router.post("/product-Afgehandeld", adminController.postAfhandelen);
+router.post("/product-onGedaanMaken", adminController.postOnGedaanMaken);
+router.post("/delete-order", adminController.postDeletOder);
 
 module.exports = router;

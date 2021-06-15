@@ -196,6 +196,7 @@ exports.postOrder = (req, res, next) => {
           userId: req.user,
         },
         products: products,
+        status: false,
       });
       // je zet het in order model
       return order.save();
