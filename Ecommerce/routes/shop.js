@@ -15,6 +15,8 @@ router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
 router.get("/bestellingen", isAuth.isAuth, shopController.getBestellingen);
 router.get("/productSpecificatie/:productId", shopController.getProduct);
 router.get("/retourneren", shopController.getRetourneren);
+router.get("/inspiratie", shopController.getInspiratie);
+router.get("/contact", shopController.getContact);
 
 router.post("/winkelmand", shopController.postWinkelmand);
 router.post("/winkelmand-delete-item", shopController.postWinkelmandDeleteProduct);

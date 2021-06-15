@@ -211,36 +211,94 @@ main {
   padding: 40px 50px;
 }
 
-main .titel {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-main .titel h2 {
+main h2 {
+  font-size: 2rem;
   font-weight: 400;
-  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-main .titel h2 span {
+main h2 span {
   color: #ffc2d0;
 }
 
-main .sectie-2 h2 {
+main .sectie-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+main .sectie-1 h3 {
   font-size: 1.3rem;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+main .sectie-1 .input {
+  display: flex;
+}
+
+main .sectie-1 .input p {
+  margin-right: 5px;
+}
+
+main .sectie-2 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+main .sectie-2 .input {
+  display: flex;
+  justify-content: space-between;
+}
+
+main .sectie-2 .input .text {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+main .sectie-2 .input input {
+  font-size: 1rem;
+  border: 1px solid #CCCCCC;
+}
+
+main .sectie-2 .input input:focus {
+  outline: 1px solid #8b8b8b;
+}
+
+main .sectie-2 .input .last .btn {
+  margin-top: 15px;
+  width: 100%;
+  font-size: 1.2rem;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) {
   main {
-    padding: 60px 100px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  main {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
+  }
+  main .title h2 {
+    font-size: 2.2rem;
+  }
+  main .sectie-1 {
+    text-align: center;
+  }
+  main .sectie-1 h3 {
+    font-size: 1.4rem;
+  }
+  main .sectie-1 p {
+    font-size: 1.2rem;
+  }
+  main .sectie-1 .input {
+    width: 480px;
+    margin: 0 auto;
+  }
+  main .sectie-2 .input .text {
+    margin-bottom: 25px;
+  }
+  main .sectie-2 .input input {
+    font-size: 1.2rem;
   }
 }
 
