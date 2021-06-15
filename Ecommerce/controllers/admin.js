@@ -1,5 +1,8 @@
+// File waar alle methods van admin te vinden zijn.
+
 const Product = require("../models/product");
 
+// Laad alle producten uit de database.
 exports.getProducts = (req, res, next) => {
   Product.find()
     .then((products) => {
@@ -12,6 +15,7 @@ exports.getProducts = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
+// Laad de pagina met de inputvelden waar de admin producten kan toevoegen.
 exports.getAddProduct = (req, res, next) => {
   res.render("admin/Add-Edit-product", {
     pageTitle: "Product toevoegen",
@@ -20,6 +24,7 @@ exports.getAddProduct = (req, res, next) => {
   });
 };
 
+// Post de gegevens die ingevuld zijn en maak een nieuw product aan.
 exports.postAddproduct = (req, res, next) => {
   const ProductNaam = req.body.ProductNaam;
   const ProductImg = req.body.ProductImg;
@@ -49,6 +54,7 @@ exports.postAddproduct = (req, res, next) => {
     });
 };
 
+// Laad het specifieke product.
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
   if (!editMode) {
@@ -70,6 +76,7 @@ exports.getEditProduct = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
+// Update het geselecteerde product.
 exports.postEditProduct = (req, res, next) => {
   const prodId = req.body.productId;
   const updatedProductNaam = req.body.ProductNaam;
@@ -97,6 +104,7 @@ exports.postEditProduct = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
+// Verwijder het specifieke product(via id)
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findByIdAndRemove(prodId)

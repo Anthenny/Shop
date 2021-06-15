@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 const User = require("../models/userModel");
 
+// Method die de login pagina weergeeft met de benodigde variabelen.
 exports.getLogin = (req, res) => {
   let message = req.flash("error");
   if (message.length > 0) {
@@ -20,6 +21,7 @@ exports.getLogin = (req, res) => {
   });
 };
 
+// Method die de signup pagina weergeeft met de benodigde variabelen.
 exports.getSignUp = (req, res) => {
   let message = req.flash("error");
   if (message.length > 0) {
@@ -40,6 +42,7 @@ exports.getSignUp = (req, res) => {
   });
 };
 
+// Method die de gebruiker uitlogd, redirect en de sessie vernietigt.
 exports.getLogout = (req, res) => {
   req.session.destroy((err) => {
     if (err) console.log(err);
@@ -47,6 +50,7 @@ exports.getLogout = (req, res) => {
   });
 };
 
+// Method die  de userinput checkt en als alles klopt hem opslaat in de database en redirect.
 exports.postSignUp = (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -90,6 +94,7 @@ exports.postSignUp = (req, res) => {
     });
 };
 
+// Wanneer de gebruiker inlogt en alles klopt wordt die doorverwezen naar de homepagina en wordt een sessie aangemaakt.
 exports.postLogIn = (req, res) => {
   const email = req.body.email;
   const password = req.body.password;

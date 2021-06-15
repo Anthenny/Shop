@@ -1,5 +1,6 @@
 const Product = require("../models/product");
 
+// Method die home pagina laad met benodigde variabelen/ ook checkt die of de user is ingelogd.
 exports.getHome = (req, res) => {
   // Check of user is ingelogd
   if (req.session.isLoggedIn) {
@@ -17,6 +18,7 @@ exports.getHome = (req, res) => {
   }
 };
 
+// Method die de bestellingen pagina regelt binnen in de user profiel.
 exports.getBestellingen = (req, res) => {
   res.status(200).render("shop/bestellingen", {
     pageTitle: "Bestellingen",
@@ -24,6 +26,7 @@ exports.getBestellingen = (req, res) => {
   });
 };
 
+// Method die de winkelmand laad met alle informatie binnen in de database.
 exports.getWinkeland = (req, res) => {
   req.user
     .populate("cart.items.productId")
@@ -38,6 +41,7 @@ exports.getWinkeland = (req, res) => {
     });
 };
 
+// Method die profiel laad binnen in het user profiel.
 exports.getProfiel = (req, res) => {
   res.status(200).render("shop/profiel", {
     pageTitle: "Profiel",
@@ -45,6 +49,7 @@ exports.getProfiel = (req, res) => {
     user: req.user,
   });
 };
+
 
 exports.getProductSpecificatie = (req, res) => {
   res.status(200).render("shop/productSpecs", {
