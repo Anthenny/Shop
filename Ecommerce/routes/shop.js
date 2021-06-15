@@ -25,6 +25,8 @@ router.get(
   shopController.getProduct
 );
 router.get("/retourneren", shopController.getRetourneren);
+router.get("/inspiratie", shopController.getInspiratie);
+router.get("/contact", shopController.getContact);
 
 router.post("/winkelmand", shopController.postWinkelmand);
 router.post(

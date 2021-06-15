@@ -139,6 +139,22 @@ exports.getRetourneren = (req, res) => {
   });
 };
 
+exports.getInspiratie = (req, res) => {
+  res.status(200).render("footer/inspiratie", {
+    pageTitle: "Inspiratie",
+    path: "/inspiratie",
+    user: req.user,
+  });
+}
+
+exports.getContact = (req, res) => {
+  res.status(200).render("footer/contact", {
+    pageTitle: "Contact",
+    path: "/contact",
+    user: req.user,
+  });
+}
+
 exports.postWinkelmand = (req, res) => {
   const prodId = req.body.productId;
   Product.findById(prodId)
