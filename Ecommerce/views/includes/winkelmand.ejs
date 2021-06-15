@@ -1,4 +1,7 @@
-<form action="/winkelmand" method="post">
-  <button type="submit">Add to Cart</button>
-  <input type="hidden" name="productId" value="<%= product._id %>" />
-</form>
+<div class="winkelmand">
+  <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
+  <form action="/winkelmand" method="post">
+    <button class="btn" type="submit">Add to Cart</button>
+    <input type="hidden" name="productId" value="<%= product._id %>" />
+  </form>
+</div>

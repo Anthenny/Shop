@@ -14,8 +14,7 @@
                 <a href="/productSpecificatie/<%= product._id %>"><img class="img-product" src="<%=product.ProductImg %>" alt="" /> </a>
                 <div class="product-beschrijving">
                   <div class="oorbel-naam"><%= product.ProductNaam %></div>
-                  <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
-                  <%- include('../includes/winkelmand.ejs', {product: product}) %>
+                  <%- include('../includes/winkelmand.ejs', {product: product}) %> 
                 </div>
               </div>
             </div>

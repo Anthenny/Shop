@@ -78,32 +78,36 @@ main {
         position: relative;
         padding-bottom: 10px;
 
-        .oorbel-prijs,
-        .oorbel-naam {
-          font-size: 1.1rem;
-        }
-
-        .oorbel-prijs {
-          margin-top: 5px;
-        }
-
-        .hartje {
-          position: absolute;
-          bottom: 15px;
-          right: 0;
-          border-radius: 50%;
-          background-color: $mainPink;
-          height: 40px;
-          width: 40px;
+        .winkelmand{
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
-          justify-content: center;
 
-          img {
-            height: 18px;
+          .btn{
+            border: none;
+            width: 100px;
+            height: 30px;
+            cursor: pointer;
+            align-items: center;
+
+            &:hover{
+              border: 1px solid $mainPink;
+              background: $white;
+              color: $mainPink;
+
+            }
+          }
+
+          .oorbel-prijs,
+          .oorbel-naam {
+            font-size: 1.1rem;
+          }
+  
+          .oorbel-prijs {
+            margin-top: 5px;
           }
         }
+
       }
     }
   }

@@ -118,7 +118,7 @@ exports.getBabyAccessoires = (req, res) => {
     .catch((err) => console.log(err));
 };
 
-exports.getProduct = (req, res, next) => {
+exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
     .then((product) => {
@@ -130,6 +130,14 @@ exports.getProduct = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.getRetourneren = (req, res) => {
+  res.status(200).render("footer/retourneren", {
+    pageTitle: "Retourneren",
+    path: "/retourneren",
+    user: req.user,
+  });
+}
 
 exports.postWinkelmand = (req, res) => {
   const prodId = req.body.productId;
