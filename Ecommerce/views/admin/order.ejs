@@ -1,0 +1,51 @@
+<%- include('../includes/head.ejs')  %> 
+    <link rel="stylesheet" href="../css/bestelingen.css">
+</head>
+  <body>
+        <%- include('../includes/navbar.ejs')  %> 
+            <main>
+                <!-- als er meer producten zijn daan 1 doe wat hier onder is ander ga naar else -->
+                    <div class="container">
+                        <div class="top-box">
+                            <h1>Admin Dashboard</h1>
+                        </div>
+                        <div class="left-box">
+                            <a href="/admin"><i class="fas fa-table"></i><p>Producten</p></a>
+                            <a href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
+                            <a href="/order" class="actieve"><i class="fas fa-plus-square"></i><p>Nieuwe Bestelingen</p></a>
+                            <a href=""><i class="fas fa-plus-square"></i><p>Oude Bestelingen</p></a>
+                            <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
+                        </div>
+                        <div class="right-box">
+                                <div class="besteling-box">
+                                    <div class="bottom">
+                                      <% if (orders.length <= 0) { %>
+                                        <h1>Geen nieuwe bestelignen</h1>
+                                      <% } else { %>
+                                        <% orders.forEach(order => { %>
+                                          <div class="besteling">
+                                              <div class="left">
+                                                <h1>OrderID: <span><%= order._id %></span></h1>
+                                                <h1>UserId: <span><%= order.user.userId %></span></h1>
+                                                <h1>UserNaam: <span><%= order.user.name %></span></h1>
+                                                <h1>Bestellingen:</h1>
+                                                  <% order.products.forEach(p => { %>
+                                                    <p><%= p.quantity %> <%= p.product.ProductNaam %></p>
+                                                  <% }); %>
+                                              </div>
+                                              <div class="btns">
+                                                  <a href="#"  class="">Afgehandeld</a>
+                                                  <form action="/delete-product" method="POST">
+                                                      <input type="hidden" value="" name="productId">
+                                                      <button class="" type="submit">Verwijderen</button>
+                                                  </form>
+                                              </div>
+                                          </div>
+                                        <% }); %>
+                                      <% } %>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </main>
+            <%- include('../includes/footer.ejs')  %>

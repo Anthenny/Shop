@@ -235,7 +235,7 @@ main .container .left-box {
   grid-area: left-box;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 10% 10%;
+  grid-template-rows: 10% 10% 10% 10% 10%;
   background-color: #ffb2c4;
   padding-top: 30px;
   max-width: 50px;

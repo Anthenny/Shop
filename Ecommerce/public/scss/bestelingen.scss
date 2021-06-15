@@ -50,27 +50,25 @@ main {
       border-radius: 6px;
       height: 500px;
       margin: 0 auto;
-      .product-form {
+      .besteling-box {
         display: grid;
-        gap: 20px;
-        font-size: 14px;
-        width: 100%;
-        justify-content: center;
-        .form-control {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: 1fr;
-          margin: 0 10px;
-        }
-        .form-control:last-child {
-          margin: 0 auto;
-        }
-        .form-control input,
-        textarea {
-          height: auto;
-        }
-        .btn {
-          width: 150px;
+        grid-template-rows: 10% 80%;
+        .bottom {
+          overflow: auto;
+          height: 400px;
+          .besteling {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 30px 10px;
+            border-radius: 8px;
+            background-color: #ffff;
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+            h1 {
+              font-size: 15px;
+            }
+          }
         }
       }
     }
@@ -127,11 +125,19 @@ main {
       .right-box {
         width: 80%;
         max-width: 600px;
-        .product-form {
+        .besteling-box {
           border-radius: 8px;
           background-color: #ffff;
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-          padding: 20px 0;
+          .bottom {
+            .besteling {
+              margin: 10px 0px;
+              border-radius: 0px;
+              box-shadow: none;
+              border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+              font-size: 13px;
+            }
+          }
         }
       }
     }

@@ -10,14 +10,28 @@ router.get("/armbanden", shopController.getArmbanden);
 router.get("/tassen", shopController.getTassen);
 router.get("/waxmelts", shopController.getWaxmelts);
 router.get("/babyaccessoires", shopController.getBabyAccessoires);
-router.get("/productSpecificatie", shopController.getProductSpecificatie);
+router.get(
+  "/productSpecificatie",
+  shopController.getProductSpecificatie
+);
 router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
-router.get("/bestellingen", isAuth.isAuth, shopController.getBestellingen);
-router.get("/productSpecificatie/:productId", shopController.getProduct);
+router.get(
+  "/bestellingen",
+  isAuth.isAuth,
+  shopController.getBestellingen
+);
+router.get(
+  "/productSpecificatie/:productId",
+  shopController.getProduct
+);
 router.get("/retourneren", shopController.getRetourneren);
 
 router.post("/winkelmand", shopController.postWinkelmand);
-router.post("/winkelmand-delete-item", shopController.postWinkelmandDeleteProduct);
+router.post(
+  "/winkelmand-delete-item",
+  shopController.postWinkelmandDeleteProduct
+);
 
+router.post("/create-order", shopController.postOrder);
 
 module.exports = router;

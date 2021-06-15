@@ -214,130 +214,144 @@ main {
 }
 
 main .container {
+  height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-columns: 12% 88%;
+  grid-template-rows: 20% 80%;
+  grid-template-areas: "left-box top-box" "left-box right-box";
+  background-color: #f8f6f6;
 }
 
 main .container .top-box {
+  grid-area: top-box;
   display: grid;
   justify-content: center;
   align-items: center;
-}
-
-main .container .top-box h1 {
-  font-size: 25px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-main .container .form {
-  display: grid;
-  justify-content: center;
-  grid-template-rows: 75% 25%;
-  margin: 0 auto;
-  width: 80%;
-}
-
-main .container .form .top-form {
-  overflow: auto;
-  height: 425px;
-  width: 100%;
-  min-width: 300px;
-}
-
-main .container .form .top-form .card {
-  margin: 10px;
-  height: 130px;
-  display: grid;
-  background-color: #ffff;
-  grid-template-columns: 1fr 4fr 1fr;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
-}
-
-main .container .form .top-form .card .left {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-}
-
-main .container .form .top-form .card .left img {
-  max-width: 100px;
-  max-height: auto;
-}
-
-main .container .form .top-form .card .middel {
-  display: block;
-  justify-self: left;
   font-size: 10px;
-  margin: 20px 0px 10px 10px;
 }
 
-main .container .form .top-form .card .middel p:first-child,
-main .container .form .top-form .card .middel p:last-child {
-  font-weight: 600;
-  font-size: 12px;
-}
-
-main .container .form .top-form .card .middel p:last-child {
-  margin-top: 30px;
-}
-
-main .container .form .top-form .card .right {
+main .container .left-box {
+  grid-area: left-box;
   display: grid;
-  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 10% 10% 10% 10%;
+  background-color: #ffb2c4;
+  padding-top: 30px;
+  max-width: 50px;
+}
+
+main .container .left-box a {
+  text-decoration: none;
+  display: grid;
+  justify-self: center;
   align-items: center;
-  grid-template-rows: repeat(2, 65px);
-  margin-right: 10px;
 }
 
-main .container .form .top-form .card .right form {
-  display: flex;
+main .container .left-box a .fas {
+  font-size: 30px;
+  color: #ffff;
 }
 
-main .container .form .top-form .card .right form p {
-  margin: 0 15px;
+main .container .left-box a p {
+  display: none;
 }
 
-main .container .form .top-form .card .right form .btn {
-  height: auto;
-  width: 50px;
+main .container .right-box {
+  grid-area: right-box;
+  border-radius: 6px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-main .container .form .bottom-form {
+main .container .right-box .besteling-box {
+  display: grid;
+  grid-template-rows: 10% 80%;
+}
+
+main .container .right-box .besteling-box .bottom {
+  overflow: auto;
+  height: 400px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-main .container .form .bottom-form button {
-  justify-self: center;
-  width: 132px;
-  height: 50px;
+  margin: 30px 10px;
   border-radius: 8px;
-  border: none;
-  background-color: #fdb5c0;
-  color: #ffff;
-  font-size: 20px;
-  font-weight: 600;
+  background-color: #ffff;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
 }
 
-main .container .form .bottom-form .totaal {
-  justify-self: center;
-}
-
-main .container .form .bottom-form .totaal > p {
-  font-size: 20px;
-}
-
-main .container .form .bottom-form .totaal p:last-child {
-  font-weight: 600;
+main .container .right-box .besteling-box .bottom .besteling h1 {
+  font-size: 15px;
 }
 
 @media screen and (min-width: 600px) {
-  main .container .form .top-form .card .right form .btn {
-    height: 40px;
-    width: 100px;
+  main .container .left-box {
+    max-width: 80px;
+  }
+  main .container .right-box {
+    width: 80%;
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  main .container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "aa top-box" "left-box right-box";
+  }
+  main .container .left-box {
+    grid-gap: 30px;
+    background-color: #f8f6f6;
+    padding-top: 0px;
+    max-width: 100%;
+    justify-self: right;
+  }
+  main .container .left-box a {
+    grid-template-columns: 20% 80%;
+    width: 300px;
+  }
+  main .container .left-box a .fas {
+    color: #000;
+  }
+  main .container .left-box .actieve {
+    border-left: 6px solid #ffc2d0;
+  }
+  main .container .left-box a p {
+    display: block;
+    margin-left: 10%;
+    color: #000;
+  }
+  main .container .left-box a img {
+    padding: 10px;
+    width: 50px;
+  }
+  main .container .right-box {
+    width: 80%;
+    max-width: 600px;
+  }
+  main .container .right-box .besteling-box {
+    border-radius: 8px;
+    background-color: #ffff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  }
+  main .container .right-box .besteling-box .bottom .besteling {
+    margin: 10px 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main .container {
+    max-width: 1300px;
+    margin: 0 auto;
   }
 }
 

@@ -43,6 +43,10 @@ main {
             justify-content: center;
             align-items: center;
             margin: 10px;
+            img {
+              max-width: 100px;
+              max-height: auto;
+            }
           }
           .middel {
             display: block;
@@ -63,19 +67,15 @@ main {
             justify-content: center;
             align-items: center;
             grid-template-rows: repeat(2, 65px);
-            img {
-              justify-self: center;
-            }
-            .button {
+            margin-right: 10px;
+            form {
               display: flex;
               p {
                 margin: 0 15px;
               }
-              button {
-                color: #000;
-                border: none;
-                background-color: #ffff;
-                width: 20px;
+              .btn {
+                height: auto;
+                width: 50px;
               }
             }
           }
@@ -112,6 +112,20 @@ main {
 @media screen and (min-width: 600px) {
   main {
     .container {
+      .form {
+        .top-form {
+          .card {
+            .right {
+              form {
+                .btn {
+                  height: 40px;
+                  width: 100px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

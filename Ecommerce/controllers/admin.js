@@ -1,7 +1,7 @@
 // File waar alle methods van admin te vinden zijn.
 
 const Product = require("../models/product");
-
+const Order = require("../models/order");
 // Laad alle producten uit de database.
 exports.getProducts = (req, res, next) => {
   Product.find()
@@ -110,6 +110,18 @@ exports.postDeleteProduct = (req, res, next) => {
   Product.findByIdAndRemove(prodId)
     .then(() => {
       res.redirect("admin");
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.getOrders = (req, res, next) => {
+  Order.find()
+    .then((orders) => {
+      res.render("admin/order", {
+        path: "/order",
+        pageTitle: "Your Orders",
+        orders: orders,
+      });
     })
     .catch((err) => console.log(err));
 };

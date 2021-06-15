@@ -9,9 +9,9 @@
                 <h1>Winkelmand</h1>
             </div>
             <% if (prods.length > 0) { %>
-                <% prods.forEach (p => { %>
             <div class="form">
                 <div class="top-form">
+                    <% prods.forEach (p => { %>
                     <div class="card">
                         <div class="left">
                             <img src="<%= p.productId.ProductImg %>" alt="">
@@ -30,19 +30,19 @@
                                 <p><%= p.quantity %></p>
                             </div>
                         </div>
-                        <div class="bottom-form">
-                            <div class="totaal">
-                                <p>Totaal:</p>
-                                <p>$17,97</p>
-                            </div>
-                            <form action="/create-order" method="POST">
-                                <button type="submit">Reken af</button>
-                            </form>
-                        </div>
                     </div>
+                    <% }) %>
+                </div>
+                <div class="bottom-form">
+                    <div class="totaal">
+                        <p>Totaal:</p>
+                        <p>$17,97</p>
+                    </div>
+                    <form action="/create-order" method="POST">
+                        <button type="submit">Reken af</button>
+                    </form>
                 </div>
             </div>
-            <% }) %>
             <% } else { %>
                 <h1>Geen producten in uw winkelmand!</h1>
                 <% } %>

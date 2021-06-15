@@ -1,4 +1,5 @@
 const Product = require("../models/product");
+const Order = require("../models/order");
 
 // Method die home pagina laad met benodigde variabelen/ ook checkt die of de user is ingelogd.
 exports.getHome = (req, res) => {
@@ -49,7 +50,6 @@ exports.getProfiel = (req, res) => {
     user: req.user,
   });
 };
-
 
 exports.getProductSpecificatie = (req, res) => {
   res.status(200).render("shop/productSpecs", {
@@ -137,7 +137,7 @@ exports.getRetourneren = (req, res) => {
     path: "/retourneren",
     user: req.user,
   });
-}
+};
 
 exports.postWinkelmand = (req, res) => {
   const prodId = req.body.productId;
@@ -155,4 +155,43 @@ exports.postWinkelmandDeleteProduct = (req, res) => {
   req.user.removeFromCart(prodId).then((result) => {
     res.redirect("/winkelmand");
   });
+};
+
+exports.postOrder = (req, res, next) => {
+  req.user
+    // kijk wat dat precies doet en waarom
+    .populate("cart.items.productId")
+    .execPopulate()
+    .then((user) => {
+      // je gaat door elke item in winkelmand
+      // en je pakt de hoeveel heid (quantity)
+      // en de helle product (moet nog kijken hoe en waarom)
+      const products = user.cart.items.map((i) => {
+        return {
+          quantity: i.quantity,
+          product: { ...i.productId._doc },
+        };
+      });
+      // dan je maakt nieuw order met de name en id van user
+      // en de producten die user besteelt heeft
+      const order = new Order({
+        user: {
+          name: req.user.name,
+          userId: req.user,
+        },
+        products: products,
+      });
+      // je zet het in order model
+      return order.save();
+    })
+    // als dat alles gedaan is verwijder je de product uit winkelmand
+    // met clearCart functie die je in user.model hebt gemaakt
+    .then((result) => {
+      return req.user.clearCart();
+    })
+    // na dat alles klaar is en die winkelmand leeg is stuur je hem naar ...
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch((err) => console.log(err));
 };
