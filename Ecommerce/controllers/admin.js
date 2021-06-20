@@ -19,7 +19,7 @@ exports.getProducts = (req, res, next) => {
 exports.getAddProduct = (req, res, next) => {
   res.render("admin/Add-Edit-product", {
     pageTitle: "Product toevoegen",
-    path: "Add-product",
+    path: "/add-product",
     editing: false,
   });
 };
@@ -68,7 +68,7 @@ exports.getEditProduct = (req, res, next) => {
       }
       res.render("admin/Add-Edit-product", {
         pageTitle: "Edit Product",
-        path: "edit-product",
+        path: "/edit-product",
         editing: editMode,
         product: product,
       });
@@ -118,7 +118,7 @@ exports.getNewOrders = (req, res, next) => {
   Order.find({status: false })
     .then((orders) => {
       res.render("admin/order", {
-        path: "/order",
+        path: "/orders",
         pageTitle: "Your Orders",
         orders: orders,
       });
@@ -130,7 +130,7 @@ exports.getOldOrders = (req, res, next) => {
   Order.find({status: true })
     .then((orders) => {
       res.render("admin/oldOrders", {
-        path: "/order",
+        path: "/oldOrders",
         pageTitle: "Your Orders",
         orders: orders,
       });

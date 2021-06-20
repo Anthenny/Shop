@@ -3,19 +3,9 @@
 </head>
   <body>
         <%- include('../includes/navbar.ejs')  %> 
-            <main>
-                <!-- als er meer producten zijn daan 1 doe wat hier onder is ander ga naar else -->
+            <main> 
                     <div class="container">
-                        <div class="top-box">
-                            <h1>Admin Dashboard</h1>
-                        </div>
-                        <div class="left-box">
-                            <a href="/admin"><i class="fas fa-table"></i><p>Producten</p></a>
-                            <a href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
-                            <a href="/orders" class="actieve"><i class="fas fa-folder-open"></i><p>Nieuwe Bestelingen</p></a>
-                            <a href="/oldOrders"><i class="fas fa-folder"></i><p>Oude Bestelingen</p></a>
-                            <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
-                        </div>
+                        <%- include('../includes/adminSideBar.ejs')  %> 
                         <div class="right-box">
                                 <div class="besteling-box">
                                     <div class="bottom">
