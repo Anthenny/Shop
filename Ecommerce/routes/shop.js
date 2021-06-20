@@ -18,7 +18,7 @@ router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
 router.get(
   "/bestellingen",
   isAuth.isAuth,
-  shopController.getBestellingen
+  shopController.getKlantBestelingen
 );
 router.get(
   "/productSpecificatie/:productId",

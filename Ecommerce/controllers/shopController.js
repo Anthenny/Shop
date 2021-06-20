@@ -19,14 +19,6 @@ exports.getHome = (req, res) => {
   }
 };
 
-// Method die de bestellingen pagina regelt binnen in de user profiel.
-exports.getBestellingen = (req, res) => {
-  res.status(200).render("shop/bestellingen", {
-    pageTitle: "Bestellingen",
-    path: "/bestellingen",
-  });
-};
-
 // Method die de winkelmand laad met alle informatie binnen in de database.
 exports.getWinkeland = (req, res) => {
   req.user
@@ -228,3 +220,16 @@ exports.postKleur = (req, res) => {
     .catch((err) => console.log(err));
 
 }
+
+exports.getKlantBestelingen = (req, res) => {
+  const klant = req.user.name;
+  Order.find({ 'user.name': klant })
+    .then((orders) => {
+      res.status(200).render("shop/bestellingen", {
+        path: "/bestellingen",
+        pageTitle: "Bestellingen",
+        orders: orders,
+      });
+    })
+    .catch((err) => console.log(err));
+};
