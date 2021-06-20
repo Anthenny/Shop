@@ -316,6 +316,7 @@ main .container .right-box .besteling-box .bottom .besteling .btns form button {
   width: 150px;
   border: 0.5px solid #000;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 main .container .right-box .besteling-box .bottom .besteling .btns .first button {
@@ -323,9 +324,21 @@ main .container .right-box .besteling-box .bottom .besteling .btns .first button
   color: #ffff;
 }
 
+main .container .right-box .besteling-box .bottom .besteling .btns .first button:hover {
+  color: green;
+  background-color: white;
+  border: 1px solid green;
+}
+
 main .container .right-box .besteling-box .bottom .besteling .btns .second button {
   background-color: red;
   color: #ffff;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns .second button:hover {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 600px) {

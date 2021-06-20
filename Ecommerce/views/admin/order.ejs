@@ -12,8 +12,8 @@
                         <div class="left-box">
                             <a href="/admin"><i class="fas fa-table"></i><p>Producten</p></a>
                             <a href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
-                            <a href="/orders" class="actieve"><i class="fas fa-plus-square"></i><p>Nieuwe Bestelingen</p></a>
-                            <a href="/oldOrders"><i class="fas fa-plus-square"></i><p>Oude Bestelingen</p></a>
+                            <a href="/orders" class="actieve"><i class="fas fa-folder-open"></i><p>Nieuwe Bestelingen</p></a>
+                            <a href="/oldOrders"><i class="fas fa-folder"></i><p>Oude Bestelingen</p></a>
                             <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
                         </div>
                         <div class="right-box">
@@ -27,8 +27,8 @@
                                               <div class="left">
                                                 <h1>OrderID: <span><%= order._id %></span></h1>
                                                 <h1>UserId: <span><%= order.user.userId %></span></h1>
-                                                <h1>UserNaam: <span><%= order.user.name %></span></h1>
-                                                <h1>Bestellingen:</h1>
+                                                <h1>Klant: <span><%= order.user.name %></span></h1>
+                                                <h1>Bestelde producten:</h1>
                                                   <% order.products.forEach(p => { %>
                                                     <p><%= p.quantity %> <%= p.product.ProductNaam %></p>
                                                   <% }); %>

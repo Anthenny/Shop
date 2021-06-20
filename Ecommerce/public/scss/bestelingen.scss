@@ -90,18 +90,29 @@ main {
                   width: 150px;
                   border: 0.5px solid #000;
                   border-radius: 10px;
+                  cursor: pointer;
                 }
               }
               .first {
                 button {
                   background-color: green;
                   color: #ffff;
+                  &:hover {
+                    color: green;
+                    background-color: white;
+                    border: 1px solid green;
+                  } 
                 }
               }
               .second {
                 button {
                   background-color: red;
                   color: #ffff;
+                  &:hover {
+                    color: red;
+                    background-color: white;
+                    border: 1px solid red;
+                  } 
                 }
               }
             }
