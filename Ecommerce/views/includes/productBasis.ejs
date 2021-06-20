@@ -20,16 +20,19 @@
 </div>
 
 <div class="desktop-flex">
+
   <div class="opties">
-    <div class="optie-1">
-      <label>Kleur:</label>
-      <select name="kleur">
-        <option value="alles">Alles</option>
-        <option value="Rood">Rood</option>
-        <option value="Groen">Groen</option>
-        <option value="Blauw">Blauw</option>
-      </select>
-    </div>
+    <form action="/kleur" method="POST">
+      <div class="optie-1">
+        <label>Kleur:</label>
+        <select onchange="this.form.submit()" name="kleur">
+          <option value="alles">Alles</option>
+          <option name="rood" value="rood">Rood</option>
+          <option value="groen">Groen</option>
+          <option value="blauw">Blauw</option>
+        </select>
+      </div>
+    </form>
 
     <!-- <div class="optie-2">
       <label>Maat:</label>

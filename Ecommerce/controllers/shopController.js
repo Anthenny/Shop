@@ -211,3 +211,19 @@ exports.postOrder = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.postKleur = (req, res) => {
+  console.log(req.body.kleur);
+  const color = req.body.kleur;
+
+  Product.find({ ProductKleur: color, ProductCategorie: "oorbellen" })
+    .then((products) => {
+      res.status(200).render("shop/oorbellen", {
+        prods: products,
+        pageTitle: "Oorbellen",
+        path: "/oorbellen",
+      });
+    })
+    .catch((err) => console.log(err));
+
+}

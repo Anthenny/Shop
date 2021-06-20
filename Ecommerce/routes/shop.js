@@ -35,5 +35,6 @@ router.post(
 );
 
 router.post("/create-order", shopController.postOrder);
+router.post("/kleur", shopController.postKleur);
 
 module.exports = router;
