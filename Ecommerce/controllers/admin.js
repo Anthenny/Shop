@@ -114,8 +114,8 @@ exports.postDeleteProduct = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-exports.getOrders = (req, res, next) => {
-  Order.find()
+exports.getNewOrders = (req, res, next) => {
+  Order.find({status: false })
     .then((orders) => {
       res.render("admin/order", {
         path: "/order",
@@ -125,3 +125,50 @@ exports.getOrders = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
+
+exports.getOldOrders = (req, res, next) => {
+  Order.find({status: true })
+    .then((orders) => {
+      res.render("admin/oldOrders", {
+        path: "/order",
+        pageTitle: "Your Orders",
+        orders: orders,
+      });
+    })
+    .catch((err) => console.log(err));
+};
+
+exports.postAfhandelen = (req, res) => {
+  const orderId = req.body.orderId;
+  Order.findByIdAndUpdate(orderId)
+  .then((Order) => {
+    Order.status = true;
+    return Order.save();
+  })
+  .then(() => {
+    res.redirect("/orders");
+  })
+  .catch((err) => console.log(err));
+}
+
+exports.postOnGedaanMaken = (req, res) => {
+  const orderId = req.body.orderId;
+  Order.findByIdAndUpdate(orderId)
+  .then((Order) => {
+    Order.status = false;
+    return Order.save();
+  })
+  .then(() => {
+    res.redirect("/oldOrders");
+  })
+  .catch((err) => console.log(err));
+}
+
+exports.postDeletOder = (req, res) => {
+  const orderId = req.body.orderId;
+  Order.findByIdAndRemove(orderId)
+  .then(() => {
+    res.redirect("/orders");
+  })
+  .catch((err) => console.log(err));
+}

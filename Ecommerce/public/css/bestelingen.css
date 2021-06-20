@@ -271,12 +271,12 @@ main .container .right-box .besteling-box {
 
 main .container .right-box .besteling-box .bottom {
   overflow: auto;
-  height: 400px;
+  height: 420px;
 }
 
 main .container .right-box .besteling-box .bottom .besteling {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   margin: 30px 10px;
   border-radius: 8px;
   background-color: #ffff;
@@ -287,6 +287,58 @@ main .container .right-box .besteling-box .bottom .besteling {
 
 main .container .right-box .besteling-box .bottom .besteling h1 {
   font-size: 15px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .left {
+  margin: 10px auto;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .left h1 {
+  font-size: 16px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .left span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .left p {
+  font-size: 16px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns {
+  display: grid;
+  grid-gap: 5px;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns form button {
+  padding: 8px;
+  width: 150px;
+  border: 0.5px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns .first button {
+  background-color: green;
+  color: #ffff;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns .first button:hover {
+  color: green;
+  background-color: white;
+  border: 1px solid green;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns .second button {
+  background-color: red;
+  color: #ffff;
+}
+
+main .container .right-box .besteling-box .bottom .besteling .btns .second button:hover {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
 }
 
 @media screen and (min-width: 600px) {

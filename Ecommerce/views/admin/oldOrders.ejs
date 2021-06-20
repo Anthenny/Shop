@@ -12,15 +12,15 @@
                         <div class="left-box">
                             <a href="/admin"><i class="fas fa-table"></i><p>Producten</p></a>
                             <a href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
-                            <a href="/orders" class="actieve"><i class="fas fa-folder-open"></i><p>Nieuwe Bestelingen</p></a>
-                            <a href="/oldOrders"><i class="fas fa-folder"></i><p>Oude Bestelingen</p></a>
+                            <a href="/orders"><i class="fas fa-folder-open"></i><p>Nieuwe Bestelingen</p></a>
+                            <a href="/oldOrders" class="actieve"><i class="fas fa-folder"></i><p>Oude Bestelingen</p></a>
                             <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
                         </div>
                         <div class="right-box">
                                 <div class="besteling-box">
                                     <div class="bottom">
                                       <% if (orders.length <= 0) { %>
-                                        <h1>Geen nieuwe bestellingen</h1>
+                                        <h1>Geen oude bestellingen</h1>
                                       <% } else { %>
                                         <% orders.forEach(order => { %>
                                           <div class="besteling">
@@ -34,14 +34,14 @@
                                                   <% }); %>
                                               </div>
                                               <div class="btns">
-                                                  <form class="first" action="/product-Afgehandeld" method="POST">
+                                                  <form class="first" action="/product-onGedaanMaken" method="POST">
                                                     <input type="hidden" value="<%= order._id %>" name="orderId">
-                                                    <button class="" type="submit">Afgehandeld</button>
+                                                    <button class="" type="submit">On gedaan maken</button>
                                                   </form>
                                                   <form class="second" action="/delete-order" method="POST">
-                                                    <input type="hidden" value="<%= order._id %>" name="orderId">
-                                                    <button class="" type="submit">Verwijderen</button>
-                                                </form>
+                                                      <input type="hidden" value="<%= order._id %>" name="orderId">
+                                                      <button class="" type="submit">Verwijderen</button>
+                                                  </form>
                                               </div>
                                           </div>
                                         <% }); %>
