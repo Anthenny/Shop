@@ -34,11 +34,11 @@
                                                   <% }); %>
                                               </div>
                                               <div class="btns">
-                                                  <form action="/product-onGedaanMaken" method="POST">
+                                                  <form class="first" action="/product-onGedaanMaken" method="POST">
                                                     <input type="hidden" value="<%= order._id %>" name="orderId">
                                                     <button class="" type="submit">On gedaan maken</button>
                                                   </form>
-                                                  <form action="/delete-order" method="POST">
+                                                  <form class="second" action="/delete-order" method="POST">
                                                       <input type="hidden" value="<%= order._id %>" name="orderId">
                                                       <button class="" type="submit">Verwijderen</button>
                                                   </form>
