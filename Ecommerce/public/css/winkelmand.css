@@ -233,23 +233,28 @@ main .container .top-box h1 {
 main .container .form {
   display: grid;
   justify-content: center;
-  grid-template-rows: 75% 25%;
+  grid-template-rows: 80% 20%;
   margin: 0 auto;
-  width: 80%;
+  height: 80%;
+  width: 50%;
+  background: #ffff;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 main .container .form .top-form {
   overflow: auto;
-  height: 425px;
+  height: 90%;
   width: 100%;
   min-width: 300px;
+  margin-top: 50px;
 }
 
 main .container .form .top-form .card {
   margin: 10px;
   height: 130px;
   display: grid;
-  background-color: #ffff;
+  background-color: rgba(255, 194, 208, 0.39);
   grid-template-columns: 1fr 4fr 1fr;
   border-radius: 10px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
@@ -303,23 +308,37 @@ main .container .form .top-form .card .right form p {
 main .container .form .top-form .card .right form .btn {
   height: auto;
   width: 50px;
+  border: 1px solid #ffc2d0;
 }
 
 main .container .form .bottom-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
-main .container .form .bottom-form button {
+main .container .form .bottom-form form {
+  display: grid;
+  justify-content: center;
+}
+
+main .container .form .bottom-form form button {
   justify-self: center;
   width: 132px;
   height: 50px;
   border-radius: 8px;
   border: none;
-  background-color: #fdb5c0;
+  background-color: #ffc2d0;
   color: #ffff;
   font-size: 20px;
   font-weight: 600;
+}
+
+main .container .form .bottom-form form button:hover {
+  color: #ffc2d0;
+  background-color: white;
+  border: 1px solid #ffc2d0;
 }
 
 main .container .form .bottom-form .totaal {

@@ -8,8 +8,8 @@
             <div class="top-box">
                 <h1>Winkelmand</h1>
             </div>
-            <% if (prods.length > 0) { %>
             <div class="form">
+                <% if (prods.length > 0) { %>
                 <div class="top-form">
                     <% prods.forEach (p => { %>
                     <div class="card">
@@ -36,16 +36,22 @@
                 <div class="bottom-form">
                     <div class="totaal">
                         <p>Totaal:</p>
-                        <p>$17,97</p>
+                        <% const item = prods.map (p => { 
+                         const prijs = p.productId.ProductPrijs 
+                         const quantity =  p.quantity 
+                         return quantity * prijs 
+                         }) %>
+                         <% const total = item.reduce((a,b) => a + b, 0) %>
+                         <p>$<%= total %></p>
                     </div>
                     <form action="/create-order" method="POST">
                         <button type="submit">Reken af</button>
                     </form>
                 </div>
-            </div>
-            <% } else { %>
-                <h1>Geen producten in uw winkelmand!</h1>
+                <% } else { %>
+                    <h1>Geen producten in uw winkelmand!</h1>
                 <% } %>
+            </div>
         </div>
     </main>
     <%- include('../includes/footer.ejs')  %> 

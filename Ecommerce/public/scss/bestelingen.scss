@@ -55,10 +55,10 @@ main {
         grid-template-rows: 10% 80%;
         .bottom {
           overflow: auto;
-          height: 400px;
+          height: 420px;
           .besteling {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 1fr;
             margin: 30px 10px;
             border-radius: 8px;
             background-color: #ffff;
@@ -67,6 +67,43 @@ main {
             align-items: center;
             h1 {
               font-size: 15px;
+            }
+            .left {
+              margin: 10px auto;
+              h1 {
+                font-size: 16px;
+              }
+              span {
+                font-size: 14px;
+                margin-left: 5px;
+              }
+              p {
+                font-size: 16px;
+              }
+            }
+            .btns {
+              display: grid;
+              grid-gap: 5px;
+              form {
+                button {
+                  padding: 8px;
+                  width: 120px;
+                  border: 0.5px solid #000;
+                  border-radius: 10px;
+                }
+              }
+              .first {
+                button {
+                  background-color: green;
+                  color: #ffff;
+                }
+              }
+              .second {
+                button {
+                  background-color: red;
+                  color: #ffff;
+                }
+              }
             }
           }
         }
