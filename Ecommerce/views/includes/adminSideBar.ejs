@@ -1,0 +1,10 @@
+<div class="top-box">
+    <h1>Admin Dashboard</h1>
+</div>
+<div class="left-box">
+    <a class="<%= path === '/admin' ? 'actieve' : ''%>" href="/admin"><i class="fas fa-table"></i><p>Producten</p></a>
+    <a class="<%= path === '/add-product' ? 'actieve' : ''%>" href="/Add-product"><i class="fas fa-plus-square"></i><p>Product toevoegen</p></a>
+    <a class="<%= path === '/orders' ? 'actieve' : ''%>" href="/orders"><i class="fas fa-folder-open"></i><p>Nieuwe Bestellingen</p></a>
+    <a class="<%= path === '/oldOrders' ? 'actieve' : ''%>" href="/oldOrders"><i class="fas fa-folder"></i><p>Oude Bestellingen</p></a>
+    <a href="/logout"><i class="fas fa-power-off"></i><p>Uitloggen</p></a>
+</div>
