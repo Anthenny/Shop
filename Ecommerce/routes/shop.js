@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.get("/", shopController.getHome);
 router.get("/winkelmand", isAuth.isAuth, shopController.getWinkeland);
-router.get("/oorbellen", shopController.getOorbellen);
 router.get("/productSpecificatie", shopController.getProductSpecificatie);
 router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
 router.get("/bestellingen", isAuth.isAuth, shopController.getKlantBestelingen);
@@ -17,9 +16,6 @@ router.get("/succesPage", shopController.getSuccesPage);
 
 router.post("/winkelmand", shopController.postWinkelmand);
 router.post("/winkelmand-delete-item", shopController.postWinkelmandDeleteProduct);
-
 router.post("/create-order", shopController.postOrder);
-router.post("/kleurOorbel", shopController.postKleurOorbel);
-router.post("/prijsOorbellen", shopController.postPrijsOorbellen);
 
 module.exports = router;

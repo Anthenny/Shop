@@ -17,7 +17,11 @@ exports.getAllArmbanden = async (req, res) => {
 exports.postKleurArmbanden = async (req, res) => {
   try {
     const color = req.body.kleurArmbanden;
-    const products = await Product.find({ productKleur: color, productCategorie: "armbanden" });
+    let products = [];
+
+    if (color === "alles") products = await Product.find({ productCategorie: "armbanden" });
+
+    if (color !== "alles") products = await Product.find({ productKleur: color, productCategorie: "armbanden" });
 
     res.status(200).render("shop/armbanden", {
       prods: products,

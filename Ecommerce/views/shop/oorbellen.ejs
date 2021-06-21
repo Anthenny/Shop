@@ -28,11 +28,12 @@
       <div class="desktop-flex">
       
         <div class="opties">
-          <form action="/kleurOorbel" method="POST">
+          <form action="/kleurOorbellen" method="POST">
             <div class="optie-1">
               <label>Kleur:</label>
               <select onchange="this.form.submit()" name="kleur">
-                <option value="alles">Alles</option>
+                <option value="" selected disabled hidden>Kies hier:</option> 
+                <option name="alles" value="alles">Alles</option>
                 <option name="rood" value="rood">Rood</option>
                 <option name="groen" value="groen">Groen</option>
                 <option name="blauw" value="blauw">Blauw</option>

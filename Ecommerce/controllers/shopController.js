@@ -50,18 +50,6 @@ exports.getProductSpecificatie = (req, res) => {
   });
 };
 
-exports.getOorbellen = (req, res) => {
-  Product.find({ productCategorie: "oorbellen" })
-    .then((products) => {
-      res.status(200).render("shop/oorbellen", {
-        prods: products,
-        pageTitle: "Oorbellen",
-        path: "/oorbellen",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
 exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
@@ -155,62 +143,6 @@ exports.postOrder = (req, res, next) => {
       res.redirect("/succesPage");
     })
     .catch((err) => console.log(err));
-};
-
-exports.postKleurOorbel = (req, res) => {
-  const color = req.body.kleur;
-
-  Product.find({ productKleur: color, productCategorie: "oorbellen" })
-    .then((products) => {
-      res.status(200).render("shop/oorbellen", {
-        prods: products,
-        pageTitle: "Oorbellen",
-        path: "/oorbellen",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.postPrijsOorbellen = (req, res) => {
-  const price = req.body.prijs;
-  console.log(price);
-
-  if (price === "alles") {
-    Product.find({ ProductCategorie: "oorbellen" }).then((products) => {
-      res.status(200).render("shop/oorbellen", {
-        prods: products,
-        pageTitle: "Oorbellen",
-        path: "/prijsOorbellen",
-      });
-    });
-  }
-
-  if (price === "laagHoog") {
-    Product.find({
-      $or: [{ ProductCategorie: "oorbellen" }],
-    })
-      .sort({ ProductPrijs: "asc" })
-      .then((products) => {
-        res.status(200).render("shop/oorbellen", {
-          prods: products,
-          pageTitle: "Oorbellen",
-          path: "/prijsOorbellen",
-        });
-      });
-  }
-  if (price === "hoogLaag") {
-    Product.find({
-      $or: [{ ProductCategorie: "oorbellen" }],
-    })
-      .sort({ ProductPrijs: "desc" })
-      .then((products) => {
-        res.status(200).render("shop/oorbellen", {
-          prods: products,
-          pageTitle: "Oorbellen",
-          path: "/prijsOorbellen",
-        });
-      });
-  }
 };
 
 exports.getSuccesPage = (req, res) => {

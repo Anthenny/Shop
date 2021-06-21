@@ -18,6 +18,7 @@ const armbandRoutes = require("./routes/armbandenRoute");
 const babyRoutes = require("./routes/babyRoute");
 const tasRoutes = require("./routes/tasRoute");
 const waxRoutes = require("./routes/waxmeltRoute");
+const oorbelRoutes = require("./routes/oorbellenRoute");
 
 const store = new MongoDBStore({
   uri: process.env.DATABASE,
@@ -56,6 +57,7 @@ app.use(armbandRoutes);
 app.use(babyRoutes);
 app.use(tasRoutes);
 app.use(waxRoutes);
+app.use(oorbelRoutes);
 app.use(adminRoutes);
 
 // catch 404
