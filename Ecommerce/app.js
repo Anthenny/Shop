@@ -14,6 +14,10 @@ const app = express();
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const authRoutes = require("./routes/auth");
+const armbandRoutes = require("./routes/armbandenRoute");
+const babyRoutes = require("./routes/babyRoute");
+const tasRoutes = require("./routes/tasRoute");
+const waxRoutes = require("./routes/waxmeltRoute");
 
 const store = new MongoDBStore({
   uri: process.env.DATABASE,
@@ -48,6 +52,10 @@ app.use((req, res, next) => {
 // Routes
 app.use(authRoutes);
 app.use(shopRoutes);
+app.use(armbandRoutes);
+app.use(babyRoutes);
+app.use(tasRoutes);
+app.use(waxRoutes);
 app.use(adminRoutes);
 
 // catch 404

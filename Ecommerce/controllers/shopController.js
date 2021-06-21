@@ -70,53 +70,17 @@ exports.getOorbellen = (req, res) => {
     .catch((err) => console.log(err));
 };
 
-exports.getArmbanden = (req, res) => {
-  Product.find({ ProductCategorie: "armbanden" })
-    .then((products) => {
-      res.status(200).render("shop/armbanden", {
-        prods: products,
-        pageTitle: "Armbanden",
-        path: "/armbanden",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getTassen = (req, res) => {
-  Product.find({ ProductCategorie: "tassen" })
-    .then((products) => {
-      res.status(200).render("shop/tassen", {
-        prods: products,
-        pageTitle: "Tassen",
-        path: "/tassen",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getWaxmelts = (req, res) => {
-  Product.find({ ProductCategorie: "waxmelts" })
-    .then((products) => {
-      res.status(200).render("shop/waxmelts", {
-        prods: products,
-        pageTitle: "Wax Melts",
-        path: "/waxmelts",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getBabyAccessoires = (req, res) => {
-  Product.find({ ProductCategorie: "babyaccessoires" })
-    .then((products) => {
-      res.status(200).render("shop/babyaccessoires", {
-        prods: products,
-        pageTitle: "Baby Accessoires",
-        path: "/babyaccessoires",
-      });
-    })
-    .catch((err) => console.log(err));
-};
+// exports.getWaxmelts = (req, res) => {
+//   Product.find({ ProductCategorie: "waxmelts" })
+//     .then((products) => {
+//       res.status(200).render("shop/waxmelts", {
+//         prods: products,
+//         pageTitle: "Wax Melts",
+//         path: "/waxmelts",
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// };
 
 exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
@@ -145,7 +109,7 @@ exports.getInspiratie = (req, res) => {
     path: "/inspiratie",
     user: req.user,
   });
-}
+};
 
 exports.getContact = (req, res) => {
   res.status(200).render("footer/contact", {
@@ -153,7 +117,7 @@ exports.getContact = (req, res) => {
     path: "/contact",
     user: req.user,
   });
-}
+};
 
 exports.postWinkelmand = (req, res) => {
   const prodId = req.body.productId;
@@ -208,13 +172,12 @@ exports.postOrder = (req, res, next) => {
     })
     // na dat alles klaar is en die winkelmand leeg is stuur je hem naar ...
     .then(() => {
-      res.redirect("/");
+      res.redirect("/succesPage");
     })
     .catch((err) => console.log(err));
 };
 
-exports.postKleur = (req, res) => {
-  console.log(req.body.kleur);
+exports.postKleurOorbel = (req, res) => {
   const color = req.body.kleur;
 
   Product.find({ ProductKleur: color, ProductCategorie: "oorbellen" })
@@ -226,5 +189,53 @@ exports.postKleur = (req, res) => {
       });
     })
     .catch((err) => console.log(err));
+};
 
-}
+exports.postPrijsOorbellen = (req, res) => {
+  const price = req.body.prijs;
+  console.log(price);
+
+  if (price === "alles") {
+    Product.find({ ProductCategorie: "oorbellen" }).then((products) => {
+      res.status(200).render("shop/oorbellen", {
+        prods: products,
+        pageTitle: "Oorbellen",
+        path: "/prijsOorbellen",
+      });
+    });
+  }
+
+  if (price === "laagHoog") {
+    Product.find({
+      $or: [{ ProductCategorie: "oorbellen" }],
+    })
+      .sort({ ProductPrijs: "asc" })
+      .then((products) => {
+        res.status(200).render("shop/oorbellen", {
+          prods: products,
+          pageTitle: "Oorbellen",
+          path: "/prijsOorbellen",
+        });
+      });
+  }
+  if (price === "hoogLaag") {
+    Product.find({
+      $or: [{ ProductCategorie: "oorbellen" }],
+    })
+      .sort({ ProductPrijs: "desc" })
+      .then((products) => {
+        res.status(200).render("shop/oorbellen", {
+          prods: products,
+          pageTitle: "Oorbellen",
+          path: "/prijsOorbellen",
+        });
+      });
+  }
+};
+
+exports.getSuccesPage = (req, res) => {
+  res.status(200).render("shop/succesPage", {
+    pageTitle: "Succes",
+    path: "/succesPage",
+  });
+};
