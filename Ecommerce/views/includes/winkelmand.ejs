@@ -1,5 +1,5 @@
 <div class="winkelmand">
-  <div class="oorbel-prijs">$<%= product.ProductPrijs %></div>
+  <div class="oorbel-prijs">$<%= product.productPrijs %></div>
   <form action="/winkelmand" method="post">
     <button class="btn" type="submit">Add to Cart</button>
     <input type="hidden" name="productId" value="<%= product._id %>" />

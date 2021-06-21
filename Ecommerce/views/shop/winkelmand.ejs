@@ -14,12 +14,12 @@
                     <% prods.forEach (p => { %>
                     <div class="card">
                         <div class="left">
-                            <img src="<%= p.productId.ProductImg %>" alt="">
+                            <img src="<%= p.productId.productImg %>" alt="">
                         </div>
                         <div class="middel">
-                            <p><%= p.productId.ProductNaam %></p>
-                            <p><%= p.productId.ProductCategorie %></p>
-                            <p>$<%= p.productId.ProductPrijs %></p>
+                            <p><%= p.productId.productNaam %></p>
+                            <p><%= p.productId.productCategorie %></p>
+                            <p>$<%= p.productId.productPrijs %></p>
                         </div>
                         <div class="right">
                             <form action="/winkelmand-delete-item" method="POST">
@@ -37,7 +37,7 @@
                     <div class="totaal">
                         <p>Totaal:</p>
                         <% const item = prods.map (p => { 
-                         const prijs = p.productId.ProductPrijs 
+                         const prijs = p.productId.productPrijs 
                          const quantity =  p.quantity 
                          return quantity * prijs 
                          }) %>

@@ -51,7 +51,7 @@ exports.getProductSpecificatie = (req, res) => {
 };
 
 exports.getOorbellen = (req, res) => {
-  Product.find({ ProductCategorie: "oorbellen" })
+  Product.find({ productCategorie: "oorbellen" })
     .then((products) => {
       res.status(200).render("shop/oorbellen", {
         prods: products,
@@ -63,7 +63,7 @@ exports.getOorbellen = (req, res) => {
 };
 
 exports.getArmbanden = (req, res) => {
-  Product.find({ ProductCategorie: "armbanden" })
+  Product.find({ productCategorie: "armbanden" })
     .then((products) => {
       res.status(200).render("shop/armbanden", {
         prods: products,
@@ -75,7 +75,7 @@ exports.getArmbanden = (req, res) => {
 };
 
 exports.getTassen = (req, res) => {
-  Product.find({ ProductCategorie: "tassen" })
+  Product.find({ productCategorie: "tassen" })
     .then((products) => {
       res.status(200).render("shop/tassen", {
         prods: products,
@@ -87,7 +87,7 @@ exports.getTassen = (req, res) => {
 };
 
 exports.getWaxmelts = (req, res) => {
-  Product.find({ ProductCategorie: "waxmelts" })
+  Product.find({ productCategorie: "waxmelts" })
     .then((products) => {
       res.status(200).render("shop/waxmelts", {
         prods: products,
@@ -99,7 +99,7 @@ exports.getWaxmelts = (req, res) => {
 };
 
 exports.getBabyAccessoires = (req, res) => {
-  Product.find({ ProductCategorie: "babyaccessoires" })
+  Product.find({ productCategorie: "babyaccessoires" })
     .then((products) => {
       res.status(200).render("shop/babyaccessoires", {
         prods: products,
@@ -206,7 +206,6 @@ exports.postOrder = (req, res, next) => {
 };
 
 exports.postKleur = (req, res) => {
-  console.log(req.body.kleur);
   const color = req.body.kleur;
 
   Product.find({ ProductKleur: color, ProductCategorie: "oorbellen" })

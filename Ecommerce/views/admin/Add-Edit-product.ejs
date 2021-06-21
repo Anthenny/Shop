@@ -11,31 +11,31 @@
                 <form class="product-form" action="<% if (editing) { %>edit-product<% } else { %>Add-product<% } %>" method="POST">
                     <div class="form-control">
                         <label for="">ProductNaam</label>
-                        <input type="text" name="ProductNaam" value="<% if (editing) { %><%= product.ProductNaam %><% } %>">
+                        <input type="text" name="productNaam" value="<% if (editing) { %><%= product.ProductNaam %><% } %>">
                     </div>
                     <div class="form-control">
                         <label for="">ProductImg</label>
-                        <input type="file" name="ProductImg"  value="<% if (editing) { %><%= product.ProductImg %><% } %>">
+                        <input type="file" name="productImg"  value="<% if (editing) { %><%= product.ProductImg %><% } %>">
                     </div>
                     <div class="form-control">
                         <label for="">ProductPrijs</label>
-                        <input type="number" name="ProductPrijs"  step="0.01" value="<% if (editing) { %><%= product.ProductPrijs %><% } %>">
+                        <input type="number" name="productPrijs"  step="0.01" value="<% if (editing) { %><%= product.ProductPrijs %><% } %>">
                     </div>
                     <div class="form-control">
                         <label for="">ProductBeschrijving</label>
-                        <textarea name="ProductBeschrijving" rows="1"><% if (editing) { %><%= product.ProductBeschrijving %><% } %></textarea>
+                        <textarea name="productBeschrijving" rows="1"><% if (editing) { %><%= product.ProductBeschrijving %><% } %></textarea>
                     </div>
                     <div class="form-control">
                         <label for="">ProductCategorie</label>
-                        <input type="text" name="ProductCategorie" value="<% if (editing) { %><%= product.ProductCategorie %><% } %>">
+                        <input type="text" name="productCategorie" value="<% if (editing) { %><%= product.ProductCategorie %><% } %>">
                     </div>
                     <div class="form-control">
                         <label for="">ProductMaat</label>
-                        <input type="text" name="ProductMaat" value="<% if (editing) { %><%= product.ProductMaat %><% } %>">
+                        <input type="text" name="productMaat" value="<% if (editing) { %><%= product.ProductMaat %><% } %>">
                     </div>
                     <div class="form-control">
                         <label for="">ProductKleur</label>
-                        <input type="text" name="ProductKleur" value="<% if (editing) { %><%= product.ProductKleur %><% } %>">
+                        <input type="text" name="productKleur" value="<% if (editing) { %><%= product.ProductKleur %><% } %>">
                     </div>
                     <% if (editing) { %>
                         <input type="hidden" value="<%= product._id %>" name="productId">

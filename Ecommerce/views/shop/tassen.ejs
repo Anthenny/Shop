@@ -11,9 +11,9 @@
             <% for (let product of prods) { %>
             <div class="product">
               <div class="">
-                <a href="/productSpecificatie/<%= product._id %>"><img class="img-product" src="<%=product.ProductImg %>" alt="" /> </a>
+                <a href="/productSpecificatie/<%= product._id %>"><img class="img-product" src="<%=product.productImg %>" alt="" /> </a>
                 <div class="product-beschrijving">
-                  <div class="oorbel-naam"><%= product.ProductNaam %></div>
+                  <div class="oorbel-naam"><%= product.productNaam %></div>
                   <%- include('../includes/winkelmand.ejs', {product: product}) %>
                 </div>
               </div>

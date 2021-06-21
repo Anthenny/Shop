@@ -20,7 +20,7 @@
                                                 <h1>Klant: <span><%= order.user.name %></span></h1>
                                                 <h1>Bestelde producten:</h1>
                                                   <% order.products.forEach(p => { %>
-                                                    <p><%= p.quantity %> <%= p.product.ProductNaam %></p>
+                                                    <p><%= p.quantity %> <%= p.product.productNaam %></p>
                                                   <% }); %>
                                               </div>
                                               <div class="btns">

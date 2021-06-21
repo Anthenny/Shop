@@ -25,7 +25,7 @@ main {
       grid-template-rows: 80% 20%;
       margin: 0 auto;
       height: 80%;
-      width: 50%;
+      width: 90%;
       background: #ffff;
       box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
@@ -56,15 +56,15 @@ main {
           .middel {
             display: block;
             justify-self: left;
-            font-size: 10px;
+            font-size: 16px;
             margin: 20px 0px 10px 10px;
             p:first-child,
             p:last-child {
               font-weight: 600;
-              font-size: 12px;
+              font-size: 18px;
             }
             p:last-child {
-              margin-top: 30px;
+              margin-top: 20px;
             }
           }
           .right {
@@ -83,6 +83,10 @@ main {
                 width: 50px;
                 border: 1px solid $mainPink;
               }
+            }
+            .button {
+              display: block;
+              margin: 0 auto;
             }
           }
         }
@@ -126,10 +130,16 @@ main {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 670px) {
   main {
     .container {
       .form {
+        display: grid;
+        justify-content: center;
+        grid-template-rows: 80% 20%;
+        margin: 0 auto;
+        height: 80%;
+        width: 50%;
         .top-form {
           .card {
             .right {

@@ -26,21 +26,21 @@ exports.getAddProduct = (req, res, next) => {
 
 // Post de gegevens die ingevuld zijn en maak een nieuw product aan.
 exports.postAddproduct = (req, res, next) => {
-  const ProductNaam = req.body.ProductNaam;
-  const ProductImg = req.body.ProductImg;
-  const ProductBeschrijving = req.body.ProductBeschrijving;
-  const ProductPrijs = req.body.ProductPrijs;
-  const ProductCategorie = req.body.ProductCategorie;
-  const ProductMaat = req.body.ProductMaat;
-  const ProductKleur = req.body.ProductKleur;
+  const productNaam = req.body.productNaam;
+  const productImg = req.body.productImg;
+  const productBeschrijving = req.body.productBeschrijving;
+  const productPrijs = req.body.productPrijs;
+  const productCategorie = req.body.productCategorie;
+  const productMaat = req.body.productMaat;
+  const productKleur = req.body.productKleur;
   const product = new Product({
-    ProductNaam: ProductNaam,
-    ProductImg: `../img/Producten/${ProductImg}`,
-    ProductBeschrijving: ProductBeschrijving,
-    ProductPrijs: ProductPrijs,
-    ProductCategorie: ProductCategorie,
-    ProductMaat: ProductMaat,
-    ProductKleur: ProductKleur,
+    productNaam: productNaam,
+    productImg: `../img/Producten/${productImg}`,
+    productBeschrijving: productBeschrijving,
+    productPrijs: productPrijs,
+    productCategorie: productCategorie,
+    productMaat: productMaat,
+    productKleur: productKleur,
     userId: req.user,
   });
   product
@@ -79,23 +79,23 @@ exports.getEditProduct = (req, res, next) => {
 // Update het geselecteerde product.
 exports.postEditProduct = (req, res, next) => {
   const prodId = req.body.productId;
-  const updatedProductNaam = req.body.ProductNaam;
-  const updatedProductImg = req.body.ProductImg;
-  const updatedProductBeschrijving = req.body.ProductBeschrijving;
-  const updatedProductPrijs = req.body.ProductPrijs;
-  const updatedProductCategorie = req.body.ProductCategorie;
-  const updatedProductMaat = req.body.ProductMaat;
-  const updatedProductKleur = req.body.ProductKleur;
+  const updatedProductNaam = req.body.productNaam;
+  const updatedProductImg = req.body.productImg;
+  const updatedProductBeschrijving = req.body.productBeschrijving;
+  const updatedProductPrijs = req.body.productPrijs;
+  const updatedProductCategorie = req.body.productCategorie;
+  const updatedProductMaat = req.body.productMaat;
+  const updatedProductKleur = req.body.productKleur;
 
   Product.findById(prodId)
     .then((product) => {
-      product.ProductNaam = updatedProductNaam;
-      product.ProductPrijs = updatedProductPrijs;
-      product.ProductBeschrijving = updatedProductBeschrijving;
-      product.ProductImg = `../img/Producten/${updatedProductImg}`;
-      product.ProductCategorie = updatedProductCategorie;
-      product.ProductMaat = updatedProductMaat;
-      product.ProductKleur = updatedProductKleur;
+      product.productNaam = updatedProductNaam;
+      product.productPrijs = updatedProductPrijs;
+      product.productBeschrijving = updatedProductBeschrijving;
+      product.productImg = `../img/Producten/${updatedProductImg}`;
+      product.productCategorie = updatedProductCategorie;
+      product.productMaat = updatedProductMaat;
+      product.productKleur = updatedProductKleur;
       return product.save();
     })
     .then((result) => {

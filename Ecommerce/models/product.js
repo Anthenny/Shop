@@ -5,31 +5,31 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
-  ProductNaam: {
+  productNaam: {
     type: String,
     require: true,
   },
-  ProductCategorie: {
+  productCategorie: {
     type: String,
     require: [true, "Een product moet een categorie hebben"],
   },
-  ProductImg: {
+  productImg: {
     type: String,
     require: false,
   },
-  ProductBeschrijving: {
+  productBeschrijving: {
     type: String,
     require: true,
   },
-  ProductPrijs: {
+  productPrijs: {
     type: Number,
     require: true,
   },
-  ProductMaat: {
+  productMaat: {
     type: String,
     require: true,
   },
-  ProductKleur: {
+  productKleur: {
     type: String,
     require: true,
   },

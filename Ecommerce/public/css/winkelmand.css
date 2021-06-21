@@ -236,7 +236,7 @@ main .container .form {
   grid-template-rows: 80% 20%;
   margin: 0 auto;
   height: 80%;
-  width: 50%;
+  width: 90%;
   background: #ffff;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -275,18 +275,18 @@ main .container .form .top-form .card .left img {
 main .container .form .top-form .card .middel {
   display: block;
   justify-self: left;
-  font-size: 10px;
+  font-size: 16px;
   margin: 20px 0px 10px 10px;
 }
 
 main .container .form .top-form .card .middel p:first-child,
 main .container .form .top-form .card .middel p:last-child {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 main .container .form .top-form .card .middel p:last-child {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 main .container .form .top-form .card .right {
@@ -309,6 +309,11 @@ main .container .form .top-form .card .right form .btn {
   height: auto;
   width: 50px;
   border: 1px solid #ffc2d0;
+}
+
+main .container .form .top-form .card .right .button {
+  display: block;
+  margin: 0 auto;
 }
 
 main .container .form .bottom-form {
@@ -353,7 +358,15 @@ main .container .form .bottom-form .totaal p:last-child {
   font-weight: 600;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 670px) {
+  main .container .form {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 80% 20%;
+    margin: 0 auto;
+    height: 80%;
+    width: 50%;
+  }
   main .container .form .top-form .card .right form .btn {
     height: 40px;
     width: 100px;
