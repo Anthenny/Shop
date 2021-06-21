@@ -15,63 +15,24 @@
             </div>
             <div class="right-box">
                 <div class="besteling-box">
-                    <div class="top">
-                        <p>Datum</p>
-                        <p>Bedrag</p>
-                        <p>Status</p>
-                    </div>
                     <div class="bottom">
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                        <div class="besteling">
-                            <p>10-02-2021</p>
-                            <p>247,65</p>
-                            <p>Verzonden</p>
-                        </div>
-                    </div>
+                        <% if (orders.length <= 0) { %>
+                          <h1>Geen nieuwe bestellingen</h1>
+                        <% } else { %>
+                          <% orders.slice().reverse().forEach(order => { %>
+                            <div class="besteling">
+                                <div class="left">
+                                  <h1>OrderID: <span><%= order._id %></span></h1>
+                                  <h1>Klant: <span><%= order.user.name %></span></h1>
+                                  <h1>Bestelde producten:</h1>
+                                    <% order.products.forEach(p => { %>
+                                      <p><%= p.quantity %> <%= p.product.ProductNaam %></p>
+                                    <% }); %>
+                                </div>
+                            </div>
+                          <% }); %>
+                        <% } %>
+                      </div>
                 </div>
             </div>
         </div>

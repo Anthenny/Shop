@@ -19,14 +19,6 @@ exports.getHome = (req, res) => {
   }
 };
 
-// Method die de bestellingen pagina regelt binnen in de user profiel.
-exports.getBestellingen = (req, res) => {
-  res.status(200).render("shop/bestellingen", {
-    pageTitle: "Bestellingen",
-    path: "/bestellingen",
-  });
-};
-
 // Method die de winkelmand laad met alle informatie binnen in de database.
 exports.getWinkeland = (req, res) => {
   req.user
@@ -69,18 +61,6 @@ exports.getOorbellen = (req, res) => {
     })
     .catch((err) => console.log(err));
 };
-
-// exports.getWaxmelts = (req, res) => {
-//   Product.find({ ProductCategorie: "waxmelts" })
-//     .then((products) => {
-//       res.status(200).render("shop/waxmelts", {
-//         prods: products,
-//         pageTitle: "Wax Melts",
-//         path: "/waxmelts",
-//       });
-//     })
-//     .catch((err) => console.log(err));
-// };
 
 exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
@@ -238,4 +218,17 @@ exports.getSuccesPage = (req, res) => {
     pageTitle: "Succes",
     path: "/succesPage",
   });
+};
+
+exports.getKlantBestelingen = (req, res) => {
+  const klant = req.user.name;
+  Order.find({ "user.name": klant })
+    .then((orders) => {
+      res.status(200).render("shop/bestellingen", {
+        path: "/bestellingen",
+        pageTitle: "Bestellingen",
+        orders: orders,
+      });
+    })
+    .catch((err) => console.log(err));
 };
