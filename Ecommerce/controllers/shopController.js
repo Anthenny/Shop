@@ -62,6 +62,7 @@ exports.getOorbellen = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+<<<<<<< HEAD
 exports.getArmbanden = (req, res) => {
   Product.find({ productCategorie: "armbanden" })
     .then((products) => {
@@ -110,6 +111,8 @@ exports.getBabyAccessoires = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+=======
+>>>>>>> b9046d266f736a38c787044297d917ac1d76ab85
 exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
@@ -137,7 +140,7 @@ exports.getInspiratie = (req, res) => {
     path: "/inspiratie",
     user: req.user,
   });
-}
+};
 
 exports.getContact = (req, res) => {
   res.status(200).render("footer/contact", {
@@ -145,7 +148,7 @@ exports.getContact = (req, res) => {
     path: "/contact",
     user: req.user,
   });
-}
+};
 
 exports.postWinkelmand = (req, res) => {
   const prodId = req.body.productId;
@@ -200,12 +203,16 @@ exports.postOrder = (req, res, next) => {
     })
     // na dat alles klaar is en die winkelmand leeg is stuur je hem naar ...
     .then(() => {
-      res.redirect("/");
+      res.redirect("/succesPage");
     })
     .catch((err) => console.log(err));
 };
 
+<<<<<<< HEAD
 exports.postKleur = (req, res) => {
+=======
+exports.postKleurOorbel = (req, res) => {
+>>>>>>> b9046d266f736a38c787044297d917ac1d76ab85
   const color = req.body.kleur;
 
   Product.find({ ProductKleur: color, ProductCategorie: "oorbellen" })
@@ -217,12 +224,60 @@ exports.postKleur = (req, res) => {
       });
     })
     .catch((err) => console.log(err));
+};
 
-}
+exports.postPrijsOorbellen = (req, res) => {
+  const price = req.body.prijs;
+  console.log(price);
+
+  if (price === "alles") {
+    Product.find({ ProductCategorie: "oorbellen" }).then((products) => {
+      res.status(200).render("shop/oorbellen", {
+        prods: products,
+        pageTitle: "Oorbellen",
+        path: "/prijsOorbellen",
+      });
+    });
+  }
+
+  if (price === "laagHoog") {
+    Product.find({
+      $or: [{ ProductCategorie: "oorbellen" }],
+    })
+      .sort({ ProductPrijs: "asc" })
+      .then((products) => {
+        res.status(200).render("shop/oorbellen", {
+          prods: products,
+          pageTitle: "Oorbellen",
+          path: "/prijsOorbellen",
+        });
+      });
+  }
+  if (price === "hoogLaag") {
+    Product.find({
+      $or: [{ ProductCategorie: "oorbellen" }],
+    })
+      .sort({ ProductPrijs: "desc" })
+      .then((products) => {
+        res.status(200).render("shop/oorbellen", {
+          prods: products,
+          pageTitle: "Oorbellen",
+          path: "/prijsOorbellen",
+        });
+      });
+  }
+};
+
+exports.getSuccesPage = (req, res) => {
+  res.status(200).render("shop/succesPage", {
+    pageTitle: "Succes",
+    path: "/succesPage",
+  });
+};
 
 exports.getKlantBestelingen = (req, res) => {
   const klant = req.user.name;
-  Order.find({ 'user.name': klant })
+  Order.find({ "user.name": klant })
     .then((orders) => {
       res.status(200).render("shop/bestellingen", {
         path: "/bestellingen",

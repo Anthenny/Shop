@@ -4,7 +4,55 @@
   <body>
     <%- include('../includes/navbar.ejs')  %> 
     <main>
-      <%- include('../includes/productBasis.ejs') %> 
+      <div class="titel">
+        <h2><%= pageTitle %></h2>
+        <div class="dropbox">
+          <label>Sorteren op:</label>
+          <select class="oorbellen" name="oorbellen">
+            <option value="rood" name="rood">Rood</option>
+            <option value="groen">Groen</option>
+            <option value="blauw">Blauw</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="sorteren">
+        <h3 class="items-gevonden">135 items gevonden</h3>
+        <div class="desktop-knoppen">
+          <button class="btn">Alles</button>
+          <button class="btn non-active">Populair</button>
+          <button class="btn non-active">Nieuw</button>
+        </div>
+      </div>
+      
+      <div class="desktop-flex">
+      
+        <div class="opties">
+          <form action="/kleurBabyAccessoires" method="POST">
+            <div class="optie-1">
+              <label>Kleur:</label>
+              <select onchange="this.form.submit()" name="kleurBaby">
+                <option value="" selected disabled hidden>Kies hier:</option> 
+                <option name="alles" value="alles">Alles</option>
+                <option name="rood" value="rood">Rood</option>
+                <option name="groen" value="groen">Groen</option>
+                <option name="blauw" value="blauw">Blauw</option>
+              </select>
+            </div>
+          </form>
+      
+          <form action="/prijsBabyAccessoires" method="POST">
+            <div class="optie-3">
+              <label>Prijs:</label>
+              <select onchange="this.form.submit()" name="prijsBaby">
+                <option value="" selected disabled hidden>Kies hier:</option> 
+                <option name="alles" value="alles">Alles</option>
+                <option name="laagHoog" value="laagHoog">laag - hoog</option>
+                <option name="hoogLaag" value="hoogLaag">hoog - laag</option>
+              </select>
+            </div>
+          </form>
+        </div>
 
         <div class="producten-grid">
           <% if (prods.length > 0) { %>

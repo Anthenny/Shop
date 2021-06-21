@@ -6,35 +6,20 @@ const router = express.Router();
 router.get("/", shopController.getHome);
 router.get("/winkelmand", isAuth.isAuth, shopController.getWinkeland);
 router.get("/oorbellen", shopController.getOorbellen);
-router.get("/armbanden", shopController.getArmbanden);
-router.get("/tassen", shopController.getTassen);
-router.get("/waxmelts", shopController.getWaxmelts);
-router.get("/babyaccessoires", shopController.getBabyAccessoires);
-router.get(
-  "/productSpecificatie",
-  shopController.getProductSpecificatie
-);
+router.get("/productSpecificatie", shopController.getProductSpecificatie);
 router.get("/profiel", isAuth.isAuth, shopController.getProfiel);
-router.get(
-  "/bestellingen",
-  isAuth.isAuth,
-  shopController.getKlantBestelingen
-);
-router.get(
-  "/productSpecificatie/:productId",
-  shopController.getProduct
-);
+router.get("/bestellingen", isAuth.isAuth, shopController.getKlantBestelingen);
+router.get("/productSpecificatie/:productId", shopController.getProduct);
 router.get("/retourneren", shopController.getRetourneren);
 router.get("/inspiratie", shopController.getInspiratie);
 router.get("/contact", shopController.getContact);
+router.get("/succesPage", shopController.getSuccesPage);
 
 router.post("/winkelmand", shopController.postWinkelmand);
-router.post(
-  "/winkelmand-delete-item",
-  shopController.postWinkelmandDeleteProduct
-);
+router.post("/winkelmand-delete-item", shopController.postWinkelmandDeleteProduct);
 
 router.post("/create-order", shopController.postOrder);
-router.post("/kleur", shopController.postKleur);
+router.post("/kleurOorbel", shopController.postKleurOorbel);
+router.post("/prijsOorbellen", shopController.postPrijsOorbellen);
 
 module.exports = router;
