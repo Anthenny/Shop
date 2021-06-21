@@ -2,7 +2,7 @@ const Product = require("../models/product");
 
 exports.getAllBabyAccessoires = async (req, res) => {
   try {
-    const products = await Product.find({ ProductCategorie: "babyaccessoires" });
+    const products = await Product.find({ productCategorie: "babyaccessoires" });
 
     res.status(200).render("shop/babyaccessoires", {
       prods: products,
@@ -19,9 +19,9 @@ exports.postKleurBabyAccessoires = async (req, res) => {
     const color = req.body.kleurBaby;
     let products = [];
 
-    if (color === "alles") products = await Product.find({ ProductCategorie: "babyaccessoires" });
+    if (color === "alles") products = await Product.find({ productCategorie: "babyaccessoires" });
 
-    if (color !== "alles") products = await Product.find({ ProductKleur: color, ProductCategorie: "babyaccessoires" });
+    if (color !== "alles") products = await Product.find({ productKleur: color, productCategorie: "babyaccessoires" });
 
     res.status(200).render("shop/babyaccessoires", {
       prods: products,
@@ -37,17 +37,17 @@ exports.postPrijsBabyAccessoires = async (req, res) => {
   try {
     const price = req.body.prijsBaby;
     let products = [];
-    if (price === "alles") products = await Product.find({ ProductCategorie: "babyaccessoires" });
+    if (price === "alles") products = await Product.find({ productCategorie: "babyaccessoires" });
 
     if (price === "laagHoog")
       products = await Product.find({
-        $or: [{ ProductCategorie: "babyaccessoires" }],
-      }).sort({ ProductPrijs: "asc" });
+        $or: [{ productCategorie: "babyaccessoires" }],
+      }).sort({ productPrijs: "asc" });
 
     if (price === "hoogLaag")
       products = await Product.find({
-        $or: [{ ProductCategorie: "babyaccessoires" }],
-      }).sort({ ProductPrijs: "desc" });
+        $or: [{ productCategorie: "babyaccessoires" }],
+      }).sort({ productPrijs: "desc" });
 
     res.status(200).render("shop/babyaccessoires", {
       prods: products,

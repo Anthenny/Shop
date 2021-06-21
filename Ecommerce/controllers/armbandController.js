@@ -2,7 +2,7 @@ const Product = require("../models/product");
 
 exports.getAllArmbanden = async (req, res) => {
   try {
-    const products = await Product.find({ ProductCategorie: "armbanden" });
+    const products = await Product.find({ productCategorie: "armbanden" });
 
     res.status(200).render("shop/armbanden", {
       prods: products,
@@ -17,7 +17,7 @@ exports.getAllArmbanden = async (req, res) => {
 exports.postKleurArmbanden = async (req, res) => {
   try {
     const color = req.body.kleurArmbanden;
-    const products = await Product.find({ ProductKleur: color, ProductCategorie: "armbanden" });
+    const products = await Product.find({ productKleur: color, productCategorie: "armbanden" });
 
     res.status(200).render("shop/armbanden", {
       prods: products,
@@ -33,17 +33,17 @@ exports.postPrijsArmbanden = async (req, res) => {
   try {
     const price = req.body.prijsArmbanden;
     let products = [];
-    if (price === "alles") products = await Product.find({ ProductCategorie: "armbanden" });
+    if (price === "alles") products = await Product.find({ productCategorie: "armbanden" });
 
     if (price === "laagHoog")
       products = await Product.find({
-        $or: [{ ProductCategorie: "armbanden" }],
-      }).sort({ ProductPrijs: "asc" });
+        $or: [{ productCategorie: "armbanden" }],
+      }).sort({ productPrijs: "asc" });
 
     if (price === "hoogLaag")
       products = await Product.find({
-        $or: [{ ProductCategorie: "armbanden" }],
-      }).sort({ ProductPrijs: "desc" });
+        $or: [{ productCategorie: "armbanden" }],
+      }).sort({ productPrijs: "desc" });
 
     res.status(200).render("shop/armbanden", {
       prods: products,

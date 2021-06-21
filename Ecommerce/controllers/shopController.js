@@ -62,57 +62,6 @@ exports.getOorbellen = (req, res) => {
     .catch((err) => console.log(err));
 };
 
-<<<<<<< HEAD
-exports.getArmbanden = (req, res) => {
-  Product.find({ productCategorie: "armbanden" })
-    .then((products) => {
-      res.status(200).render("shop/armbanden", {
-        prods: products,
-        pageTitle: "Armbanden",
-        path: "/armbanden",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getTassen = (req, res) => {
-  Product.find({ productCategorie: "tassen" })
-    .then((products) => {
-      res.status(200).render("shop/tassen", {
-        prods: products,
-        pageTitle: "Tassen",
-        path: "/tassen",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getWaxmelts = (req, res) => {
-  Product.find({ productCategorie: "waxmelts" })
-    .then((products) => {
-      res.status(200).render("shop/waxmelts", {
-        prods: products,
-        pageTitle: "Wax Melts",
-        path: "/waxmelts",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-exports.getBabyAccessoires = (req, res) => {
-  Product.find({ productCategorie: "babyaccessoires" })
-    .then((products) => {
-      res.status(200).render("shop/babyaccessoires", {
-        prods: products,
-        pageTitle: "Baby Accessoires",
-        path: "/babyaccessoires",
-      });
-    })
-    .catch((err) => console.log(err));
-};
-
-=======
->>>>>>> b9046d266f736a38c787044297d917ac1d76ab85
 exports.getProduct = (req, res) => {
   const prodId = req.params.productId;
   Product.findById(prodId)
@@ -208,14 +157,10 @@ exports.postOrder = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 
-<<<<<<< HEAD
-exports.postKleur = (req, res) => {
-=======
 exports.postKleurOorbel = (req, res) => {
->>>>>>> b9046d266f736a38c787044297d917ac1d76ab85
   const color = req.body.kleur;
 
-  Product.find({ ProductKleur: color, ProductCategorie: "oorbellen" })
+  Product.find({ productKleur: color, productCategorie: "oorbellen" })
     .then((products) => {
       res.status(200).render("shop/oorbellen", {
         prods: products,

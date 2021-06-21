@@ -2,7 +2,7 @@ const Product = require("../models/product");
 
 exports.getAllWaxmelts = async (req, res) => {
   try {
-    const products = await Product.find({ ProductCategorie: "waxmelts" });
+    const products = await Product.find({ productCategorie: "waxmelts" });
 
     res.status(200).render("shop/waxmelts", {
       prods: products,
@@ -19,9 +19,9 @@ exports.postKleurWaxmelts = async (req, res) => {
     const color = req.body.kleurWaxmelts;
     let products = [];
 
-    if (color === "alles") products = await Product.find({ ProductCategorie: "waxmelts" });
+    if (color === "alles") products = await Product.find({ productCategorie: "waxmelts" });
 
-    if (color !== "alles") products = await Product.find({ ProductKleur: color, ProductCategorie: "waxmelts" });
+    if (color !== "alles") products = await Product.find({ productKleur: color, productCategorie: "waxmelts" });
 
     res.status(200).render("shop/waxmelts", {
       prods: products,
@@ -37,17 +37,17 @@ exports.postPrijsWaxmelts = async (req, res) => {
   try {
     const price = req.body.prijsWaxmelts;
     let products = [];
-    if (price === "alles") products = await Product.find({ ProductCategorie: "waxmelts" });
+    if (price === "alles") products = await Product.find({ productCategorie: "waxmelts" });
 
     if (price === "laagHoog")
       products = await Product.find({
-        $or: [{ ProductCategorie: "waxmelts" }],
-      }).sort({ ProductPrijs: "asc" });
+        $or: [{ productCategorie: "waxmelts" }],
+      }).sort({ productPrijs: "asc" });
 
     if (price === "hoogLaag")
       products = await Product.find({
-        $or: [{ ProductCategorie: "waxmelts" }],
-      }).sort({ ProductPrijs: "desc" });
+        $or: [{ productCategorie: "waxmelts" }],
+      }).sort({ productPrijs: "desc" });
 
     res.status(200).render("shop/waxmelts", {
       prods: products,
