@@ -7,6 +7,7 @@ exports.getHome = (req, res) => {
   if (req.session.isLoggedIn) {
     res.status(200).render("shop/index", {
       pageTitle: "Home",
+      pageDesc: "Welkom op de homepagina!",
       path: "/",
       login: true,
     });
@@ -28,6 +29,7 @@ exports.getWinkeland = (req, res) => {
       const products = user.cart.items;
       res.status(200).render("shop/winkelmand", {
         pageTitle: "Winkelmand",
+        pageDesc: "Voeg producten toe aan uw winkelmand zodat u deze gemakkelijk kan bestellen.",
         path: "/winkelmand",
         prods: products,
       });
@@ -38,6 +40,7 @@ exports.getWinkeland = (req, res) => {
 exports.getProfiel = (req, res) => {
   res.status(200).render("shop/profiel", {
     pageTitle: "Profiel",
+    pageDesc: "Bekijk uw profiel.",
     path: "/profiel",
     user: req.user,
   });
@@ -46,6 +49,7 @@ exports.getProfiel = (req, res) => {
 exports.getProductSpecificatie = (req, res) => {
   res.status(200).render("shop/productSpecs", {
     pageTitle: "Product Specificatie",
+    pageDesc: "Bekijk details over uw product.",
     path: "/productSpecificatie",
   });
 };
@@ -57,6 +61,7 @@ exports.getProduct = (req, res) => {
       res.render("shop/productSpecs", {
         prods: product,
         pageTitle: "Product Specificatie",
+        pageDesc: "Bekijk details over uw product.",
         path: "/products",
       });
     })
@@ -66,6 +71,7 @@ exports.getProduct = (req, res) => {
 exports.getRetourneren = (req, res) => {
   res.status(200).render("footer/retourneren", {
     pageTitle: "Retourneren",
+    pageDesc: "Bekijk uw opties als het gaat om retourneren.",
     path: "/retourneren",
     user: req.user,
   });
@@ -74,6 +80,7 @@ exports.getRetourneren = (req, res) => {
 exports.getInspiratie = (req, res) => {
   res.status(200).render("footer/inspiratie", {
     pageTitle: "Inspiratie",
+    pageDesc: "Bekijk wat Anna's accessoires haar inspiratiebronnen zijn.",
     path: "/inspiratie",
     user: req.user,
   });
@@ -82,6 +89,7 @@ exports.getInspiratie = (req, res) => {
 exports.getContact = (req, res) => {
   res.status(200).render("footer/contact", {
     pageTitle: "Contact",
+    pageDesc: "Bekijk hoe je het beste contact kan opnemen.",
     path: "/contact",
     user: req.user,
   });
@@ -148,6 +156,7 @@ exports.postOrder = (req, res, next) => {
 exports.getSuccesPage = (req, res) => {
   res.status(200).render("shop/succesPage", {
     pageTitle: "Succes",
+    pageDesc: "Bedankt voor de bestelling we gaan zo snel mogelijk aan de slag!",
     path: "/succesPage",
   });
 };
@@ -159,6 +168,7 @@ exports.getKlantBestelingen = (req, res) => {
       res.status(200).render("shop/bestellingen", {
         path: "/bestellingen",
         pageTitle: "Bestellingen",
+        pageDesc: "Zie hier al uw bestellingen.",
         orders: orders,
       });
     })

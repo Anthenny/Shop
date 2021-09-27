@@ -13,6 +13,7 @@ exports.getLogin = (req, res) => {
 
   res.status(200).render("auth/login", {
     pageTitle: "Login",
+    pageDesc: "Log in op uw account zodat u kunt bestellen!",
     path: "/login",
     errorMessage: message,
     oldInput: {
@@ -31,6 +32,7 @@ exports.getSignUp = (req, res) => {
   }
   res.status(200).render("auth/signUp", {
     pageTitle: "Sign Up",
+    pageDesc: "Sign up voor de beste deals!",
     path: "/signUp",
     errorMessage: message,
     oldInput: {
@@ -62,6 +64,7 @@ exports.postSignUp = (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(402).render("auth/signUp", {
       pageTitle: "Sign Up",
+      pageDesc: "Sign up voor de beste deals!",
       path: "/signUp",
       errorMessage: errors.array()[0].msg,
       oldInput: { name: name, email: email, plaats: plaats, adres: adres },

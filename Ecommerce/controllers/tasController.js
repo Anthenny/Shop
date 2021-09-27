@@ -7,6 +7,7 @@ exports.getAllTassen = async (req, res) => {
     res.status(200).render("shop/tassen", {
       prods: products,
       pageTitle: "Tassen",
+      pageDesc: "Bekijk de mooiste tassen!",
       path: "/tassen",
     });
   } catch {
@@ -26,6 +27,7 @@ exports.postKleurTassen = async (req, res) => {
     res.status(200).render("shop/tassen", {
       prods: products,
       pageTitle: "Tassen",
+      pageDesc: "Bekijk de mooiste tassen!",
       path: "/kleurTassen",
     });
   } catch {

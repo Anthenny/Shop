@@ -46,8 +46,7 @@ exports.postAddproduct = (req, res, next) => {
   product
     .save()
     .then((result) => {
-      console.log("Product created");
-      res.redirect("admin");
+      res.redirect("/admin");
     })
     .catch((err) => {
       console.log(err);
@@ -68,6 +67,7 @@ exports.getEditProduct = (req, res, next) => {
       }
       res.render("admin/Add-Edit-product", {
         pageTitle: "Edit Product",
+        pageDesc: "Een admin pagina waar we producten kunnen editen",
         path: "/edit-product",
         editing: editMode,
         product: product,
@@ -115,11 +115,13 @@ exports.postDeleteProduct = (req, res, next) => {
 };
 
 exports.getNewOrders = (req, res, next) => {
-  Order.find({status: false })
+  Order.find({ status: false })
     .then((orders) => {
       res.render("admin/order", {
         path: "/orders",
         pageTitle: "Your Orders",
+        pageDesc: "Een admin pagina waar we nieuwe bestellingen kunnen zien",
+
         orders: orders,
       });
     })
@@ -127,11 +129,12 @@ exports.getNewOrders = (req, res, next) => {
 };
 
 exports.getOldOrders = (req, res, next) => {
-  Order.find({status: true })
+  Order.find({ status: true })
     .then((orders) => {
       res.render("admin/oldOrders", {
         path: "/oldOrders",
         pageTitle: "Your Orders",
+        pageDesc: "Een admin pagina waar we oude bestellingen kunnen zien",
         orders: orders,
       });
     })
@@ -141,34 +144,34 @@ exports.getOldOrders = (req, res, next) => {
 exports.postAfhandelen = (req, res) => {
   const orderId = req.body.orderId;
   Order.findByIdAndUpdate(orderId)
-  .then((Order) => {
-    Order.status = true;
-    return Order.save();
-  })
-  .then(() => {
-    res.redirect("/orders");
-  })
-  .catch((err) => console.log(err));
-}
+    .then((Order) => {
+      Order.status = true;
+      return Order.save();
+    })
+    .then(() => {
+      res.redirect("/orders");
+    })
+    .catch((err) => console.log(err));
+};
 
 exports.postOnGedaanMaken = (req, res) => {
   const orderId = req.body.orderId;
   Order.findByIdAndUpdate(orderId)
-  .then((Order) => {
-    Order.status = false;
-    return Order.save();
-  })
-  .then(() => {
-    res.redirect("/oldOrders");
-  })
-  .catch((err) => console.log(err));
-}
+    .then((Order) => {
+      Order.status = false;
+      return Order.save();
+    })
+    .then(() => {
+      res.redirect("/oldOrders");
+    })
+    .catch((err) => console.log(err));
+};
 
 exports.postDeletOder = (req, res) => {
   const orderId = req.body.orderId;
   Order.findByIdAndRemove(orderId)
-  .then(() => {
-    res.redirect("/orders");
-  })
-  .catch((err) => console.log(err));
-}
+    .then(() => {
+      res.redirect("/orders");
+    })
+    .catch((err) => console.log(err));
+};

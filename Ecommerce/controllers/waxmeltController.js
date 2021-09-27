@@ -7,6 +7,7 @@ exports.getAllWaxmelts = async (req, res) => {
     res.status(200).render("shop/waxmelts", {
       prods: products,
       pageTitle: "Wax Melts",
+      pageDesc: "Bekijk de mooiste waxmelts!",
       path: "/waxmelts",
     });
   } catch {
@@ -26,6 +27,7 @@ exports.postKleurWaxmelts = async (req, res) => {
     res.status(200).render("shop/waxmelts", {
       prods: products,
       pageTitle: "Wax Melts",
+      pageDesc: "Bekijk de mooiste waxmelts!",
       path: "/kleurWaxmelts",
     });
   } catch {

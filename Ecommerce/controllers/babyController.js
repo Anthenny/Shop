@@ -7,6 +7,7 @@ exports.getAllBabyAccessoires = async (req, res) => {
     res.status(200).render("shop/babyaccessoires", {
       prods: products,
       pageTitle: "Baby Accessoires",
+      pageDesc: "Bekijk de beste baby accessoires",
       path: "/babyaccessoires",
     });
   } catch {
@@ -26,6 +27,7 @@ exports.postKleurBabyAccessoires = async (req, res) => {
     res.status(200).render("shop/babyaccessoires", {
       prods: products,
       pageTitle: "Baby Accessoires",
+      pageDesc: "Bekijk de beste baby accessoires",
       path: "/kleurBabyAccessoires",
     });
   } catch {

@@ -7,6 +7,7 @@ exports.getAllArmbanden = async (req, res) => {
     res.status(200).render("shop/armbanden", {
       prods: products,
       pageTitle: "Armbanden",
+      pageDesc: "Bekijk nu de nieuwste en beste armbanden",
       path: "/armbanden",
     });
   } catch {
@@ -26,6 +27,7 @@ exports.postKleurArmbanden = async (req, res) => {
     res.status(200).render("shop/armbanden", {
       prods: products,
       pageTitle: "Armbanden",
+      pageDesc: "Bekijk nu de nieuwste en beste armbanden",
       path: "/kleurArmbanden",
     });
   } catch {

@@ -7,6 +7,7 @@ exports.getAllOorbellen = async (req, res) => {
     res.status(200).render("shop/oorbellen", {
       prods: products,
       pageTitle: "Oorbellen",
+      pageDesc: "Bekijk de beste oorbellen",
       path: "/oorbellen",
     });
   } catch {
@@ -27,6 +28,7 @@ exports.postKleurOorbellen = async (req, res) => {
     res.status(200).render("shop/oorbellen", {
       prods: products,
       pageTitle: "Oorbellen",
+      pageDesc: "Bekijk de beste oorbellen",
       path: "/kleurOorbellen",
     });
   } catch {
